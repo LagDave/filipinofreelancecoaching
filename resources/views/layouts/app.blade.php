@@ -46,7 +46,7 @@
                         <li class="nav-item">
                             <a href="/home" class="nav-link">Dashboard</a>
                         </li>
-                        @if(Auth::user()->role === 143)
+                        @if(Auth::check() && Auth::user()->role === 143)
                             <li class="nav-item">
                                 <a href="/admin/manage/courses" class="nav-link">Manage Courses </a>
                             </li>
