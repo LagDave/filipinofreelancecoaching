@@ -43,9 +43,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a href="/home" class="nav-link">Dashboard</a>
-                        </li>
+                        @if(Auth::check())
+                            <li class="nav-item">
+                                <a href="/home" class="nav-link">Dashboard</a>
+                            </li>
+                        @endif
                         @if(Auth::check() && Auth::user()->role === 143)
                             <li class="nav-item">
                                 <a href="/admin/manage/courses" class="nav-link">Manage Courses </a>
