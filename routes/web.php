@@ -7,7 +7,7 @@ Route::get('/', 'PagesController@homepage');
 Route::get('/home', 'UsersController@dashboard')->middleware('auth');
 
 // Admin Routes
-Route::get('/admin/manage/courses', 'AdminsController@manage_courses');
+Route::get('/admin/manage/courses', 'AdminsController@manage_courses')->middleware('admin_auth');
 
 // Course Routes
 Route::get('/admin/manage/courses/get', 'CoursesController@index');
