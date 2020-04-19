@@ -29,7 +29,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('homepage/assets/css/style.css')}}" rel="stylesheet">
-
+  <link href="{{asset('homepage/assets/css/footer.css')}}" rel="stylesheet">
   <!-- =======================================================
   * Template Name: Vesperr - v2.0.0
   * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
@@ -59,7 +59,7 @@
           <li><a href="#portfolio">Courses</a></li>
           <li><a href="#pricing">Pricing</a></li>
 
-          <li><a href="#">Login</a></li>
+          <li><a href="/login">Login</a></li>
           <li class="get-started"><a href="#about">Enroll Now</a></li>
         </ul>
       </nav><!-- .nav-menu -->
@@ -641,25 +641,7 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="row d-flex align-items-center">
-        <div class="col-lg-6 text-lg-left text-center">
-          <div class="copyright">
-            Copyright  © 2019 Filipino Freelance Coaching. All rights reserved
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#">Login</a>
-            <a href="#">Enroll Now</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
+  @include('components.footer')
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
