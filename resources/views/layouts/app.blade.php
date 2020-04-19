@@ -24,10 +24,14 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{asset('homepage/assets/css/footer.css')}}" rel="stylesheet">
+
+    {{-- icons --}}
+    <link href="{{asset('homepage/assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar sticky-top navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img style='max-heigh:80px' src="{{asset('homepage/assets/img/logo.png')}}" alt="" class="img-fluid"></a>
@@ -39,7 +43,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        
+                        <li class="nav-item">
+                            <a href="/home" class="nav-link">Dashboard</a>
+                        </li>
                         @if(Auth::user()->role === 143)
                             <li class="nav-item">
                                 <a href="/admin/manage/courses" class="nav-link">Manage Courses </a>
@@ -91,4 +97,10 @@
         @include('components.footer')
     </div>
 </body>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 </html>
