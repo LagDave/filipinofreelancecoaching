@@ -4,6 +4,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
 .card {
     border: none !important;
 }
@@ -556,52 +557,6 @@ h6 {
     100% {
         transform: translateY(-10px);
     }
-}
-
-/*--------------------------------------------------------------
-# Sections General
---------------------------------------------------------------*/
-section {
-    padding: 60px 0;
-    overflow: hidden;
-}
-
-.section-bg {
-    background-color: #e60c3f09;
-}
-
-.section-title {
-    text-align: center;
-    padding-bottom: 30px;
-}
-
-.section-title h2 {
-    font-size: 32px;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
-    color: #222222;
-}
-
-.section-title h2::before,
-.section-title h2::after {
-    content: "";
-    width: 50px;
-    height: 2px;
-    background: #e60c3e;
-    display: inline-block;
-}
-
-.section-title h2::before {
-    margin: 0 15px 10px 0;
-}
-
-.section-title h2::after {
-    margin: 0 0 10px 15px;
-}
-
-.section-title p {
-    margin: 15px 0 0 0;
 }
 
 /*--------------------------------------------------------------
@@ -1259,109 +1214,6 @@ section {
 
 .team .member:hover .social {
     opacity: 1;
-}
-
-/*--------------------------------------------------------------
-# Pricing
---------------------------------------------------------------*/
-.pricing .box {
-    padding: 20px;
-    background: #f9f9f9;
-    text-align: center;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid #f9f9f9;
-}
-
-.pricing .box h3 {
-    font-weight: 400;
-    padding: 15px;
-    margin-top: 15px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #222222;
-}
-
-.pricing .box h4 {
-    font-size: 42px;
-    color: #e60c3e;
-    font-weight: 500;
-    font-family: "Open Sans", sans-serif;
-    margin-bottom: 20px;
-}
-
-.pricing .box h4 sup {
-    font-size: 20px;
-    top: -15px;
-    left: -3px;
-}
-
-.pricing .box h4 span {
-    color: #bababa;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.pricing .box ul {
-    padding: 0;
-    list-style: none;
-    color: #222222;
-    text-align: center;
-    line-height: 20px;
-    font-size: 14px;
-}
-
-.pricing .box ul li {
-    padding-bottom: 16px;
-}
-
-.pricing .box ul i {
-    color: #e60c3e;
-    font-size: 18px;
-    padding-right: 4px;
-}
-
-.pricing .box ul .na {
-    color: #ccc;
-    text-decoration: line-through;
-}
-
-.pricing .box .btn-wrap {
-    padding: 15px;
-    text-align: center;
-}
-
-.pricing .box .btn-buy {
-    display: inline-block;
-    padding: 10px 40px 12px 40px;
-    border-radius: 50px;
-    border: 2px solid #e60c3e;
-    color: #e60c3e;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.pricing .box .btn-buy:hover {
-    background: #e60c3e;
-    color: #fff;
-}
-
-.pricing .recommended {
-    border-color: #e60c3e;
-}
-
-.pricing .recommended .btn-buy {
-    background: #e60c3e;
-    color: #fff;
-}
-
-.pricing .recommended .btn-buy:hover {
-    background: #2383c4;
-    border-color: #2383c4;
 }
 
 /*--------------------------------------------------------------

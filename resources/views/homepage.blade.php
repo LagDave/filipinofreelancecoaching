@@ -30,6 +30,9 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('homepage/assets/css/style.css')}}" rel="stylesheet">
   <link href="{{asset('homepage/assets/css/footer.css')}}" rel="stylesheet">
+  <link href="{{asset('homepage/assets/css/pricing.css')}}" rel="stylesheet">
+  <link href="{{asset('homepage/assets/css/courses-carousel.css')}}" rel="stylesheet">
+  <link href="{{asset('homepage/assets/css/sections-general.css')}}" rel="stylesheet">
   <!-- =======================================================
   * Template Name: Vesperr - v2.0.0
   * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
@@ -60,7 +63,7 @@
           <li><a href="#pricing">Pricing</a></li>
 
           <li><a href="/login">Login</a></li>
-          <li class="get-started"><a href="#about">Enroll Now</a></li>
+          <li class="get-started"><a >Enroll Now</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -375,113 +378,28 @@
           <p>100+ courses for you to learn and master!</p>
         </div>
 
-        <div data-aos='fade-up' class="container">
-          <div class="row">
-            <div class="col-xs-12 ">
-              <nav style='width:100%;' class='courses-nav'>
-                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                  <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Virtual Assistant</a>
-                  <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Social Media Management</a>
-                  <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Ecommerce</a>
-                  <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">Clickfunnels</a>
-                </div>
-              </nav>
-              <div class="tab-content w-100 py-3 px-3 px-sm-0" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        
+        <div data-aos='fade-up' class="owl-carousel courses-carousel">
 
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{asset('homepage/assets/img/clickminded.png')}}" alt="Card image cap">
-                        <div class="card-body">
-                           <h5 class="card-title">The Clickminded Sales Funnel</h5>
-                           <p class="card-text">ClickMinded Sales Training will teach you exactly how to significantly increase revenue with strong sales paths.</p>
-                           <span style='color:orange'><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i></span>
-                           <br>
-                           <a  href="#pricing" class="mt-3 shadow-none btn btn-outline-primary btn-sm">Enroll Now</a>
-                        </div>
-                     </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{asset('homepage/assets/img/smm.png')}}" alt="Card image cap">
-                        <div class="card-body">
-                           <h5 class="card-title">Social Media Mastery</h5>
-                           <p class="card-text">On this on-line step-by-step grasp coaching course, I’ll present you the way to correctly mix social media...</p>
-                           <span style='color:orange'><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i></span>
-                           <br>
-                           <a href="#pricing" class="mt-3 shadow-none btn btn-outline-primary btn-sm">Enroll Now</a>
-                        </div>
-                     </div>
-                    </div>
-                  </div>
+          <div class="course-item">
+            <img class='img-fluid' src="{{asset('homepage/assets/img/facebook-ads-university.png')}}" alt="">
+          </div>
+          <div class="course-item">
+            <img class='img-fluid' src="{{asset('homepage/assets/img/gads.png')}}" alt="">
+          </div>
+          <div class="course-item">
+            <img class='img-fluid' src="{{asset('homepage/assets/img/instagram-domination.png')}}" alt="">
+          </div>
+          <div class="course-item">
+            <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-mastery.png')}}" alt="">
+          </div>
+          <div class="course-item">
+            <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-secrets.png')}}" alt="">
+          </div>
+          <div class="course-item">
+            <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-strategy.png')}}" alt="">
+          </div>
 
-                </div>
-                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{asset('homepage/assets/img/smm.png')}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Social Media Mastery</h5>
-                            <p class="card-text">On this on-line step-by-step grasp coaching course, I’ll present you the way to correctly mix social media...</p>
-                            <span style='color:orange'><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i></span>
-                            <br>
-                            <a href="http://www.jquery2dotnet.com/" class="mt-3 btn btn-outline-primary btn-sm">Go somewhere</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{asset('homepage/assets/img/smm.png')}}" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">Social Media Mastery</h5>
-                          <p class="card-text">On this on-line step-by-step grasp coaching course, I’ll present you the way to correctly mix social media...</p>
-                          <span style='color:orange'><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i></span>
-                          <br>
-                          <a href="http://www.jquery2dotnet.com/" class="mt-3 btn btn-outline-primary btn-sm">Go somewhere</a>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{asset('homepage/assets/img/clickminded.png')}}" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">The Clickminded Sales Funnel</h5>
-                          <p class="card-text">ClickMinded Sales Training will teach you exactly how to significantly increase revenue with strong sales paths.</p>
-                          <span style='color:orange'><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i></span>
-                          <br>
-                          <a  href="http://www.jquery2dotnet.com/" class="mt-3 btn btn-outline-primary btn-sm">Go somewhere</a>
-                        </div>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{asset('homepage/assets/img/smm.png')}}" alt="Card image cap">
-                        <div class="card-body">
-                          <h5 class="card-title">Social Media Mastery</h5>
-                          <p class="card-text">On this on-line step-by-step grasp coaching course, I’ll present you the way to correctly mix social media...</p>
-                          <span style='color:orange'><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i></span>
-                          <br>
-                          <a href="http://www.jquery2dotnet.com/" class="mt-3 btn btn-outline-primary btn-sm">Go somewhere</a>
-                        </div>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-            </div>
-          </div>
-          </div>
         </div>
       </div>
 
@@ -500,21 +418,21 @@
 
         <div class="section-title">
           <h2>Pricing</h2>
-          <p>Sit sint consectetur velit nemo qui impedit suscipit alias ea</p>
+          <p>We have new courses and ebooks every week!</p>
         </div>
 
         <div class="row">
 
           <div class="col-lg-4 col-md-6">
             <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
-              <h3>Monthly</h3>
-              <h4><sup>₱</sup>799<span> / month</span></h4>
+              <h3>Yearly</h3>
+              <h4><sup>₱</sup>1,999<span> / month</span></h4>
               <ul>
                 <li>100+ Courses</li>
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
                 <li>Certificates</li>
-                <li class="na">Chat support</li>
+                <li>Chat support</li>
               </ul>
               <div class="btn-wrap">
                 <a href="#" class="btn-buy">Enroll Now</a>
@@ -524,14 +442,14 @@
 
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="box recommended" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Yearly</h3>
-              <h4><sup>₱</sup>1,999<span> / month</span></h4>
+              <h3>Monthly</h3>
+              <h4><sup>₱</sup>799<span> / month</span></h4>
               <ul>
                 <li>100+ Courses</li>
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
                 <li>Certificates</li>
-                <li>Chat support</li>
+                <li class="na">Chat support</li>
               </ul>
               <div class="btn-wrap">
                 <a href="#" class="btn-buy">Enroll Now</a>
@@ -575,7 +493,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-about">
               <h3>Filipino Freelance Coaching</h3>
-              <p>It should be: If you have any questions about the services we provide simply use the form below. We try to respond to all queries and comments within 24 hours.</p>
+              <p>If you have any questions about the services we provide simply use the form below. We try to respond to all queries and comments within 24 hours.</p>
               <div class="social-links">
                 <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
               </div>
@@ -659,6 +577,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('homepage/assets/js/main.js')}}"></script>
+  <script src="{{asset('homepage/assets/js/courses-carousel.js')}}"></script>
 
 </body>
 
