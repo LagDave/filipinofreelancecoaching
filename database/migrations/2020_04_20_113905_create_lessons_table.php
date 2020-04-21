@@ -20,6 +20,7 @@ class CreateLessonsTable extends Migration
             $table->text('vimeo_link');
             $table->string('publisher');
             $table->unsignedInteger('topic_id');
+            $table->string('duration');
         });
     }
 

@@ -56,6 +56,9 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         @if(Auth::check() && Auth::user()->role === 143)
+                        <li class="nav-item">
+                            <a href="/admin/manage/users" class="nav-link"><i class="icofont-user"></i> Manage Users </a>
+                        </li>
                             <li class="nav-item">
                                 <a href="/admin/manage/courses" class="nav-link"><i class="icofont-lock"></i> Manage Courses </a>
                             </li>

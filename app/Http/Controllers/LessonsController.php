@@ -11,9 +11,11 @@ class LessonsController extends Controller
     public function store(Request $request){
         return Lesson::create([
             'name' => $request->name,
-            'publisher'=> Auth::user()->username,
+            'publisher'=> 'Auth::user()->username',
             'topic_id' => $request->topic_id,
-            'vimeo_link'=>$request->vimeo_link
+            'vimeo_link'=>$request->vimeo_link,
+            
+            "duration"=> $request->duration
         ]);
     }
     public function destroy($lesson_id){
@@ -27,7 +29,8 @@ class LessonsController extends Controller
             "name"=>$request->name,
             "vimeo_link"=>$request->vimeo_link,
             "topic_id"=> $request->topic_id,
-            "publisher"=>Auth::user()->username
+            "publisher"=>Auth::user()->username,
+            "duration"=> $request->duration
         ]);
     }
 }

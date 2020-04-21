@@ -62,7 +62,7 @@
                                     ><span
                                         data-toggle="tooltip"
                                         data-placement="right"
-                                        title="Always start the name with a number followed by a '.' (dot) for sorting topic items."
+                                        title="Always start the name with a number followed by a '.' (dot) for sorting lesson items."
                                         class="ml-1 text-primary"
                                         style="font-size:1.3em"
                                     >
@@ -91,12 +91,23 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Vimeo Link</label>
-                                    <input
+                                    <label>Embed Video URL</label>
+                                    <textarea
                                         v-model="vimeo_link"
                                         required
                                         type="text"
                                         class="form-control"
+                                    >
+                                    </textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Duration</label>
+                                    <br />
+                                    <input
+                                        type="text"
+                                        v-model="duration"
+                                        class="form-control"
+                                        required
                                     />
                                 </div>
                                 <div class="btn-group">
@@ -134,7 +145,9 @@
                                         <div class="topic-container">
                                             <div style="width:100%" class="row">
                                                 <div class="col-9">
-                                                    <p>{{ topic.name }}</p>
+                                                    <p>
+                                                        <b>{{ topic.name }}</b>
+                                                    </p>
                                                     <small class="text-muted"
                                                         >Published by
                                                         {{ topic.publisher }} @
@@ -184,14 +197,25 @@
                                                         style="width:100%"
                                                         class="row"
                                                     >
-                                                        <div class="col-8">
+                                                        <div
+                                                            class="col-2 mx-0 px-0"
+                                                        >
+                                                            <span
+                                                                class="lesson-duration shadow-sm"
+                                                                >{{
+                                                                    lesson.duration
+                                                                }}</span
+                                                            >
+                                                            <br />
+                                                        </div>
+                                                        <div class="pl-0 col-6">
                                                             <p>
                                                                 {{
                                                                     lesson.name
                                                                 }}
                                                             </p>
                                                         </div>
-                                                        <div class="col-4">
+                                                        <div class="col-3">
                                                             <div
                                                                 class="btn-group"
                                                             >
@@ -237,13 +261,20 @@
 </template>
 
 <style lang="scss" scoped>
+.lesson-duration {
+    margin-right: 10px;
+    padding: 3px 8px;
+    color: white;
+    min-width: 50px !important;
+    background: #e60c3e;
+}
 .lessons-container {
     padding-left: 30px;
     border-left: 1px solid #e60c3e;
 }
 .lesson {
     background: #f5f5f5;
-    color: #999;
+    color: #777;
     padding: 10px;
 }
 .topic-container {
@@ -285,6 +316,7 @@ export default {
             lesson_name: "",
             lesson_topic: "",
             vimeo_link: "",
+            duration: "",
             editLessonFlag: false,
             editLessonId: ""
         };
@@ -392,6 +424,7 @@ export default {
             this.editTopicFlag = false;
             this.editTopicId = "";
             this.topic_name = "";
+            this.duration = "";
         },
         saveLesson() {
             if (this.editLessonFlag == true) {
@@ -402,7 +435,8 @@ export default {
                         {
                             name: this.lesson_name,
                             topic_id: this.lesson_topic,
-                            vimeo_link: this.vimeo_link
+                            vimeo_link: this.vimeo_link,
+                            duration: this.duration
                         }
                     )
                     .then(response => {
@@ -423,7 +457,8 @@ export default {
                     .post(`/admin/manage/courses/topics/lessons/store`, {
                         name: this.lesson_name,
                         topic_id: this.lesson_topic,
-                        vimeo_link: this.vimeo_link
+                        vimeo_link: this.vimeo_link,
+                        duration: this.duration
                     })
                     .then(response => {
                         this.lesson_name = "";
@@ -464,6 +499,7 @@ export default {
                     this.lesson_name = response.data.name;
                     this.lesson_topic = response.data.topic_id;
                     this.vimeo_link = response.data.vimeo_link;
+                    this.duration = response.data.duration;
                     this.toggleLoading();
                 })
                 .catch(err => {
