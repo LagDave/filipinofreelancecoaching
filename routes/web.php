@@ -36,6 +36,20 @@ Route::get('/admin/manage/users/get/unsubscribed', 'UsersController@unsubscribed
 Route::get('/admin/manage/users/get/pending', 'UsersController@pending');
 Route::get('/admin/manage/users/get/subscribed', 'UsersController@subscribed');
 Route::get('/admin/manage/users/get/expired', 'UsersController@expired');
+Route::get('/admin/manage/users/get/renewal', 'UsersController@renewal');
 Route::post('/admin/manage/users/{user_id}/grant/{grant_type}', 'UsersController@grant');
 Route::post('/admin/manage/users/{user_id}/moveToPending', 'UsersController@moveToPending');
 Route::post('/admin/manage/users/{user_id}/unsubscribe', 'UsersController@unsubscribe');
+
+// User Dashboard Routes
+  // Enrollment
+  Route::get('/home/enroll', 'UsersController@enrollPage')->middleware('auth');
+  Route::get('/home/enroll/monthly/basic_info', 'UsersController@monthlyEnrollPage')->middleware('auth');
+  Route::get('/home/enroll/yearly/basic_info', 'UsersController@yearlyEnrollPage')->middleware('auth');
+  Route::get('/home/enroll/lifetime/basic_info', 'UsersController@lifetimeEnrollPage')->middleware('auth');
+  
+  Route::post('/home/enroll/yearly/apply', 'UsersController@yearlyApply')->middleware('auth');
+  Route::post('/home/enroll/monthly/apply', 'UsersController@monthlyApply')->middleware('auth');
+  Route::post('/home/enroll/lifetime/apply', 'UsersController@lifetimeApply')->middleware('auth');
+
+  Route::get('/home/enroll/success', "UsersController@success")->middleware('auth');

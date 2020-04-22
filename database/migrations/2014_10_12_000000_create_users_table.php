@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('subscription_end')->nullable();
             $table->string('plan')->default('no_plan');
             $table->string('plan_name')->nullable();
+            $table->string('latest_plan_update')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -3,15 +3,150 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Proof;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
 
+    // Pages
     public function dashboard(){
         return view ('home');
     }
+    
+    // Enrollment
+        public function success(){
+            return view('users.enroll_success');
+        }
+        public function enrollPage(){
+            if(Auth::user()->plan == 'pending'){
+                return redirect('/home')->with('error', 'Your application is still under pending.');
+            }
+            return view ('users.enroll_page');
+        }
+        public function monthlyEnrollPage(){
+            return view ('users.monthly_basic_info');   
+        }
+        public function yearlyEnrollPage(){
+            return view ('users.yearly_basic_info');   
+        }
+        public function lifetimeEnrollPage(){
+            return view ('users.lifetime_basic_info');   
+        }
+        public function monthlyApply(Request $request){
+            request()->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+           ]);
+           if ($files = $request->file('image')) {
+               $destinationPath = 'payment_proofs/'; // upload path
+               $proofImage = Auth::user()->username . '_' . date('YmdHis') . "." . $files->getClientOriginalExtension();
+               $files->move($destinationPath, $proofImage);
+               $insert['image'] = "$proofImage";
+            }
+            
+            
+            $user = User::find(Auth::id());
+            if($user->plan == 'no_plan'){
+                // Set user to pending registration
+                $user->plan = 'pending';
+                $user->plan_name = 'monthly';
+                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
+                $user->save();
+            }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
+                // Set user to pending renewal
+                $user->plan = 'renewal';
+                $user->plan_name = 'monthly';
+                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
+                $user->save();
+            }
+
+
+            // Set Proof
+            Proof::create([
+                'url'=> asset('/payment_proofs/'.$proofImage),
+                'user_id'=>Auth::id()
+            ]);
+
+            return redirect('/home/enroll/success');
+     
+        }
+        public function yearlyApply(Request $request){
+            request()->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+           ]);
+           if ($files = $request->file('image')) {
+               $destinationPath = 'payment_proofs/'; // upload path
+               $proofImage = Auth::user()->username . '_' . date('YmdHis') . "." . $files->getClientOriginalExtension();
+               $files->move($destinationPath, $proofImage);
+               $insert['image'] = "$proofImage";
+            }
+            
+            $user = User::find(Auth::id());
+            if($user->plan == 'no_plan'){
+                // Set user to pending registration
+                $user->plan = 'pending';
+                $user->plan_name = 'monthly';
+                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
+                $user->save();
+            }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
+                // Set user to pending renewal
+                $user->plan = 'renewal';
+                $user->plan_name = 'monthly';
+                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
+                $user->save();
+            }
+
+
+
+            // Set Proof
+            Proof::create([
+                'url'=> asset('/payment_proofs/'.$proofImage),
+                'user_id'=>Auth::id()
+            ]);
+
+            return redirect('/home/enroll/success');
+        }
+        public function lifetimeApply(Request $request){
+            request()->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+           ]);
+           if ($files = $request->file('image')) {
+               $destinationPath = 'payment_proofs/'; // upload path
+               $proofImage = Auth::user()->username . '_' . date('YmdHis') . "." . $files->getClientOriginalExtension();
+               $files->move($destinationPath, $proofImage);
+               $insert['image'] = "$proofImage";
+            }
+            
+            $user = User::find(Auth::id());
+            if($user->plan == 'no_plan'){
+                // Set user to pending registration
+                $user->plan = 'pending';
+                $user->plan_name = 'monthly';
+                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
+                $user->save();
+            }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
+                // Set user to pending renewal
+                $user->plan = 'renewal';
+                $user->plan_name = 'monthly';
+                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
+                $user->save();
+            }
+
+
+
+            // Set Proof
+            Proof::create([
+                'url'=> asset('/payment_proofs/'.$proofImage),
+                'user_id'=>Auth::id()
+            ]);
+
+            return redirect('/home/enroll/success');
+        }
+
+
+    // API
     public function index(){
         return User::all();
     }
@@ -26,13 +161,17 @@ class UsersController extends Controller
         ])->get();
     }
     public function subscribed(){
-        $today =  Carbon::now()->setTimezone('GMT+8')->format('m-d-Y');
-
-        return User::where('subscription_end', '>', $today)->orderBy('updated_at', 'asc')->get();
+        return User::where('plan', 'has_plan')->orderBy('updated_at', 'asc')->get();
     }
     public function expired(){
-        $today =  Carbon::now()->setTimezone('GMT+8')->format('m-d-Y');
-        return User::where('subscription_end', '<=', $today)->orderBy('updated_at', 'asc')->get();
+        return User::where('plan', 'expired')->orderBy('updated_at', 'asc')->get();
+    }
+    public function renewal(){
+        return User::where('plan', 'renewal')->orderBy('updated_at', 'asc')->with([
+            'proofs'=>function($q){
+                $q->orderBy('id', 'desc');
+            }
+        ])->get();
     }
     public function grant($user_id, $grant_type){
         // set subscription start
@@ -40,15 +179,15 @@ class UsersController extends Controller
         if($grant_type == 'monthly'){
             $user->subscription_start =  Carbon::now()->format('m-d-Y');
             $user->subscription_end = Carbon::now()->addDays(30)->format('m-d-Y');
-            $user->plan = 'monthly';
+            $user->plan_name = 'monthly';
         }else if($grant_type == 'yearly'){
             $user->subscription_start =  Carbon::now()->format('m-d-Y');
             $user->subscription_end = Carbon::now()->addDays(366)->format('m-d-Y');
-            $user->plan = 'yearly';
+            $user->plan_name = 'yearly';
         }else if($grant_type == 'lifetime'){
             $user->subscription_start =  'lifetime';
             $user->subscription_end = 'lifetime';
-            $user->plan = 'lifetime';
+            $user->plan_name = 'lifetime';
         }
 
         $user->plan = 'has_plan';

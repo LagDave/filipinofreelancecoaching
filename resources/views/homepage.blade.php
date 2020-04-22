@@ -426,7 +426,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
               <h3>Yearly</h3>
-              <h4><sup>₱</sup>1,999<span> / month</span></h4>
+              <h4><sup>₱</sup>1,999<span> / year</span></h4>
               <ul>
                 <li>100+ Courses</li>
                 <li>Templates and Checklists</li>

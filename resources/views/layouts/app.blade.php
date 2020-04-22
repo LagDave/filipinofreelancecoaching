@@ -19,8 +19,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{asset('homepage/assets/css/footer.css')}}" rel="stylesheet">
@@ -49,6 +50,15 @@
                             <li class="nav-item">
                                 <a href="/home" class="nav-link">Dashboard</a>
                             </li>
+                            @if(Auth::user()->plan == 'has_plan')
+                            <li class="nav-item">
+                                <a href="/home/enroll" class="nav-link">Renew Subscription</a>
+                            </li>
+                            @else
+                            <li class="nav-item">
+                                <a href="/home/enroll" class="nav-link">Enroll</a>
+                            </li>
+                            @endif
                         @endif
 
                     </ul>

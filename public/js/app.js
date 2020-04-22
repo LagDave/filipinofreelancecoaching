@@ -4863,6 +4863,220 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4872,7 +5086,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       unsubscribed: [],
       pending: [],
       subscribed: [],
-      expired: []
+      expired: [],
+      renewal: []
     };
   },
   components: {
@@ -4915,45 +5130,46 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         console.log(err);
       });
     },
+    gatherRenewal: function gatherRenewal() {
+      var _this5 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default()("/admin/manage/users/get/renewal").then(function (response) {
+        _this5.renewal = response.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
     gatherAll: function gatherAll() {
       this.gatherUnsubscribed();
       this.gatherPending();
       this.gatherSubscribed();
       this.gatherExpired();
+      this.gatherRenewal();
+    },
+    gatherAllWithLoad: function gatherAllWithLoad() {
+      this.toggleLoading();
+      this.gatherAll();
+      this.toggleLoading();
     },
     grantUser: function grantUser(id, grantType) {
-      var _this5 = this;
-
-      this.toggleLoading();
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/admin/manage/users/".concat(id, "/grant/").concat(grantType)).then(function (response) {
-        _this5.gatherAll();
-
-        _this5.toggleLoading();
-      })["catch"](function (err) {
-        console.log(err);
-
-        _this5.toggleLoading();
-      });
-    },
-    moveToPending: function moveToPending(id) {
       var _this6 = this;
 
       this.toggleLoading();
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/admin/manage/users/".concat(id, "/moveToPending")).then(function (response) {
-        console.log(response);
-
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/admin/manage/users/".concat(id, "/grant/").concat(grantType)).then(function (response) {
         _this6.gatherAll();
 
         _this6.toggleLoading();
       })["catch"](function (err) {
         console.log(err);
+
+        _this6.toggleLoading();
       });
     },
-    unsubscribe: function unsubscribe(id) {
+    moveToPending: function moveToPending(id) {
       var _this7 = this;
 
       this.toggleLoading();
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/admin/manage/users/".concat(id, "/unsubscribe")).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/admin/manage/users/".concat(id, "/moveToPending")).then(function (response) {
         console.log(response);
 
         _this7.gatherAll();
@@ -4961,15 +5177,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this7.toggleLoading();
       })["catch"](function (err) {
         console.log(err);
+      });
+    },
+    unsubscribe: function unsubscribe(id) {
+      var _this8 = this;
 
-        _this7.toggleLoading();
+      this.toggleLoading();
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/admin/manage/users/".concat(id, "/unsubscribe")).then(function (response) {
+        console.log(response);
+
+        _this8.gatherAll();
+
+        _this8.toggleLoading();
+      })["catch"](function (err) {
+        console.log(err);
+
+        _this8.toggleLoading();
       });
     }
   }),
   created: function created() {
-    this.toggleLoading();
-    this.gatherAll();
-    this.toggleLoading();
+    this.gatherAllWithLoad();
   }
 });
 
@@ -7422,7 +7650,7 @@ var render = function() {
                       "button",
                       {
                         staticClass: "btn btn-sm btn-primary",
-                        on: { click: _vm.gatherUnsubscribed }
+                        on: { click: _vm.gatherAllWithLoad }
                       },
                       [_c("i", { staticClass: "icofont-refresh" })]
                     ),
@@ -7509,12 +7737,12 @@ var render = function() {
                       "button",
                       {
                         staticClass: "btn btn-sm btn-primary",
-                        on: { click: _vm.gatherPending }
+                        on: { click: _vm.gatherAllWithLoad }
                       },
                       [_c("i", { staticClass: "icofont-refresh" })]
                     ),
                     _vm._v(" "),
-                    _c("b", [_vm._v("Pending")])
+                    _c("b", [_vm._v("Pending Registration")])
                   ]),
                   _vm._v(" "),
                   _c("hr"),
@@ -7616,7 +7844,7 @@ var render = function() {
                           ]
                         ),
                         _vm._v(" "),
-                        _c("div", { staticClass: "alert alert-success" }, [
+                        _c("div", { staticClass: "alert alert-secondary" }, [
                           _c("div", { staticClass: "row" }, [
                             _c("div", { staticClass: "col-5" }, [
                               _c(
@@ -7797,7 +8025,7 @@ var render = function() {
                       "button",
                       {
                         staticClass: "btn btn-sm btn-primary",
-                        on: { click: _vm.gatherSubscribed }
+                        on: { click: _vm.gatherAllWithLoad }
                       },
                       [_c("i", { staticClass: "icofont-refresh" })]
                     ),
@@ -7951,7 +8179,7 @@ var render = function() {
                       "button",
                       {
                         staticClass: "btn btn-sm btn-primary",
-                        on: { click: _vm.gatherExpired }
+                        on: { click: _vm.gatherAllWithLoad }
                       },
                       [_c("i", { staticClass: "icofont-refresh" })]
                     ),
@@ -8045,6 +8273,312 @@ var render = function() {
                   })
                 ],
                 2
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row mt-5" }, [
+              _c(
+                "div",
+                { staticClass: "col-lg-6" },
+                [
+                  _c("h5", { staticClass: "mt-5" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-sm btn-primary",
+                        on: { click: _vm.gatherAllWithLoad }
+                      },
+                      [_c("i", { staticClass: "icofont-refresh" })]
+                    ),
+                    _vm._v(" "),
+                    _c("b", [_vm._v("Pending Renewal")])
+                  ]),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c(
+                    "transition-group",
+                    { attrs: { name: "fade" } },
+                    _vm._l(_vm.renewal, function(user) {
+                      return _c("div", { key: user.id }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "modal fade",
+                            attrs: {
+                              id: "modal_" + user.id,
+                              tabindex: "-1",
+                              role: "dialog",
+                              "aria-labelledby": "exampleModalLabel",
+                              "aria-hidden": "true"
+                            }
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "modal-dialog",
+                                attrs: { role: "document" }
+                              },
+                              [
+                                _c("div", { staticClass: "modal-content" }, [
+                                  _c("div", { staticClass: "modal-header" }, [
+                                    _c(
+                                      "h5",
+                                      {
+                                        staticClass: "modal-title",
+                                        attrs: { id: "exampleModalLabel" }
+                                      },
+                                      [
+                                        _c("b", [
+                                          _vm._v(
+                                            _vm._s(user.first_name) +
+                                              "\n                                                        " +
+                                              _vm._s(user.last_name)
+                                          )
+                                        ]),
+                                        _vm._v(
+                                          "\n                                                    Proof of Payment\n                                                "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "close",
+                                        attrs: {
+                                          type: "button",
+                                          "data-dismiss": "modal",
+                                          "aria-label": "Close"
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "span",
+                                          { attrs: { "aria-hidden": "true" } },
+                                          [_vm._v("×")]
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "modal-body" },
+                                    _vm._l(user.proofs, function(proof) {
+                                      return _c("div", { key: proof.id }, [
+                                        _c("h5", [
+                                          _vm._v(
+                                            "\n                                                        Uploaded:\n                                                        " +
+                                              _vm._s(proof.created_at) +
+                                              "\n                                                    "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("hr"),
+                                        _vm._v(" "),
+                                        _c("img", {
+                                          staticClass: "mb-3",
+                                          staticStyle: { width: "100%" },
+                                          attrs: { src: proof.url, alt: "" }
+                                        })
+                                      ])
+                                    }),
+                                    0
+                                  )
+                                ])
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "alert alert-secondary" }, [
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col-5" }, [
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "user_name",
+                                  staticStyle: { cursor: "pointer" },
+                                  attrs: {
+                                    "data-toggle": "collapse",
+                                    href: "#collapse_" + user.id,
+                                    role: "button",
+                                    "aria-expanded": "false",
+                                    "aria-controls": "collapse_" + user.id
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                                " +
+                                      _vm._s(user.first_name) +
+                                      "\n                                                " +
+                                      _vm._s(user.last_name) +
+                                      "\n                                                "
+                                  ),
+                                  _c("small", { staticClass: "text-muted" }, [
+                                    _vm._v("@" + _vm._s(user.username))
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-7" }, [
+                              _c("div", { staticClass: "btn-group" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-sm btn-primary",
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.grantUser(user.id, "monthly")
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                                    MONTHLY\n                                                "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-sm btn-primary",
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.grantUser(user.id, "yearly")
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                                    YEARLY\n                                                "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-sm btn-primary",
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.grantUser(
+                                          user.id,
+                                          "lifetime"
+                                        )
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                                    LIFETIME\n                                                "
+                                    )
+                                  ]
+                                )
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "collapse",
+                              attrs: { id: "collapse_" + user.id }
+                            },
+                            [
+                              _c("div", { staticClass: "card card-body" }, [
+                                _c("p", { staticClass: "mb-0" }, [
+                                  _vm._v(
+                                    "\n                                                Applying for:\n                                                "
+                                  ),
+                                  _c("b", [
+                                    _vm._v(_vm._s(user.plan_name.toUpperCase()))
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "mb-0" }, [
+                                  _vm._v(
+                                    "\n                                                Proof of Payment:\n                                                "
+                                  ),
+                                  user.proofs.length == 0
+                                    ? _c("span", { staticClass: "ml-1" }, [
+                                        _c(
+                                          "small",
+                                          { staticClass: "proof-status" },
+                                          [_vm._v("No Proof Yet")]
+                                        )
+                                      ])
+                                    : _c(
+                                        "span",
+                                        {
+                                          staticClass: "ml-1",
+                                          staticStyle: { cursor: "pointer" },
+                                          attrs: {
+                                            "data-toggle": "modal",
+                                            "data-target": "#modal_" + user.id
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "small",
+                                            { staticClass: "proof-status" },
+                                            [
+                                              _vm._v(
+                                                "\n                                                        CLICK TO SEE\n                                                    "
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "mb-0" }, [
+                                  _vm._v(
+                                    "\n                                                Plan started:\n                                                "
+                                  ),
+                                  _c("b", [
+                                    _vm._v(_vm._s(user.subscription_start))
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "mb-0" }, [
+                                  _vm._v(
+                                    "\n                                                Plan end:\n                                                "
+                                  ),
+                                  _c("b", [
+                                    _vm._v(_vm._s(user.subscription_end))
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("hr"),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "mb-0" }, [
+                                  _vm._v(
+                                    "\n                                                Registered at:\n                                                "
+                                  ),
+                                  _c("b", [_vm._v(_vm._s(user.created_at))])
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "mb-0" }, [
+                                  _vm._v(
+                                    "\n                                                Email:\n                                                "
+                                  ),
+                                  _c("b", [_vm._v(_vm._s(user.email) + " ")])
+                                ])
+                              ])
+                            ]
+                          )
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ],
+                1
               )
             ])
           ])
