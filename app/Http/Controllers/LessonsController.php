@@ -11,7 +11,7 @@ class LessonsController extends Controller
     public function store(Request $request){
         return Lesson::create([
             'name' => $request->name,
-            'publisher'=> 'Auth::user()->username',
+            'publisher'=> Auth::user()->username,
             'topic_id' => $request->topic_id,
             'vimeo_link'=>$request->vimeo_link,
             

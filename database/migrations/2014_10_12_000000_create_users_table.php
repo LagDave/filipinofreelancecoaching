@@ -26,7 +26,8 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('role')->default(1);
             $table->string('subscription_start')->nullable();
             $table->string('subscription_end')->nullable();
-            $table->string('plan')->nullable();
+            $table->string('plan')->default('no_plan');
+            $table->string('plan_name')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

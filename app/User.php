@@ -2,9 +2,10 @@
 
 namespace App;
 
+use Carbon\Carbon;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -44,5 +45,13 @@ class User extends Authenticatable
     {
         $this->attributes['last_name'] = ucwords($value);
     }
-    
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('m-d-Y');
+
+    }
+    public function proofs(){
+        return $this->hasMany('App\Proof');
+    }
+
 }

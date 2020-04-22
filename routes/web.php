@@ -29,3 +29,13 @@ Route::get('/admin/manage/courses/topics/lessons/{lesson_id}/pick', 'LessonsCont
 Route::post('/admin/manage/courses/topics/lessons/store', "LessonsController@store");
 Route::post('/admin/manage/courses/topics/lessons/{lesson_id}/delete', "LessonsController@destroy");
 Route::post('/admin/manage/courses/topics/lessons/{lesson_id}/update', "LessonsController@update");
+
+// User Routes
+Route::get('/admin/manage/users/get/all', 'UsersController@index');
+Route::get('/admin/manage/users/get/unsubscribed', 'UsersController@unsubscribed');
+Route::get('/admin/manage/users/get/pending', 'UsersController@pending');
+Route::get('/admin/manage/users/get/subscribed', 'UsersController@subscribed');
+Route::get('/admin/manage/users/get/expired', 'UsersController@expired');
+Route::post('/admin/manage/users/{user_id}/grant/{grant_type}', 'UsersController@grant');
+Route::post('/admin/manage/users/{user_id}/moveToPending', 'UsersController@moveToPending');
+Route::post('/admin/manage/users/{user_id}/unsubscribe', 'UsersController@unsubscribe');
