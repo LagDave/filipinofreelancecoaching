@@ -40,11 +40,12 @@ class ManageExpiredUsers extends Command
     public function handle()
     {
         
-        $today = Carbon::now()->setTimezone('GMT+8')->format('m-d-Y');
-        $users = User::where('subscription_end', $today)->orderBy('updated_at')->get();
-        foreach($users as $user){
-            $user->plan = 'expired';
-            $user->save();
-        }
+        // $today = Carbon::now()->setTimezone('GMT+8')->format('m-d-Y');
+        // $users = User::where('subscription_end', $today)->orderBy('updated_at')->get();
+        // foreach($users as $user){
+        //     $user->plan = 'expired';
+        //     $user->save();
+        // }
+        echo "COMMAND RUN!\n";
     }
 }

@@ -12,6 +12,11 @@
         Your subscription has expired. <a href="/home/enroll" class="alert-link">Renew subscription</a>
     </div>
     @endif
+    @if(Auth::user()->plan == 'renewal')
+    <div class="alert alert-info" role="alert">
+        Your subscription renewal is still under process. Please wait.
+    </div>
+    @endif
     @if($message = Session::get('error'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         Your account subscription is under pending. Please wait for confirmation.
