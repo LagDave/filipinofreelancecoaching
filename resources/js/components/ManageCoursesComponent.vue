@@ -1,7 +1,7 @@
 <template>
     <div class="add_course">
         <loader></loader>
-        <div class="container">
+        <div class="container-fluid">
             <transition name="fade">
                 <div
                     v-if="notif"
@@ -117,7 +117,12 @@
                                     <div
                                         :key="course.id"
                                         v-for="course in courses"
-                                        class="course-entry mb-2"
+                                        :class="{
+                                            'mb-2': true,
+                                            'course-entry': true,
+                                            published:
+                                                course.published == 'true'
+                                        }"
                                     >
                                         <div style="width:100%;" class="row">
                                             <div class="col-9">
@@ -170,6 +175,40 @@
                                                         ></i>
                                                     </button>
                                                 </div>
+                                                <button
+                                                    v-if="
+                                                        course.published ==
+                                                            'false'
+                                                    "
+                                                    @click="
+                                                        togglePublishedState(
+                                                            course.id,
+                                                            course.published
+                                                        )
+                                                    "
+                                                    class="btn btn-success"
+                                                    data-toggle="tooltip"
+                                                    data-placement="left"
+                                                >
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                                <button
+                                                    v-if="
+                                                        course.published ==
+                                                            'true'
+                                                    "
+                                                    @click="
+                                                        togglePublishedState(
+                                                            course.id,
+                                                            course.published
+                                                        )
+                                                    "
+                                                    class="btn btn-secondary"
+                                                    data-toggle="tooltip"
+                                                    data-placement="left"
+                                                >
+                                                    <i class="fas fa-times"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -192,9 +231,17 @@
 .course-entry {
     background: #d3d3d336;
     padding: 10px;
+    transition: 0.1s;
 }
+
 .course-entry:hover {
     background: #d3d3d386;
+}
+.published {
+    background: #e60c3f25;
+}
+.published:hover {
+    background: #e60c3f3d;
 }
 .fade-enter-active,
 .fade-leave-active {
@@ -210,6 +257,7 @@ import Editor from "@tinymce/tinymce-vue";
 import Loader from "./Loader.vue";
 import axios from "axios";
 import { mapActions } from "vuex";
+
 export default {
     data() {
         return {
@@ -257,7 +305,8 @@ export default {
                         .post("/admin/manage/courses/store", {
                             title: this.title,
                             description: this.description,
-                            cover_img: this.cover_img
+                            cover_img: this.cover_img,
+                            published: "false"
                         })
                         .then(data => {
                             this.getCourses();
@@ -277,6 +326,51 @@ export default {
                 setTimeout(() => {
                     this.description_blank = false;
                 }, 5000);
+            }
+        },
+        togglePublishedState(id, publishState) {
+            if (publishState == "true") {
+                if (
+                    confirm(
+                        "Note:\n Unpublishing course will reset all its users' progress."
+                    )
+                ) {
+                    this.toggleLoading();
+                    axios
+                        .post(
+                            `/admin/manage/courses/${id}/togglePublishedState`
+                        )
+                        .then(response => {
+                            console.log(response);
+                            this.getCourses();
+                            this.toggleLoading();
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            this.toggleLoading();
+                        });
+                }
+            } else {
+                if (
+                    confirm(
+                        "Note:\n Only publish when the course structure is final. \n Publish the course now?"
+                    )
+                ) {
+                    this.toggleLoading();
+                    axios
+                        .post(
+                            `/admin/manage/courses/${id}/togglePublishedState`
+                        )
+                        .then(response => {
+                            console.log(response);
+                            this.getCourses();
+                            this.toggleLoading();
+                        })
+                        .catch(err => {
+                            console.log(err);
+                            this.toggleLoading();
+                        });
+                }
             }
         },
         getCourses() {

@@ -24,7 +24,7 @@
   <div class="custom-file-container" data-upload-id="proofUpload">
     <label>Upload File <a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image">&times;</a></label>
     <label class="custom-file-container__custom-file" >
-        <input required name='image' type="file" class="custom-file-container__custom-file__custom-file-input" accept="*" multiple aria-label="Choose File">
+        <input required name='image' type="file" class="custom-file-container__custom-file__custom-file-input" accept="*" aria-label="Choose File">
         <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
         <span class="custom-file-container__custom-file__custom-file-control"></span>
     </label>

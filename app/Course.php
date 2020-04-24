@@ -10,6 +10,11 @@ class Course extends Model
     public function topics(){
         return $this->hasMany('App\Topic');
     }
+    public function course_users(){
+        return $this->hasMany('App\CourseUser');
+    }
+
+
     public static function boot(){
         parent::boot();
 

@@ -1,7 +1,7 @@
 <template>
     <div>
         <loader></loader>
-        <div class="container">
+        <div class="container-fluid">
             <div class="card">
                 <div class=" card-header">
                     <h4>
@@ -443,6 +443,7 @@ export default {
                         this.lesson_name = "";
                         this.lesson_topic = "";
                         this.vimeo_link = "";
+                        this.duration = "";
                         this.clearLessonEdit();
                         this.gatherTopicsAndLessons();
                         this.toggleLoading();
@@ -464,6 +465,7 @@ export default {
                         this.lesson_name = "";
                         this.lesson_topic = "";
                         this.vimeo_link = "";
+                        this.duration = "";
                         this.gatherTopicsAndLessons();
                         this.toggleLoading();
                     })

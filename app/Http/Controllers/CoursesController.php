@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\CourseUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,7 +23,18 @@ class CoursesController extends Controller
         $course->description = $request->description;
         $course->cover_img =  $request->cover_img;
         $course->publisher = Auth::user()->username;
+        $course->published = 'false';
 
+        return $course->save();
+    }
+    public function togglePublishedState($course_id){
+        $course = Course::find($course_id);
+        if($course->published == 'false'){
+            $course->published = 'true';
+        }else{
+            $course->published = 'false';
+        }
+        CourseUser::where('course_id', $course_id)->delete();
         return $course->save();
     }
     public function destroy(Request $request, $id){

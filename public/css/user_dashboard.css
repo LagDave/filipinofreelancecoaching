@@ -1,0 +1,112 @@
+.section-header {
+    font-family: "Alfa Slab One";
+    background: -webkit-linear-gradient(#dd2476, #ff512f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* COURSES */
+.courses-container {
+}
+.course {
+    display: flex;
+    flex-direction: column;
+}
+.course a {
+    color: #e60c3e;
+}
+.course a:hover {
+    color: white;
+}
+.course button {
+    margin-top: auto;
+}
+.course .course-title {
+    text-align: center;
+    color: #777;
+}
+
+.dash-navigation {
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1.3em;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+.dash-navigation:hover {
+    text-decoration: none;
+    color: white;
+    transform: translate(5px, -5px);
+    box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.363);
+}
+.dash-navigation.courses {
+    background: #ff512f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #dd2476,
+        #ff512f
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #dd2476,
+        #ff512f
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.dash-navigation.soft-n-tools {
+    background: #f953c6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #b91d73,
+        #f953c6
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #b91d73,
+        #f953c6
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.dash-navigation.ebooks {
+    background: #ff9966; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #ff5e62,
+        #ff9966
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #ff5e62,
+        #ff9966
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.dash-navigation.templates {
+    background: #bc4e9c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #f80759,
+        #bc4e9c
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #f80759,
+        #bc4e9c
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.dash-navigation.certs {
+    background: #7f00ff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #e100ff,
+        #7f00ff
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #e100ff,
+        #7f00ff
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

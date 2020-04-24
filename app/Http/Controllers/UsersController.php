@@ -5,16 +5,13 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Proof;
 use Carbon\Carbon;
+use App\CourseUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
 
-    // Pages
-    public function dashboard(){
-        return view ('home');
-    }
     
     // Enrollment
         public function success(){
@@ -22,7 +19,7 @@ class UsersController extends Controller
         }
         public function enrollPage(){
             if(Auth::user()->plan == 'pending'){
-                return redirect('/home')->with('error', 'Your application is still under pending.');
+                return redirect('/home')->with('error', 'Your application is still under pending. Please wait.');
             }
             return view ('users.enroll_page');
         }
@@ -35,6 +32,29 @@ class UsersController extends Controller
         public function lifetimeEnrollPage(){
             return view ('users.lifetime_basic_info');   
         }
+
+        public function getCertificates(){
+            return CourseUser::where('completed', 'true')->with(
+                [
+                    'user'=>function($q){
+                        $q->get();
+                    },
+                    'course'=>function ($r){
+                        $r->get();
+                    }
+                ]
+            )->orderBy('id', 'desc')->get();
+        }
+        public function toggleGrantCertificate($certificate_id){
+            $certificate = CourseUser::find($certificate_id);
+            if($certificate->checked == 'false'){
+                $certificate->checked = 'true';
+                return $certificate->save();
+            }
+            $certificate->checked = 'false';
+            return $certificate->save();
+        }
+
         public function monthlyApply(Request $request){
             request()->validate([
                 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
