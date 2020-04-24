@@ -107,13 +107,13 @@ class UsersController extends Controller
             if($user->plan == 'no_plan'){
                 // Set user to pending registration
                 $user->plan = 'pending';
-                $user->plan_name = 'monthly';
+                $user->plan_name = 'yearly';
                 $user->latest_plan_update = Carbon::now()->format('m-d-Y');
                 $user->save();
             }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
                 // Set user to pending renewal
                 $user->plan = 'renewal';
-                $user->plan_name = 'monthly';
+                $user->plan_name = 'yearly';
                 $user->latest_plan_update = Carbon::now()->format('m-d-Y');
                 $user->save();
             }
@@ -143,13 +143,13 @@ class UsersController extends Controller
             if($user->plan == 'no_plan'){
                 // Set user to pending registration
                 $user->plan = 'pending';
-                $user->plan_name = 'monthly';
+                $user->plan_name = 'lifetime';
                 $user->latest_plan_update = Carbon::now()->format('m-d-Y');
                 $user->save();
             }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
                 // Set user to pending renewal
                 $user->plan = 'renewal';
-                $user->plan_name = 'monthly';
+                $user->plan_name = 'lifetime';
                 $user->latest_plan_update = Carbon::now()->format('m-d-Y');
                 $user->save();
             }
