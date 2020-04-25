@@ -15,22 +15,26 @@ class UserCoursesController extends Controller
         $this->middleware('has_plan');
     }
     public function index(){
-        $courses = Course::where('published', 'true')->orderBy('id')->with('topics')->get();
+        $courses = Course::where('published', 'true')->orderBy('id', 'desc')->with('topics')->paginate(9);
         return view('courses.index',  compact('courses'));
     }
     public function validateProgress($course_id, $topic_index, $lesson_index){
         
-        $course_user = CourseUser::where(['user_id'=> Auth::id(), 'course_id'=>$course_id])->get();
-        // Checked if passed arguments are existent
-        $course = Course::where('id',$course_id)->with([
-            'topics'=> function($q){
-                return $q->orderBy('name')->with([
-                    'lessons'=>function($r){
-                        return $r->orderBy('name')->get();
-                    }
-                ])->get();
-            }
-        ])->get()[0];
+            $course_user = CourseUser::where(['user_id'=> Auth::id(), 'course_id'=>$course_id])->get();
+            // Checked if passed arguments are existent
+            $course = Course::where('id',$course_id)->with([
+                'topics'=> function($q){
+                    return $q->orderBy('created_at', 'asc')->with([
+                        'lessons'=>function($r){
+                            return $r->orderBy('created_at', 'asc')->get();
+                        }
+                    ])->get();
+                }
+            ])->get()[0];
+
+            // return $course;
+
+
         $is_last_lesson = false;
 
 

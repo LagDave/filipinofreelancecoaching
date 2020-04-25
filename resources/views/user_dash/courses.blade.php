@@ -13,5 +13,8 @@
           <a href="/courses/watch/{{$course->id}}/{{$course->course_users[0]->topic_index}}/{{$course->course_users[0]->lesson_index}}" class="btn-outline-primary btn w-100 btn-sm">Resume Course</a>
       </div>
     @endforeach
+
+    {{$courses->links()}}
   </div>
+ 
 @endsection

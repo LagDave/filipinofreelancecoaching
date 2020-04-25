@@ -11,9 +11,9 @@ class TopicsController extends Controller
     public function index($course_id){
         return Topic::where('course_id', $course_id)->with(
             ['lessons'=> function($q){
-                $q->orderBy('name', 'asc');
+                return $q->orderBy('created_at', 'asc')->get();
             }]
-        )->orderBy('name', 'asc')->get();
+        )->orderBy('created_at', 'asc')->get();
     }
     public function store(Request $request, $course_id){
         return Topic::create([

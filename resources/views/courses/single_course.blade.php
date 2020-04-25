@@ -42,13 +42,13 @@
       <div class="col-lg-4 pl-1">
         <div class="card px-2 card-body">
 
-          @foreach($course->topics->sortBy('name') as $topic)
+          @foreach($course->topics as $topic)
             <div class="topic-container">
               <p><b>{{$topic->name}}</b></p>
             </div>
             <div class="lessons-container pt-2">
 
-              @foreach($topic->lessons->sortBy('name') as $lesson)
+              @foreach($topic->lessons as $lesson)
               <div class="lesson mb-2 {{$lesson->id == $curr_lesson->id ? 'active' : ''}}">
 
                   <div class="row" style='width:100%'>
