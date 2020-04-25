@@ -118,7 +118,7 @@
             <p>
               Learn limitless and more opportunity for our students. We want you to reach your greatest potential. Do not hold back once you enroll in our courses. Everything you need to build your dreams is all here! 
             </p>
-            <a href="#" class="btn-learn-more">Enroll Now</a>
+            <a href="/register" class="btn-learn-more">Enroll Now</a>
           </div>
         </div>
 
@@ -163,7 +163,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Certificates</a></h4>
+              <h4 class="title"><a href="#">Certificates</a></h4>
               <p class="description">You can get 1 certificate for each course you will finish!</p>
             </div>
           </div>

@@ -4,10 +4,10 @@
 <link rel="stylesheet" href="{{asset('css/user_dashboard.css')}}">
 <link rel="stylesheet" href="{{asset('css/enroll-page-pricing.css')}}">
 
-<a href="/register">
+<a href="{{Auth::check() ? '/home/enroll' : '/register'}}">
   <div class="sticky-top shadow-sm enroll-steps-header">
     <div class="container">
-      <h2 class="text-center">REGISTER NOW!</h2>
+      <h2 class="text-center">{{Auth::check() ? 'ENROLL' : 'REGISTER'}} NOW!</h2>
       <h5 class="text-white text-center">And get access to all of the courses listed below at the best price!</h5>
     </div>
   </div>

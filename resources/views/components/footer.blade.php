@@ -9,8 +9,10 @@
         </div>
         <div class="col-lg-6">
           <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#">Login</a>
-            <a href="#">Enroll Now</a>
+            @if(!Auth::check())
+              <a href="/login">Login</a>
+              <a href="/register">Register Now</a>
+            @endif
           </nav>
         </div>
       </div>

@@ -77,7 +77,7 @@
 
         </div>
       </div>
-      <div class="col-lg-6 px-0">
+      <div class="col-lg-9 ">
 
         <div class="card card-body">
 

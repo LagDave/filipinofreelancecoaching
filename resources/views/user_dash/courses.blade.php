@@ -4,7 +4,7 @@
   <hr>
   <div class="courses-container row">
     @foreach($courses as $course)
-    <div class="mb-5 col-lg-4 course">
+    <div class="mb-5 col-lg-3 course">
           <img src="{{asset($course->cover_img)}}" alt="" class="img-fluid">
           <div class="mt-2 progress">
             <div class="progress-bar {{$course->course_users[0]->completed == 'true' ? 'bg-success' : '' }} progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{$course->course_users[0]->completed == 'true' ? '100' : $course->course_users[0]->topic_index / sizeof($course->topics) * 100}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
