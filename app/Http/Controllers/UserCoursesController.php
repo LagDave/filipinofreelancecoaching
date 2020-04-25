@@ -32,8 +32,6 @@ class UserCoursesController extends Controller
                 }
             ])->get()[0];
 
-            // return $course;
-
 
         $is_last_lesson = false;
 
@@ -93,6 +91,7 @@ class UserCoursesController extends Controller
                         // Set lesson index back to 0
                         $lesson_index = 0;
                         if(!isset($curr_topic->lessons[$lesson_index])){
+
                             // Check if indices represents the last part of the course
 
                             if($last_lesson_index == -1){
@@ -119,6 +118,13 @@ class UserCoursesController extends Controller
             }
 
         }else{
+
+            // Check if the current lesson represents the last entry
+            if(sizeof($course->topics) < 2){
+                if(sizeof($course->topics[0]->lessons) < 2){
+                    $is_last_lesson = true;
+                }
+            }
             // If user does not have an entry
             $course_user = CourseUser::create([
                 'user_id'=>Auth::id(),
