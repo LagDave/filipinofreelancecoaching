@@ -43,3 +43,36 @@ main {
         #eb3349
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.alert-success {
+    color: white;
+    background: #134e5e; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #134e5e,
+        #71b280
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #134e5e,
+        #71b280
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.alert-primary {
+    color: white;
+    background: #ff512f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #dd2476,
+        #ff512f
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #dd2476,
+        #ff512f
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.collapse,
+.card {
+    color: black;
+}

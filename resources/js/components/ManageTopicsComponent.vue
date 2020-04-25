@@ -476,8 +476,8 @@ export default {
             }
         },
         deleteLesson(id) {
-            this.toggleLoading();
             if (confirm("This lesson will be deleted.")) {
+                this.toggleLoading();
                 axios
                     .post(`/admin/manage/courses/topics/lessons/${id}/delete`)
                     .then(response => {

@@ -31,4 +31,16 @@ class UserDashboardsController extends Controller
 
         return view('user_dash.courses', compact('courses'));
     }
+
+    public function profile(){
+        $user = Auth::user();
+        return view('user_dash.profile', compact('user'));
+    }
+    public function subscription(){
+        $user = Auth::user();
+        return view('user_dash.subscription', compact('user'));
+    }
+    public function contacts(){
+        return view('user_dash.contacts');
+    }
 }

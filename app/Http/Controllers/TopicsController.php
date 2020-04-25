@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 
 class TopicsController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin_auth');
+    }
     public function index($course_id){
         return Topic::where('course_id', $course_id)->with(
             ['lessons'=> function($q){

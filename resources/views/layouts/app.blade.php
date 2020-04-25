@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Filipino Freelance Coaching</title>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -20,7 +20,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{asset('homepage/assets/css/footer.css')}}" rel="stylesheet">
@@ -70,12 +71,21 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         @if(Auth::check() && Auth::user()->role === 143)
-                        <li class="nav-item">
-                            <a href="/admin/manage/users" class="nav-link"><i class="icofont-user"></i> Manage Users </a>
+
+
+                        <li class="nav-item dropdown">
+                            <a id="adminDropDown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="fas fa-lock"></i> Manage <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropDown">
+                                <a href="/admin/manage/courses" class="dropdown-item"><i class="fas fa-photo-video"></i> Manage Courses </a>
+                                <a href="/admin/manage/users" class="dropdown-item"><i class="fas fa-users"></i> Manage Students </a>
+                                <a href="/admin/manage/downloadables" class="dropdown-item"><i class="fas fa-download"></i> Manage Downloadables  </a>
+    
+                            </div>
                         </li>
-                            <li class="nav-item">
-                                <a href="/admin/manage/courses" class="nav-link"><i class="icofont-lock"></i> Manage Courses </a>
-                            </li>
+
                         @endif
                         <!-- Authentication Links -->
                         @guest
@@ -90,7 +100,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->username }} <span class="caret"></span>
+                                    <i class="fas fa-user"></i> {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

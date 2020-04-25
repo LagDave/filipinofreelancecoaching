@@ -51,17 +51,33 @@ Route::post('/admin/manage/users/{user_id}/unsubscribe', 'UsersController@unsubs
   Route::get('/home/enroll/monthly/basic_info', 'UsersController@monthlyEnrollPage')->middleware('auth');
   Route::get('/home/enroll/yearly/basic_info', 'UsersController@yearlyEnrollPage')->middleware('auth');
   Route::get('/home/enroll/lifetime/basic_info', 'UsersController@lifetimeEnrollPage')->middleware('auth');
-  
   Route::post('/home/enroll/yearly/apply', 'UsersController@yearlyApply')->middleware('auth');
   Route::post('/home/enroll/monthly/apply', 'UsersController@monthlyApply')->middleware('auth');
   Route::post('/home/enroll/lifetime/apply', 'UsersController@lifetimeApply')->middleware('auth');
-
   Route::get('/home/enroll/success', "UsersController@success")->middleware('auth');
+
+  // User Password Change
+  Route::post('/user/change_password', 'UsersController@changePass');
 
 // Dashboard Routes
 Route::get('/home/courses', 'UserDashboardsController@index')->middleware('auth');
+Route::get('/home/profile', 'UserDashboardsController@profile')->middleware('auth');
+Route::get('/home/subscription', 'UserDashboardsController@subscription')->middleware('auth');
+Route::get('/home/contacts', "UserDashboardsController@contacts")->middleware('auth');
+
 
 // Courses Routes
 Route::get('/courses/', 'UserCoursesController@index');
 Route::get('/courses/watch/{course_id}/{topic_index}/{lesson_index}', 'UserCoursesController@validateProgress');
 Route::get('/courses/{course_id}/completed', 'UserCoursesController@completed');
+
+// Downloadables Routes
+Route::get('/admin/manage/downloadables', 'DownloadablesController@index');
+Route::post('/admin/manage/downloadables/store', 'DownloadablesController@store');
+Route::get('/admin/manage/downloadables/get', 'DownloadablesController@get');
+Route::post('/admin/manage/downloadables/{downloadable_id}/destroy', 'DownloadablesController@destroy');
+
+
+// Guest Routes
+Route::get('/guest/courses', 'PagesController@courses');
+Route::get('/guest/downloadables', 'PagesController@downloadables');

@@ -123,7 +123,7 @@
       <h1>Congratulations!</h1>
       <p>It's been a marvelous ride and your certificate is on its way!</p>
       <p></p>
-      <p>Please Allow up to 24 hours and check your certificates dashboard</p>
+      <p>Please Allow up to 24 hours and check your email.</p>
       <p class='mt-4'>
       <a href='/home' class="go-home">
         go home

@@ -10,7 +10,7 @@
 <div class="container">
 
     <div class="row justify-content-center">
-        <div class="col-md-5 mb-3">
+        <div class="col-md-4 mb-3">
             <div class="card">
                 <div class="card-header"><i class="icofont-user"></i> {{ __('Register') }}</div>
 
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <div class="register-pricing col-md-7">
+        <div class="register-pricing col-md-8">
             <div class="section-title" data-aos="fade-up">
                 <h2>Pricing</h2>
                 <p>We have new courses and ebooks every week!</p>
@@ -138,30 +138,36 @@
                     <ul class="price">
                         <li class="header">Yearly</li>
                         <li class="grey">₱ 1,999 / year</li>
-                        <li>Templates and Checklists</li>
-                        <li>Softwares and Tools</li>
-                        <li>Certificates</li>
-                        <li>Chat Support</li>
+                        <small><li>100+ Courses</li></small>
+                        <small><li>Templates and Checklists</li></small>
+                        <small><li>Softwares and Tools</li></small>
+                        <small><li>E-Books</li></small>
+                        <small><li>Certificates</li></small>
+                        <small><li>Chat Support</li></small>
                     </ul>
                 </div>
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header recommended">Monthly</li>
                         <li class="grey">₱ 799 / year</li>
-                        <li>Templates and Checklists</li>
-                        <li>Softwares and Tools</li>
-                        <li>Certificates</li>
-                        <li><del>Chat Support</del></li>
+                        <small><li>100+ Courses</li></small>
+                        <small><li>Templates and Checklists</li></small>
+                        <small><li>Softwares and Tools</li></small>
+                        <small><li>E-Books</li></small>
+                        <small><li>Certificates</li></small>
+                        <small><li><del>Chat Support</del></li></small>
                     </ul>
                 </div>
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header">Lifetime</li>
                         <li class="grey">₱ 3,999 / ∞</li>
-                        <li>Templates and Checklists</li>
-                        <li>Softwares and Tools</li>
-                        <li>Certificates</li>
-                        <li>Chat Support</li>
+                        <small><li>100+ Courses</li></small>
+                        <small><li>Templates and Checklists</li></small>
+                        <small><li>Softwares and Tools</li></small>
+                        <small><li>E-Books</li></small>
+                        <small><li>Certificates</li></small>
+                        <small><li>Chat Support</li></small>
                     </ul>
                 </div>
             </div>
@@ -174,28 +180,139 @@
                 <p>100+ courses for you to learn and master!</p>
               </div>
       
-              
+      
               <div data-aos='fade-up' class="owl-carousel courses-carousel">
       
                 <div class="course-item">
-                  <img class='img-fluid' src="{{asset('homepage/assets/img/facebook-ads-university.png')}}" alt="">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/facebook-ads-university.png')}}" alt="">
+                  </a>
                 </div>
                 <div class="course-item">
-                  <img class='img-fluid' src="{{asset('homepage/assets/img/gads.png')}}" alt="">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/gads.png')}}" alt="">
+                  </a>
                 </div>
                 <div class="course-item">
-                  <img class='img-fluid' src="{{asset('homepage/assets/img/instagram-domination.png')}}" alt="">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/instagram-domination.png')}}" alt="">
+                  </a>
                 </div>
                 <div class="course-item">
-                  <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-mastery.png')}}" alt="">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-mastery.png')}}" alt="">
+                  </a>
                 </div>
                 <div class="course-item">
-                  <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-secrets.png')}}" alt="">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-secrets.png')}}" alt="">
+                  </a>
                 </div>
                 <div class="course-item">
-                  <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-strategy.png')}}" alt="">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-strategy.png')}}" alt="">
+                  </a>
                 </div>
-      
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/write-like-freddy.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/write-ads-that-sell.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/the-click-minded-salesfunnel.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/script-writing.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/amazon.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/yt-mc.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/htgka.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/fun-des.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/fba.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/fare.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/gads-ecom.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/ck.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/tseo.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/smed-marketing.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/ssss.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/copywriting.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/ideal-cust.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/iww.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/1k.png')}}" alt="">
+                  </a>
+                </div>
+                <div class="course-item">
+                  <a href="/guest/courses">
+                    <img class='img-fluid' src="{{asset('homepage/assets/img/ytca.png')}}" alt="">
+                  </a>
+                </div>
               </div>
         </div>
     </div>

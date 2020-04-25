@@ -8,11 +8,40 @@ use Carbon\Carbon;
 use App\CourseUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
 
+    public function __construct(){
+        $this->middleware('admin_auth')->except([
+            'success',
+            'enrollPage',
+            'success',
+            'enrollPage',
+            'monthlyEnrollPage',
+            'yearlyEnrollPage',
+            'lifetimeEnrollPage',
+            'monthlyApply',
+            'yearlyApply',
+            'lifetimeApply',
+            'changePass'
+        ]);
+    }
     
+    // Change Pass
+    
+    public function changePass(Request $request){
+        $data = $request->validate([
+            'password'=> 'required',
+            'confirm_password'=> 'same:password'
+        ]);
+        $user = Auth::user();
+        $user->password = Hash::make($data['password']);
+        $user->save();
+        return back()->with('success', "Password changed successfully!");
+    }
+
     // Enrollment
         public function success(){
             return view('users.enroll_success');

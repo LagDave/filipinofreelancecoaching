@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 
 class LessonsController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin_auth');
+    }
     public function store(Request $request){
         return Lesson::create([
             'name' => $request->name,

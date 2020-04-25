@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Auth;
 
 class CoursesController extends Controller
 {   
+    public function __construct(){
+        $this->middleware('admin_auth');
+    }
     public function index(){
         return Course::orderBy('id', 'desc')->get();
     }

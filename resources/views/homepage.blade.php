@@ -32,6 +32,8 @@
   <link href="{{asset('homepage/assets/css/footer.css')}}" rel="stylesheet">
   <link href="{{asset('homepage/assets/css/pricing.css')}}" rel="stylesheet">
   <link href="{{asset('homepage/assets/css/courses-carousel.css')}}" rel="stylesheet">
+  
+  <link href="{{asset('homepage/assets/css/contacts.css')}}" rel="stylesheet">
   <link href="{{asset('homepage/assets/css/sections-general.css')}}" rel="stylesheet">
   <!-- =======================================================
   * Template Name: Vesperr - v2.0.0
@@ -63,7 +65,7 @@
           <li><a href="#pricing">Pricing</a></li>
 
           <li><a href="/login">Login</a></li>
-          <li class="get-started"><a >Enroll Now</a></li>
+          <li class="get-started"><a href='/register' >Register Now</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -80,7 +82,7 @@
           <h2 data-aos="fade-up" data-aos-delay="400">Learn a new skill from Filipino Freelance Coaching
           </h2>
           <div data-aos="fade-up" data-aos-delay="800">
-            <a href="#about" class="btn-get-started scrollto">Enroll Now</a>
+            <a href="/register" class="btn-get-started scrollto">Register Now</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -137,7 +139,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">100+ Courses</a></h4>
+              <h4 class="title"><a href="/guest/courses">100+ Courses</a></h4>
               <p class="description">Get your 100+ courses! From Basic to Professional Courses!</p>
             </div>
           </div>
@@ -145,7 +147,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Freebies</a></h4>
+              <h4 class="title"><a href="/guest/downloadables">Freebies</a></h4>
               <p class="description">Get your freebies worth 5k pesos after you enroll!</p>
             </div>
           </div>
@@ -153,7 +155,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Software and Tools</a></h4>
+              <h4 class="title"><a href="/guest/downloadables">Software and Tools</a></h4>
               <p class="description">We have at least 30 software and tools worth 30k that you can use!</p>
             </div>
           </div>
@@ -183,73 +185,73 @@
           <div class="col-lg-3 col-md-4">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/obs-studio.png"/>
-              <h3 class='ml-2'><a href="">OBS STUDIO</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">OBS STUDIO</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/adobe-photoshop.png"/>
-              <h3 class='ml-2'><a href="">ADOBE PHOTOSHOP</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">ADOBE PHOTOSHOP</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/sony-vegas.png"/>
-              <h3 class='ml-2'><a href="">SONY VEGAS</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">SONY VEGAS</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/ms-excel.png"/>
-              <h3 class='ml-2'><a href="">MS EXCEL</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">MS EXCEL</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/ms-powerpoint--v1.png"/>
-              <h3 class='ml-2'><a href="">MS POWERPOINT</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">MS POWERPOINT</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/adobe-illustrator.png"/>
-              <h3 class='ml-2'><a href="">ADOBE ILLUSTRATOR</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">ADOBE ILLUSTRATOR</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/adobe-animate.png"/>
-              <h3 class='ml-2'><a href="">ADOBE ANIMATE</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">ADOBE ANIMATE</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/fl-studio.png"/>
-              <h3 class='ml-2'><a href="">FL STUDIO</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">FL STUDIO</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/particles.png"/>
-              <h3 class='ml-2'><a href="">PARTICLE ILLUSION</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">PARTICLE ILLUSION</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <img src="https://img.icons8.com/flat_round/32/000000/record.png"/>
-              <h3 class='ml-2'><a href="">BANDICAM</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">BANDICAM</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/adobe-after-effects.png"/>
-              <h3 class='ml-2'><a href="">AFTER EFFECTS</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">AFTER EFFECTS</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/adobe-photoshop.png"/>
-              <h3 class='ml-2'><a href="">PHOTOSHOP CS6</a></h3>
+              <h3 class='ml-2'><a href="/guest/downloadables">PHOTOSHOP CS6</a></h3>
             </div>
           </div>
         </div>
@@ -269,7 +271,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/testimonials-1.jpg')}}" class="testimonial-img" alt="">
+              <img src="{{asset('homepage/assets/img/testimonials/shane-nilo.jpg')}}" class="testimonial-img" alt="">
               <h3>Shane Nilo</h3>
               <h4>Student</h4>
               <p>
@@ -284,7 +286,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/testimonials-3.jpg')}}" class="testimonial-img" alt="">
+              <img src="{{asset('homepage/assets/img/testimonials/daisy-christina.jpg')}}" class="testimonial-img" alt="">
               <h3>Daisy Christina</h3>
               <h4>Student</h4>
               <p>
@@ -295,7 +297,7 @@
           </div>
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/testimonials-2.jpg')}}" class="testimonial-img" alt="">
+              <img src="{{asset('homepage/assets/img/testimonials/jericho-pampola.jpg')}}" class="testimonial-img" alt="">
               <h3>Jericho Pampola</h3>
               <h4>Student</h4>
               <p>
@@ -306,7 +308,7 @@
           </div>
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/testimonials-4.jpg')}}" class="testimonial-img" alt="">
+              <img src="{{asset('homepage/assets/img/testimonials/anna-bolus.jpg')}}" class="testimonial-img" alt="">
               <h3>Maria Angela Dela Pena</h3>
               <h4>Student</h4>
               <p>
@@ -318,7 +320,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/testimonials-5.jpg')}}" class="testimonial-img" alt="">
+              <img src="{{asset('homepage/assets/img/testimonials/anna-torres.jpg')}}" class="testimonial-img" alt="">
               <h3>Ana Torres</h3>
               <h4>Student</h4>
               <p>
@@ -330,7 +332,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/testimonials-4.jpg')}}" class="testimonial-img" alt="">
+              <img src="{{asset('homepage/assets/img/testimonials/jane-cruz.jpg')}}" class="testimonial-img" alt="">
               <h3>Jane Cruz</h3>
               <h4>Student</h4>
               <p>
@@ -342,7 +344,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/testimonials-5.jpg')}}" class="testimonial-img" alt="">
+              <img src="{{asset('homepage/assets/img/testimonials/daisy-sanchez.jpg')}}" class="testimonial-img" alt="">
               <h3>Daisy Jane Sanchez</h3>
               <h4>Student</h4>
               <p>
@@ -354,7 +356,7 @@
 
           <div class="testimonial-wrap">
             <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/testimonials-5.jpg')}}" class="testimonial-img" alt="">
+              <img src="{{asset('homepage/assets/img/testimonials/james-santos.jpg')}}" class="testimonial-img" alt="">
               <h3>James Santos</h3>
               <h4>Student</h4>
               <p>
@@ -378,28 +380,139 @@
           <p>100+ courses for you to learn and master!</p>
         </div>
 
-        
+
         <div data-aos='fade-up' class="owl-carousel courses-carousel">
 
           <div class="course-item">
-            <img class='img-fluid' src="{{asset('homepage/assets/img/facebook-ads-university.png')}}" alt="">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/facebook-ads-university.png')}}" alt="">
+            </a>
           </div>
           <div class="course-item">
-            <img class='img-fluid' src="{{asset('homepage/assets/img/gads.png')}}" alt="">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/gads.png')}}" alt="">
+            </a>
           </div>
           <div class="course-item">
-            <img class='img-fluid' src="{{asset('homepage/assets/img/instagram-domination.png')}}" alt="">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/instagram-domination.png')}}" alt="">
+            </a>
           </div>
           <div class="course-item">
-            <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-mastery.png')}}" alt="">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-mastery.png')}}" alt="">
+            </a>
           </div>
           <div class="course-item">
-            <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-secrets.png')}}" alt="">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-secrets.png')}}" alt="">
+            </a>
           </div>
           <div class="course-item">
-            <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-strategy.png')}}" alt="">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/social-media-strategy.png')}}" alt="">
+            </a>
           </div>
-
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/write-like-freddy.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/write-ads-that-sell.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/the-click-minded-salesfunnel.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/script-writing.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/amazon.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/yt-mc.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/htgka.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/fun-des.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/fba.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/fare.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/gads-ecom.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/ck.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/tseo.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/smed-marketing.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/ssss.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/copywriting.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/ideal-cust.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/iww.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/1k.png')}}" alt="">
+            </a>
+          </div>
+          <div class="course-item">
+            <a href="/guest/courses">
+              <img class='img-fluid' src="{{asset('homepage/assets/img/ytca.png')}}" alt="">
+            </a>
+          </div>
         </div>
       </div>
 
@@ -431,6 +544,7 @@
                 <li>100+ Courses</li>
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
+                <li>E-Books</li>
                 <li>Certificates</li>
                 <li>Chat support</li>
               </ul>
@@ -448,6 +562,7 @@
                 <li>100+ Courses</li>
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
+                <li>E-Books</li>
                 <li>Certificates</li>
                 <li class="na">Chat support</li>
               </ul>
@@ -465,6 +580,7 @@
                 <li>100+ Courses</li>
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
+                <li>E-Books</li>
                 <li>Certificates</li>
                 <li>Chat support</li>
               </ul>

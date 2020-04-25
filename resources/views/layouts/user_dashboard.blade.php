@@ -28,8 +28,17 @@
     @endif
 
 
+
     @if($message = Session::get('error'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{$message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    @endif
+    @if($message = Session::get('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{$message}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -48,29 +57,22 @@
               <i class="fas fa-graduation-cap"></i>
               <span class='ml-2'>My Courses</span>
           </a>
+          <a href="/home/profile" class="dash-navigation ebooks">
 
-          <a href="#" class="dash-navigation soft-n-tools">
-
-            <i class="fas fa-tools"></i>
-            <span class='ml-2'>Software & Tools</span>
+            <i class="fas fa-user"></i>
+            <span class='ml-2'>My Profile</span>
           </a>
 
-          <a href="#" class="dash-navigation ebooks">
+          <a href="/home/subscription" class="dash-navigation templates">
 
-            <i class="fas fa-book"></i>
-            <span class='ml-2'>E-Books</span>
+            <i class="fas fa-clock"></i>
+            <span class='ml-2'>Subscription</span>
           </a>
 
-          <a href="#" class="dash-navigation templates">
+          <a href="/home/contacts" class="dash-navigation certs">
 
-            <i class="fas fa-sticky-note"></i>
-            <span class='ml-2'>Templates</span>
-          </a>
-
-          <a href="#" class="dash-navigation certs">
-
-            <i class="fas fa-certificate"></i>
-            <span class='ml-2'>Certificates</span>
+            <i class="fas fa-phone"></i>
+            <span class='ml-2'>Contact Us</span>
           </a>
 
         </div>
@@ -83,29 +85,6 @@
 
         </div>
 
-      </div>
-      <div class="col-lg-3 pl-2">
-        <div style='top:85px;z-index:0' class="card card-body sticky-top">
-
-          <a href="#" class="dash-navigation ebooks">
-
-            <i class="fas fa-user"></i>
-            <span class='ml-2'>My Profile</span>
-          </a>
-
-          <a href="#" class="dash-navigation templates">
-
-            <i class="fas fa-clock"></i>
-            <span class='ml-2'>Subscription</span>
-          </a>
-
-          <a href="#" class="dash-navigation certs">
-
-            <i class="fas fa-phone"></i>
-            <span class='ml-2'>Contact Us</span>
-          </a>
-
-        </div>
       </div>
     </div>
 
