@@ -25,9 +25,8 @@
               <a href='/register' class="btn-outline-primary btn w-100 btn-sm">Register Now</a>
           </div>
         @endforeach
-
-        {{$courses->links()}}
       </div>
+      {{$courses->links()}}
     </div>
 </div>
 

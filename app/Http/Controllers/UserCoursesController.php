@@ -15,7 +15,7 @@ class UserCoursesController extends Controller
         $this->middleware('has_plan');
     }
     public function index(){
-        $courses = Course::where('published', 'true')->orderBy('id', 'desc')->with('topics')->paginate(9);
+        $courses = Course::where('published', 'true')->orderBy('id', 'desc')->with('topics')->paginate(16);
         return view('courses.index',  compact('courses'));
     }
     public function validateProgress($course_id, $topic_index, $lesson_index){

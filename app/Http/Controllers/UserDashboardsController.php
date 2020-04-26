@@ -26,7 +26,7 @@ class UserDashboardsController extends Controller
                     return $r->where('user_id', Auth::id())->get();
                 }
             ]
-        )->paginate(9);
+        )->paginate(16);
 
 
         return view('user_dash.courses', compact('courses'));

@@ -15,6 +15,7 @@
     </div>
 
   @endforeach
-    {{ $courses->links() }}
 </div>
+
+{{ $courses->links() }}
 @endsection
