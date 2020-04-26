@@ -19,7 +19,7 @@
       <h3 class='section-header mb-2'><i class="fas fa-graduation-cap"></i> Downloadables</h3>
       <hr>
 
-        <h4 class='mb-3'><i class="fas fa-books"></i> Ebooks</h4>
+        <h2 class='text-center mb-3'>Ebooks</h2>
         <div class="row">
           @foreach($ebooks as $ebook)
               <div class="mb-5 col-lg-3 course">
@@ -33,7 +33,7 @@
       {{$ebooks->links()}}
 
 
-      <h4 class='mb-3'>Templates</h4>
+      <h2 class='mb-3 text-center'>Templates</h2>
       <div class="row">
         @foreach($templates as $template)
             <div class="mb-5 col-lg-3 course">
@@ -47,7 +47,7 @@
     {{$templates->links()}}
 
 
-    <h4 class='mb-3'>Software and Tools</h4>
+    <h2 class='text-center mb-3'>Software and Tools</h2>
     <div class="row">
       @foreach($softwares_and_tools as $software_or_tool)
           <div class="mb-5 col-lg-3 course">
