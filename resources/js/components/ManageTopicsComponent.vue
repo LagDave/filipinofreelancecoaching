@@ -6,7 +6,7 @@
                 <div class=" card-header">
                     <h4>
                         <router-link
-                            style="color:#e60c3e; text-decoration:none"
+                            style="color:white !important; text-decoration:none"
                             :to="{ name: 'manage_courses' }"
                             ><i class="icofont-arrow-left"></i>
                             {{ page_title }}</router-link
