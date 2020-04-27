@@ -25,6 +25,8 @@
             <li>100+ Courses</li>
             <li>Templates and Checklists</li>
             <li>Softwares and Tools</li>
+            <li>E-Books</li>
+            <li>Cheat sheet</li>
             <li>Certificates</li>
             <li>Chat support</li>
           </ul>
@@ -42,6 +44,8 @@
             <li>100+ Courses</li>
             <li>Templates and Checklists</li>
             <li>Softwares and Tools</li>
+            <li>E-Books</li>
+            <li>Cheat sheet</li>
             <li>Certificates</li>
             <li class="na">Chat support</li>
           </ul>
@@ -59,6 +63,8 @@
             <li>100+ Courses</li>
             <li>Templates and Checklists</li>
             <li>Softwares and Tools</li>
+            <li>E-Books</li>
+            <li>Cheat sheet</li>
             <li>Certificates</li>
             <li>Chat support</li>
           </ul>
