@@ -57,14 +57,14 @@ Route::post('/admin/manage/users/{user_id}/unsubscribe', 'UsersController@unsubs
   Route::get('/home/enroll/success', "UsersController@success")->middleware('auth');
 
   // User Password Change
-  Route::post('/user/change_password', 'UsersController@changePass');
+  Route::post('/user/change_password', 'UsersController@changePass')->middleware('auth');
 
 // Dashboard Routes
 Route::get('/home/courses', 'UserDashboardsController@index')->middleware('auth');
 Route::get('/home/profile', 'UserDashboardsController@profile')->middleware('auth');
 Route::get('/home/subscription', 'UserDashboardsController@subscription')->middleware('auth');
 Route::get('/home/contacts', "UserDashboardsController@contacts")->middleware('auth');
-
+Route::get('/home/cheat_sheet', "UserDashboardsController@cheatsheet")->middleware('has_plan');
 
 // Courses Routes
 Route::get('/courses/', 'UserCoursesController@index');

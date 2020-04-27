@@ -5676,29 +5676,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -5771,9 +5748,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.gatherRenewal();
     },
     gatherAllWithLoad: function gatherAllWithLoad() {
-      this.toggleLoading();
       this.gatherAll();
-      this.toggleLoading();
     },
     grantUser: function grantUser(id, grantType) {
       var _this6 = this;
@@ -5821,7 +5796,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   created: function created() {
+    var _this9 = this;
+
+    this.toggleLoading();
     this.gatherAllWithLoad();
+    setTimeout(function () {
+      _this9.toggleLoading();
+    }, 1000);
   }
 });
 
@@ -5934,7 +5915,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".proof-status {\n  margin-right: 5px;\n  padding: 3px 8px;\n  color: #777;\n  min-width: 50px !important;\n  background: #d3d3d37a;\n}\n.fade-enter-active,\n.fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter, .fade-leave-to {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".list-container {\n  background: rgba(170, 170, 170, 0.185);\n  padding: 10px;\n  min-height: 500px;\n  max-height: 500px;\n  overflow: scroll;\n}\n.proof-status {\n  margin-right: 5px;\n  padding: 3px 8px;\n  color: #777;\n  min-width: 50px !important;\n  background: #d3d3d37a;\n}\n.fade-enter-active,\n.fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter, .fade-leave-to {\n  opacity: 0;\n}", ""]);
 
 // exports
 
@@ -8920,20 +8901,9 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c(
                     "div",
-                    { staticClass: "col-lg-6" },
+                    { staticClass: "col-lg-6 list-container" },
                     [
-                      _c("h5", [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-sm btn-primary",
-                            on: { click: _vm.gatherAllWithLoad }
-                          },
-                          [_c("i", { staticClass: "icofont-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c("b", [_vm._v("Unsubscribed ")])
-                      ]),
+                      _vm._m(1),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
@@ -9012,20 +8982,9 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "col-lg-6" },
+                    { staticClass: "col-lg-6 list-container" },
                     [
-                      _c("h5", [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-sm btn-primary",
-                            on: { click: _vm.gatherAllWithLoad }
-                          },
-                          [_c("i", { staticClass: "icofont-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c("b", [_vm._v("Pending Registration")])
-                      ]),
+                      _vm._m(2),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
@@ -9367,20 +9326,9 @@ var render = function() {
                 _c("div", { staticClass: "row mt-5" }, [
                   _c(
                     "div",
-                    { staticClass: "col-lg-6" },
+                    { staticClass: "col-lg-6 list-container" },
                     [
-                      _c("h5", [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-sm btn-primary",
-                            on: { click: _vm.gatherAllWithLoad }
-                          },
-                          [_c("i", { staticClass: "icofont-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c("b", [_vm._v("Subscribed")])
-                      ]),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
@@ -9528,20 +9476,9 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "col-lg-6" },
+                    { staticClass: "col-lg-6 list-container" },
                     [
-                      _c("h5", [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-sm btn-primary",
-                            on: { click: _vm.gatherAllWithLoad }
-                          },
-                          [_c("i", { staticClass: "icofont-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c("b", [_vm._v("Expired")])
-                      ]),
+                      _vm._m(4),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
@@ -9642,20 +9579,9 @@ var render = function() {
                 _c("div", { staticClass: "row mt-5" }, [
                   _c(
                     "div",
-                    { staticClass: "col-lg-6" },
+                    { staticClass: "col-lg-6 list-container" },
                     [
-                      _c("h5", { staticClass: "mt-5" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-sm btn-primary",
-                            on: { click: _vm.gatherAllWithLoad }
-                          },
-                          [_c("i", { staticClass: "icofont-refresh" })]
-                        ),
-                        _vm._v(" "),
-                        _c("b", [_vm._v("Pending Renewal")])
-                      ]),
+                      _vm._m(5),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
@@ -10042,6 +9968,38 @@ var staticRenderFns = [
           "\n                            Manage Students\n                        "
         )
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("b", [_vm._v("Unsubscribed ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("b", [_vm._v("Pending Registration")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("b", [_vm._v("Subscribed")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", [_c("b", [_vm._v("Expired")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h5", { staticClass: "mt-5" }, [
+      _c("b", [_vm._v("Pending Renewal")])
     ])
   }
 ]
@@ -26193,7 +26151,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_manage_courses_store_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/manage_courses_store.js */ "./resources/js/utils/manage_courses_store.js");
 /* harmony import */ var _utils_manage_users_store_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/manage_users_store.js */ "./resources/js/utils/manage_users_store.js");
 /* harmony import */ var _utils_manage_users_router_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/manage_users_router.js */ "./resources/js/utils/manage_users_router.js");
-/* harmony import */ var _utils_manage_downloadables_store_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils/manage_downloadables_store.js */ "./resources/js/utils/manage_downloadables_store.js");
+/* harmony import */ var _utils_manage_downloadables_store_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/manage_downloadables_store.js */ "./resources/js/utils/manage_downloadables_store.js");
 /* harmony import */ var _utils_manage_downloadables_router_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils/manage_downloadables_router.js */ "./resources/js/utils/manage_downloadables_router.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
@@ -26220,7 +26178,7 @@ var manage_users = new Vue({
 var manage_downloadables = new Vue({
   el: "#manage_downloadables",
   router: _utils_manage_downloadables_router_js__WEBPACK_IMPORTED_MODULE_7__["default"],
-  store: _utils_manage_downloadables_store_js__WEBPACK_IMPORTED_MODULE_8__["default"]
+  store: _utils_manage_downloadables_store_js__WEBPACK_IMPORTED_MODULE_6__["default"]
 });
 
 /***/ }),

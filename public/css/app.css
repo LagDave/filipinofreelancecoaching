@@ -5014,8 +5014,12 @@ input[type=button].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  color: #e60c3e;
-  background-color: rgba(0, 0, 0, 0.03);
+  color: white;
+  background: #ff512f;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #dd2476, #ff512f);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -10925,6 +10929,15 @@ main {
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #dd2476, #ff512f);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.alert-secondary {
+  color: white;
+  background: #283048;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #859398, #283048);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 

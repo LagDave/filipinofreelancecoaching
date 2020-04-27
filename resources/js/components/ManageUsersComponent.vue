@@ -13,14 +13,8 @@
                         <div class="card-body">
                             <div class="row">
                                 <!-- Unsubscribed -->
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 list-container">
                                     <h5>
-                                        <button
-                                            @click="gatherAllWithLoad"
-                                            class="btn btn-sm btn-primary"
-                                        >
-                                            <i class="icofont-refresh"></i>
-                                        </button>
                                         <b>Unsubscribed </b>
                                     </h5>
                                     <hr />
@@ -69,14 +63,8 @@
                                     </transition-group>
                                 </div>
                                 <!-- Pending Registration -->
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 list-container">
                                     <h5>
-                                        <button
-                                            @click="gatherAllWithLoad"
-                                            class="btn btn-sm btn-primary"
-                                        >
-                                            <i class="icofont-refresh"></i>
-                                        </button>
                                         <b>Pending Registration</b>
                                     </h5>
                                     <hr />
@@ -289,14 +277,8 @@
                             </div>
                             <div class="row mt-5">
                                 <!-- Subscribed -->
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 list-container">
                                     <h5>
-                                        <button
-                                            @click="gatherAllWithLoad"
-                                            class="btn btn-sm btn-primary"
-                                        >
-                                            <i class="icofont-refresh"></i>
-                                        </button>
                                         <b>Subscribed</b>
                                     </h5>
                                     <hr />
@@ -392,14 +374,8 @@
                                     </transition-group>
                                 </div>
                                 <!-- Expired -->
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 list-container">
                                     <h5>
-                                        <button
-                                            @click="gatherAllWithLoad"
-                                            class="btn btn-sm btn-primary"
-                                        >
-                                            <i class="icofont-refresh"></i>
-                                        </button>
                                         <b>Expired</b>
                                     </h5>
                                     <hr />
@@ -461,14 +437,8 @@
                             </div>
                             <div class="row mt-5">
                                 <!-- Renewal -->
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 list-container">
                                     <h5 class="mt-5">
-                                        <button
-                                            @click="gatherAllWithLoad"
-                                            class="btn btn-sm btn-primary"
-                                        >
-                                            <i class="icofont-refresh"></i>
-                                        </button>
                                         <b>Pending Renewal</b>
                                     </h5>
                                     <hr />
@@ -703,6 +673,13 @@
 </template>
 
 <style lang="scss">
+.list-container {
+    background: rgba(170, 170, 170, 0.185);
+    padding: 10px;
+    min-height: 500px;
+    max-height: 500px;
+    overflow: scroll;
+}
 .proof-status {
     margin-right: 5px;
     padding: 3px 8px;
@@ -794,9 +771,7 @@ export default {
             this.gatherRenewal();
         },
         gatherAllWithLoad() {
-            this.toggleLoading();
             this.gatherAll();
-            this.toggleLoading();
         },
         grantUser(id, grantType) {
             this.toggleLoading();
@@ -840,7 +815,11 @@ export default {
         }
     },
     created() {
+        this.toggleLoading();
         this.gatherAllWithLoad();
+        setTimeout(() => {
+            this.toggleLoading();
+        }, 1000);
     }
 };
 </script>

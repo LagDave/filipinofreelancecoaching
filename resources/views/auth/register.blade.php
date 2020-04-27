@@ -131,7 +131,7 @@
         <div class="register-pricing col-md-8">
             <div class="section-title" data-aos="fade-up">
                 <h2>Pricing</h2>
-                <p>We have new courses and ebooks every week!</p>
+                <p>We have new courses every week!</p>
               </div>
             <div class="row">
                 <div class="col-lg-4">
@@ -142,6 +142,7 @@
                         <small><li>Templates and Checklists</li></small>
                         <small><li>Softwares and Tools</li></small>
                         <small><li>E-Books</li></small>
+                        <small><li>Cheat Sheet</li></small>
                         <small><li>Certificates</li></small>
                         <small><li>Chat Support</li></small>
                     </ul>
@@ -149,11 +150,12 @@
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header recommended">Monthly</li>
-                        <li class="grey">₱ 799 / year</li>
+                        <li class="grey">₱ 799 / month</li>
                         <small><li>100+ Courses</li></small>
                         <small><li>Templates and Checklists</li></small>
                         <small><li>Softwares and Tools</li></small>
                         <small><li>E-Books</li></small>
+                        <small><li>Cheat Sheet</li></small>
                         <small><li>Certificates</li></small>
                         <small><li><del>Chat Support</del></li></small>
                     </ul>
@@ -166,6 +168,7 @@
                         <small><li>Templates and Checklists</li></small>
                         <small><li>Softwares and Tools</li></small>
                         <small><li>E-Books</li></small>
+                        <small><li>Cheat Sheet</li></small>
                         <small><li>Certificates</li></small>
                         <small><li>Chat Support</li></small>
                     </ul>

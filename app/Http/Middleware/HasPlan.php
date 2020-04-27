@@ -20,7 +20,7 @@ class HasPlan
         if(Auth::user()->plan == 'has_plan' || Auth::user()->plan == 'admin'){
             return $next($request);
         }
-        return redirect('/home')->with('error', 'Courses are only available to enrolled users.');
+        return redirect('/home')->with('error', 'This content is only available to enrolled users.');
 
         
         

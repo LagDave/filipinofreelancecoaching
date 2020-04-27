@@ -43,4 +43,7 @@ class UserDashboardsController extends Controller
     public function contacts(){
         return view('user_dash.contacts');
     }
+    public function cheatsheet(){
+        return view('user_dash.cheatsheet');
+    }
 }

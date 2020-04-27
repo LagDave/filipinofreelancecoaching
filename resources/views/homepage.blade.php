@@ -136,7 +136,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="/guest/courses">100+ Courses</a></h4>
@@ -144,15 +144,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="/guest/downloadables">Freebies</a></h4>
-              <p class="description">Get your freebies worth 5k pesos after you enroll!</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4 class="title"><a href="/guest/downloadables">Software and Tools</a></h4>
@@ -160,11 +152,44 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="/guest/downloadables">Templates</a></h4>
+              <p class="description">Get your templates, checklist for VA and Social Media Management!</p>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="#">Certificates</a></h4>
-              <p class="description">You can get 1 certificate for each course you will finish!</p>
+              <div class="icon"><i class="bx bx-book-alt"></i></div>
+              <h4 class="title"><a href="/guest/downloadables">Ebooks</a></h4>
+              <p class="description">Get your ebook for English, Excel and many more!
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="bx bx-spreadsheet"></i></div>
+              <h4 class="title"><a href="#cheatsheet">Cheat Sheet</a></h4>
+              <p class="description">Know how to start freelancing with our Cheat Sheet!
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="bx bx-certification"></i></div>
+              <h4 class="title"><a href="#certificates">Certificates</a></h4>
+              <p class=" description">You can get 1 certificate for each course you will finish!
+              </p>
             </div>
           </div>
 
@@ -531,7 +556,7 @@
 
         <div class="section-title">
           <h2>Pricing</h2>
-          <p>We have new courses and ebooks every week!</p>
+          <p>We have new courses every week!</p>
         </div>
 
         <div class="row">
@@ -545,6 +570,7 @@
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
                 <li>E-Books</li>
+                <li>Cheat sheet</li>
                 <li>Certificates</li>
                 <li>Chat support</li>
               </ul>
@@ -563,6 +589,7 @@
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
                 <li>E-Books</li>
+                <li>Cheat sheet</li>
                 <li>Certificates</li>
                 <li class="na">Chat support</li>
               </ul>
@@ -581,6 +608,7 @@
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
                 <li>E-Books</li>
+                <li>Cheat sheet</li>
                 <li>Certificates</li>
                 <li>Chat support</li>
               </ul>
@@ -676,7 +704,6 @@
   </main><!-- End #main -->
 
   @include('components.footer')
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="{{asset('homepage/assets/vendor/jquery/jquery.min.js')}}"></script>
