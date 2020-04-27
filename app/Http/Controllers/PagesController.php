@@ -12,7 +12,7 @@ class PagesController extends Controller
         return view('homepage');
     }
     public function courses(){
-        $courses = Course::where('published', 'true')->orderBy('id', 'desc')->paginate(16);
+        $courses = Course::where('published', 'true')->orderBy('id', 'asc')->paginate(16);
         return view('guest.courses', compact('courses'));
     }
     public function downloadables(){
