@@ -11,8 +11,12 @@
         <p class="text-center mb-1">
           <small class="text-muted">{{sizeof($course->topics)}} Topic{{sizeof($course->topics)>1 ? 's': ''}}</small>
         </p>
-        <a href="/courses/watch/{{$course->id}}/0/0" class="btn-outline-primary btn w-100 btn-sm">Start Course</a>
-    </div>
+        @if(sizeof($course->topics) > 0)
+          <a href="/courses/watch/{{$course->id}}/0/0" class="btn-outline-primary btn w-100 btn-sm">Start Course</a>
+        @else
+          <button class="btn btn-outline-secondary w-100 btn-sm">Coming Soon</button>
+        @endif
+      </div>
 
   @endforeach
 </div>
