@@ -137,7 +137,7 @@
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header">Yearly</li>
-                        <li class="grey">₱ 1,999 / year</li>
+                        <li class="grey">₱ 999 / year</li>
                         <small><li>100+ Courses</li></small>
                         <small><li>Templates and Checklists</li></small>
                         <small><li>Softwares and Tools</li></small>
@@ -150,7 +150,7 @@
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header recommended">Monthly</li>
-                        <li class="grey">₱ 799 / month</li>
+                        <li class="grey">₱ 399 / month</li>
                         <small><li>100+ Courses</li></small>
                         <small><li>Templates and Checklists</li></small>
                         <small><li>Softwares and Tools</li></small>
@@ -163,7 +163,7 @@
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header">Lifetime</li>
-                        <li class="grey">₱ 3,999 / ∞</li>
+                        <li class="grey">₱ 1,999 / ∞</li>
                         <small><li>100+ Courses</li></small>
                         <small><li>Templates and Checklists</li></small>
                         <small><li>Softwares and Tools</li></small>

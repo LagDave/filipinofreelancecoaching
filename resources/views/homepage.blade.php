@@ -564,7 +564,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
               <h3>Yearly</h3>
-              <h4><sup>₱</sup>1,999<span> / year</span></h4>
+              <h4><sup>₱</sup>999<span> / year</span></h4>
               <ul>
                 <li>100+ Courses</li>
                 <li>Templates and Checklists</li>
@@ -575,7 +575,7 @@
                 <li>Chat support</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Enroll Now</a>
+                <a href="/register" class="btn-buy">Enroll Now</a>
               </div>
             </div>
           </div>
@@ -583,7 +583,7 @@
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="box recommended" data-aos="zoom-in" data-aos-delay="100">
               <h3>Monthly</h3>
-              <h4><sup>₱</sup>799<span> / month</span></h4>
+              <h4><sup>₱</sup>399<span> / month</span></h4>
               <ul>
                 <li>100+ Courses</li>
                 <li>Templates and Checklists</li>
@@ -594,7 +594,7 @@
                 <li class="na">Chat support</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Enroll Now</a>
+                <a href="/register" class="btn-buy">Enroll Now</a>
               </div>
             </div>
           </div>
@@ -602,7 +602,7 @@
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
               <h3>Lifetime</h3>
-              <h4><sup>₱</sup>3,999<span> / limitless</span></h4>
+              <h4><sup>₱</sup>1,999<span> / limitless</span></h4>
               <ul>
                 <li>100+ Courses</li>
                 <li>Templates and Checklists</li>
@@ -613,7 +613,7 @@
                 <li>Chat support</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Enroll Now</a>
+                <a href="/register" class="btn-buy">Enroll Now</a>
               </div>
             </div>
           </div>
