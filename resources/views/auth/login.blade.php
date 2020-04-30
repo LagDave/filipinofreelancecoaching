@@ -4,6 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-5">
+
+            @if($message = Session::get('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{$message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            @endif
+
             <div class="card">
                 <div class="card-header"><i class="icofont-lock"></i> {{ __('Login') }}</div>
 
@@ -39,17 +49,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                        <p><a href="/reset_password">Forgot Password?</a></p>
 
                         <div class="form-group mb-0">
                             <div>
