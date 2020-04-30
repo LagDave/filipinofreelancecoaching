@@ -774,44 +774,58 @@ export default {
             this.gatherAll();
         },
         grantUser(id, grantType) {
-            this.toggleLoading();
-            axios
-                .post(`/admin/manage/users/${id}/grant/${grantType}`)
-                .then(response => {
-                    this.gatherAll();
-                    this.toggleLoading();
-                })
-                .catch(err => {
-                    console.log(err);
-                    this.toggleLoading();
-                });
+            if (confirm("Toggle Certificate Status?")) {
+                this.toggleLoading();
+                axios
+                    .post(`/admin/manage/users/${id}/grant/${grantType}`)
+                    .then(response => {
+                        this.gatherAll();
+                        this.toggleLoading();
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        this.toggleLoading();
+                    });
+            }
         },
         moveToPending(id) {
-            this.toggleLoading();
-            axios
-                .post(`/admin/manage/users/${id}/moveToPending`)
-                .then(response => {
-                    console.log(response);
-                    this.gatherAll();
-                    this.toggleLoading();
-                })
-                .catch(err => {
-                    console.log(err);
-                });
+            if (
+                confirm(
+                    "This will move user to pending and will forfeit its current plan."
+                )
+            ) {
+                this.toggleLoading();
+                axios
+                    .post(`/admin/manage/users/${id}/moveToPending`)
+                    .then(response => {
+                        console.log(response);
+                        this.gatherAll();
+                        this.toggleLoading();
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            }
         },
         unsubscribe(id) {
-            this.toggleLoading();
-            axios
-                .post(`/admin/manage/users/${id}/unsubscribe`)
-                .then(response => {
-                    console.log(response);
-                    this.gatherAll();
-                    this.toggleLoading();
-                })
-                .catch(err => {
-                    console.log(err);
-                    this.toggleLoading();
-                });
+            if (
+                confirm(
+                    "This will unsubscribe the user and forfeit its plan \nUser has to reapply for a plan before admin can grant a subscription."
+                )
+            ) {
+                this.toggleLoading();
+                axios
+                    .post(`/admin/manage/users/${id}/unsubscribe`)
+                    .then(response => {
+                        console.log(response);
+                        this.gatherAll();
+                        this.toggleLoading();
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        this.toggleLoading();
+                    });
+            }
         }
     },
     created() {
