@@ -37,7 +37,7 @@
                                             >
                                                 {{ user.first_name }}
                                                 {{ user.last_name }}
-                                                <small class="text-muted"
+                                                <small class=""
                                                     >@{{ user.username }}</small
                                                 >
                                             </p>
@@ -162,8 +162,7 @@
                                                                 user.first_name
                                                             }}
                                                             {{ user.last_name }}
-                                                            <small
-                                                                class="text-muted"
+                                                            <small class=""
                                                                 >@{{
                                                                     user.username
                                                                 }}</small
@@ -536,8 +535,7 @@
                                                                 user.first_name
                                                             }}
                                                             {{ user.last_name }}
-                                                            <small
-                                                                class="text-muted"
+                                                            <small class=""
                                                                 >@{{
                                                                     user.username
                                                                 }}</small
@@ -774,7 +772,7 @@ export default {
             this.gatherAll();
         },
         grantUser(id, grantType) {
-            if (confirm("Toggle Certificate Status?")) {
+            if (confirm("Grant the Plan to user?")) {
                 this.toggleLoading();
                 axios
                     .post(`/admin/manage/users/${id}/grant/${grantType}`)

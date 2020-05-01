@@ -122,6 +122,7 @@
       <h1>Thank you !</h1>
       <p>Your enrollment application has been sent to the admins.</p>
       <p>Please allow up to 24 hours.</p>
+      <p>We will send you an email once the enrollment has been granted.</p>
       <p class='mt-4'>
       <a href='/home' class="go-home">
         go home

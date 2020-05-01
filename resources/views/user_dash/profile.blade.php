@@ -10,7 +10,7 @@
 </div>
 @endif
 
-  <h3 class='section-header mb-2'><i class="fas fa-graduation-cap"></i> Profile</h3>
+  <h3 class='section-header mb-2'><i class="fas fa-user"></i> Profile</h3>
   <hr>
 
   <p>Full Name: <span style='font-weight:bolder !important'>{{$user->first_name}} {{$user->last_name}}</span></p>
@@ -30,5 +30,4 @@
     </div>
     <button class="btn btn-primary">Save New Password</button>
   </form>
-
 @endsection

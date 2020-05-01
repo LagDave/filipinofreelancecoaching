@@ -5,7 +5,7 @@
 <link href="{{asset('homepage/assets/css/contacts.css')}}" rel="stylesheet">
 <link href="{{asset('homepage/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
 
-  <h3 class='section-header mb-2'><i class="fas fa-graduation-cap"></i> Contacts</h3>
+  <h3 class='section-header mb-2'><i class="fas fa-phone"></i> Contact Us</h3>
   <hr>
 
   <section id="contact" class="contact">

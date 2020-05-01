@@ -46,4 +46,7 @@ class UserDashboardsController extends Controller
     public function cheatsheet(){
         return view('user_dash.cheatsheet');
     }
+    public function policies(){
+        return view('user_dash.policies');
+    }
 }

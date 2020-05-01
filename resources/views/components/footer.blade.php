@@ -13,6 +13,11 @@
               <a href="/login">Login</a>
               <a href="/register">Register Now</a>
             @endif
+            @if(Auth::user()->plan == 'has_plan' || Auth::user()->plan == 'admin')
+              <a href="/home/policies">Policies</a>
+            @endif
+            
+            
           </nav>
         </div>
       </div>

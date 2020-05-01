@@ -1,7 +1,7 @@
 @extends('layouts.user_dashboard')
 @section('current_section')
 
-<h3 class='section-header mb-2'><i class="fas fa-graduation-cap"></i> Cheat Sheet</h3>
+<h3 class='section-header mb-2'><i class="fas fa-scroll"></i> Cheat Sheet</h3>
 <hr>
 <div class="accordion" id="accordionExample">
 

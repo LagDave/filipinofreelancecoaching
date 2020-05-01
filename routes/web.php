@@ -65,6 +65,7 @@ Route::get('/home/profile', 'UserDashboardsController@profile')->middleware('aut
 Route::get('/home/subscription', 'UserDashboardsController@subscription')->middleware('auth');
 Route::get('/home/contacts', "UserDashboardsController@contacts")->middleware('auth');
 Route::get('/home/cheat_sheet', "UserDashboardsController@cheatsheet")->middleware('has_plan');
+Route::get('/home/policies', "UserDashboardsController@policies")->middleware('has_plan');
 
 // Courses Routes
 Route::get('/courses/', 'UserCoursesController@index');

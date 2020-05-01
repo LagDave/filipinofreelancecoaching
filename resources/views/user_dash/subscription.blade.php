@@ -2,7 +2,7 @@
 @section('current_section')
 
 
-  <h3 class='section-header mb-2'><i class="fas fa-graduation-cap"></i> Subscription Status</h3>
+  <h3 class='section-header mb-2'><i class="fas fa-clock"></i> Subscription Status</h3>
   <hr>
 
   <p>Plan: <span style='font-weight:bolder !important'>{{$user->plan == 'has_plan' ? $user->plan_name : 'No Plan'}}</span></p>

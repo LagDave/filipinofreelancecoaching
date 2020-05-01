@@ -7,8 +7,10 @@ use App\Proof;
 use Carbon\Carbon;
 use App\CourseUser;
 use Illuminate\Http\Request;
+use App\Mail\PlanGrantedMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UsersController extends Controller
 {
@@ -25,7 +27,8 @@ class UsersController extends Controller
             'monthlyApply',
             'yearlyApply',
             'lifetimeApply',
-            'changePass'
+            'changePass',
+            'confirmTermination'
         ]);
     }
     
@@ -72,7 +75,7 @@ class UsersController extends Controller
                         $r->get();
                     }
                 ]
-            )->orderBy('id', 'desc')->get();
+            )->orderBy('checked')->get();
         }
         public function toggleGrantCertificate($certificate_id){
             $certificate = CourseUser::find($certificate_id);
@@ -240,8 +243,13 @@ class UsersController extends Controller
         }
 
         $user->plan = 'has_plan';
+        
+        // Mail the code
+        $toEmail = $user->email;
+        Mail::to($toEmail)->send(new PlanGrantedMail($user));
+        
         return $user->save();
-        // set subscription end
+
     }
     public function moveToPending($user_id){
         $user = User::find($user_id);

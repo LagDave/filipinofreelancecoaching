@@ -41,10 +41,6 @@ class UserCoursesController extends Controller
             // If user has an entry
             $course_user = $course_user[0];
 
-
-            
-
-
             $last_topic_index = sizeof($course->topics) - 1;
             $last_topic = $course->topics[$last_topic_index];
         

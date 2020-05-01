@@ -53,6 +53,9 @@
                             <li class="nav-item">
                                 <a href="{{Auth::user()->plan == 'has_plan' || Auth::user()->plan == 'admin' ? '/courses' : '/guest/courses'}}" class="nav-link">Browse Courses</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/home/policies" class="nav-link">Policies</a>
+                            </li>
                             @if(Auth::user()->plan !== 'admin')
                                 @if(Auth::user()->plan == 'has_plan')
                                 <li class="nav-item">

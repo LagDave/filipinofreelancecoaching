@@ -4,7 +4,9 @@ namespace App\Console\Commands;
 
 use \App\User;
 use Carbon\Carbon;
+use App\Mail\ExpiredUserMail;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Mail;
 
 class ManageExpiredUsers extends Command
 {
@@ -45,6 +47,10 @@ class ManageExpiredUsers extends Command
         foreach($users as $user){
             $user->plan = 'expired';
             $user->save();
+            // Mail the code
+            $toEmail = $user->email;
+            Mail::to($toEmail)->send(new ExpiredUserMail($user));
+
         }
     }
 }
