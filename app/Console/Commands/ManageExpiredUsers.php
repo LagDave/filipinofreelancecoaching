@@ -47,10 +47,6 @@ class ManageExpiredUsers extends Command
         foreach($users as $user){
             $user->plan = 'expired';
             $user->save();
-            // Mail the code
-            $toEmail = $user->email;
-            Mail::to($toEmail)->send(new ExpiredUserMail($user));
-
         }
     }
 }
