@@ -639,7 +639,7 @@
               <h3>Filipino Freelance Coaching</h3>
               <p>If you have any questions about the services we provide simply use the form below. We try to respond to all queries and comments within 24 hours.</p>
               <div class="social-links">
-                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                <a href="https://facebook.com/filipinofreelancecoaching/" class="facebook"><i class="icofont-facebook"></i></a>
               </div>
             </div>
           </div>

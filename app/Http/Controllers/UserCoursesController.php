@@ -8,6 +8,9 @@ use App\Lesson;
 use App\CourseUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class UserCoursesController extends Controller
 {

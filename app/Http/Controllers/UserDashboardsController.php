@@ -14,9 +14,11 @@ class UserDashboardsController extends Controller
         // Get the courses
         $courses = CourseUser::where('user_id', Auth::id())->get(); 
         $ids = array();
+        
         foreach($courses as $course){
             array_push($ids, $course->course_id);
         }
+
         $courses =  Course::whereIn('id', $ids)->with(
             [
                 'topics'=>function($q){

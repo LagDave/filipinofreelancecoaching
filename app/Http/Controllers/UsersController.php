@@ -75,8 +75,9 @@ class UsersController extends Controller
                         $r->get();
                     }
                 ]
-            )->orderBy('checked')->get();
+            )->orderBy('user_id')->get();
         }
+        
         public function toggleGrantCertificate($certificate_id){
             $certificate = CourseUser::find($certificate_id);
             if($certificate->checked == 'false'){
