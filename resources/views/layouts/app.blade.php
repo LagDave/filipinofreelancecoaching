@@ -35,7 +35,7 @@
 <body>
     <div id="app">
         <nav class="navbar sticky-top navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img style='max-heigh:80px' src="{{asset('homepage/assets/img/logo.png')}}" alt="" class="img-fluid"></a>
                 </a>

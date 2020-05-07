@@ -57,7 +57,6 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="#header">Home</a></li>
-          <li><a href="#about">About</a></li>
           <li><a href="#services">Benefits</a></li>
           <li><a href="#features">Softwares and Tools</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
@@ -94,37 +93,6 @@
   </section><!-- End Hero -->
 
   <main id="main">
-
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>About Us</h2>
-        </div>
-
-        <div class="row content">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-            <p>
-              Filipino Freelance Coaching started March 10, 2019. We are selling in demand courses for all of the Filipino Freelancers.
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> All of our courses are in demand that will help you to earn a high paying job!</li>
-              <li><i class="ri-check-double-line"></i> Learn from the best softwares and tools!</li>
-              <li><i class="ri-check-double-line"></i> Get your certificates for each course you finished!</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <p>
-              Learn limitless and more opportunity for our students. We want you to reach your greatest potential. Do not hold back once you enroll in our courses. Everything you need to build your dreams is all here! 
-            </p>
-            <a href="/register" class="btn-learn-more">Enroll Now</a>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Us Section -->
-
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">

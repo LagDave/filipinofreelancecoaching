@@ -178,22 +178,5 @@ class UserCoursesController extends Controller
         ]);
         return view('courses.completed', compact('course'));
     }
+    
 }
-
-
-
-
-
-// $current_course = Course::where('id', $course_id)->with([
-//     'topics'=>function($q){
-//         $q->orderBy('name')->with([
-//             'lessons'=> function($r){
-//                 $r->orderBy('name')->get();
-//             }
-//         ])->get();
-//     }
-// ])->get();
-
-
-
-// return view('courses.single_course', compact('current_course'));

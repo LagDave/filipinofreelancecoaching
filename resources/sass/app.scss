@@ -87,6 +87,43 @@ main {
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.btn-primary {
+    color: white;
+    background: #ff512f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #ff512f,
+        #dd2476
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #dd2476
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none !important;
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    box-shadow: 0 8px 22px #e60c3f2f, 0 4px 4px #e60c3f2f;
+}
+.btn-success {
+    background: #11998e; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #38ef7d,
+        #11998e
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #38ef7d,
+        #11998e
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none !important;
+}
+.btn-success:hover {
+    box-shadow: 0 8px 22px #11998e28, 0 4px 4px #11998e28;
+}
+
 .collapse,
 .card {
     color: black;

@@ -84,13 +84,10 @@
         </div>
       </div>
       <div class="col-lg-9 ">
-
-        <div class="card card-body">
-
+          <div class="card card-body mb-3">
+            <h3 class='section-header mb-0'>@yield('section_title')</h3>
+          </div>
           @yield('current_section')
-
-        </div>
-
       </div>
     </div>
 

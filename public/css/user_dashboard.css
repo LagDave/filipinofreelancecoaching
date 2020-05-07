@@ -12,18 +12,22 @@
     display: flex;
     flex-direction: column;
 }
-.course a {
-    color: #e60c3e;
+
+.course-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
-.course a:hover {
-    color: white;
+.course-card:hover {
+    cursor: pointer;
+    transform: scale(1.03, 1.03);
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1) !important;
 }
+
 .course button {
     margin-top: auto;
 }
 .course .course-title {
     text-align: center;
-    color: #777;
+    color: #555;
 }
 
 .dash-navigation {
