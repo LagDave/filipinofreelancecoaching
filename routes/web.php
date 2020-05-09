@@ -88,7 +88,3 @@ Route::post('/reset_password/verify', 'PasswordResetsController@verify');
 Route::post('/reset_password/update_pass', 'PasswordResetsController@update_pass');
 Route::get('/reset_password/update_pass_form', 'PasswordResetsController@update_pass_form');
 Route::post('/reset_password/updateStore', 'PasswordResetsController@updateStore');
-
-
-// Test Routes
-Route::get('/test/testForCompleted/{course_id}', 'TestsController@testForCompleted');
