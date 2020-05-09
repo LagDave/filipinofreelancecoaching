@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class TestsController extends Controller
 {
-    public function testForCompleted(Request $request){
+    public function testForCompleted(Request $request, $course_id){
         $course = Course::find($course_id);
         $course_users = CourseUser::where(['course_id'=> $course_id, 'user_id'=> Auth::id()])->get();
         $course_user = CourseUser::where(['course_id'=> $course_id, 'user_id'=> Auth::id()])->get()[0];

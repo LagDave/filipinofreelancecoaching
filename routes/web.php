@@ -91,4 +91,4 @@ Route::post('/reset_password/updateStore', 'PasswordResetsController@updateStore
 
 
 // Test Routes
-Route::get('/test/testForCompleted', 'TestsController@testForCompleted');
+Route::get('/test/testForCompleted/{course_id}', 'TestsController@testForCompleted');
