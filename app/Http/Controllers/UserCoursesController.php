@@ -170,6 +170,7 @@ class UserCoursesController extends Controller
     public function completed ($course_id){
         $course = Course::find($course_id);
         $course_user = CourseUser::where(['course_id'=> $course_id, 'user_id'=> Auth::id()])->get()[0];
+
         if($course_user->completed == 'true'){
             return back()->with('error', 'Course already completed!');
         }
@@ -178,5 +179,7 @@ class UserCoursesController extends Controller
         ]);
         return view('courses.completed', compact('course'));
     }
-    
+
+
+    // TEST FUNCTIONS
 }
