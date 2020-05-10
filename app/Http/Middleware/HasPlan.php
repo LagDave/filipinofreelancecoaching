@@ -16,13 +16,11 @@ class HasPlan
      */
     public function handle($request, Closure $next)
     {
-
-        if(Auth::user()->plan == 'has_plan' || Auth::user()->plan == 'admin'){
-            return $next($request);
+        if(Auth::check()){
+            if(Auth::user()->plan == 'has_plan' || Auth::user()->plan == 'admin'){
+                return $next($request);
+            }
+            return redirect('/home')->with('error', 'This content is only available to enrolled users.');
         }
-        return redirect('/home')->with('error', 'This content is only available to enrolled users.');
-
-        
-        
     }
 }

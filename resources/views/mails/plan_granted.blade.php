@@ -5,14 +5,10 @@
 <p>You can now check out:</p>
 <ul>
   <li>
-    <a href="https://www.thefilipinofreelancecoaching.com/courses">
-      100+ Courses
-    </a>
+    100+ Courses
   </li>
   <li>
-    <a href="https://www.thefilipinofreelancecoaching.com/home/cheat_sheet">
-      Cheat Sheet
-    </a>
+    Cheat Sheet
   </li>
   <li>
     Softwares, Ebooks and Templates <small><i>from another email you will receive from the admins shortly</i></small>
