@@ -18,7 +18,7 @@
           <img src="{{asset($course->cover_img)}}" alt="" class="img-fluid">
           <div class="content py-3 px-3">
             <p class='mt-1 course-title'><b>{{$course->title}}</b></p>
-            <a href="/courses/watch/{{$course->id}}/{{$course->course_users[0]->topic_index}}/{{$course->course_users[0]->lesson_index}}" class="btn-primary btn w-100 btn-sm">Resume Course</a>
+            <a href="/courses/watch/{{$course->id}}/{{$course->course_users[0]->topic_index}}/{{$course->course_users[0]->lesson_index}}" class="{{$course->course_users[0]->completed == 'true' ? 'btn-success' : 'btn-primary' }} btn w-100 btn-sm">{{$course->course_users[0]->completed == 'true' ? 'Review Course' : 'Resume Course' }}</a>
           </div>
       </div>
     </div>

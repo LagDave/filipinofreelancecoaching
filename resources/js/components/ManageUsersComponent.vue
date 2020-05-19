@@ -287,6 +287,77 @@
                                             v-for="user in subscribed"
                                             class="alert alert-primary"
                                         >
+                                            <div
+                                                class="modal fade"
+                                                :id="'modal_' + user.id"
+                                                tabindex="-1"
+                                                role="dialog"
+                                                aria-labelledby="exampleModalLabel"
+                                                aria-hidden="true"
+                                            >
+                                                <div
+                                                    class="modal-dialog"
+                                                    role="document"
+                                                >
+                                                    <div class="modal-content">
+                                                        <div
+                                                            class="modal-header"
+                                                        >
+                                                            <h5
+                                                                class="modal-title"
+                                                                style="color:black !important"
+                                                                id="exampleModalLabel"
+                                                            >
+                                                                <b
+                                                                    >{{
+                                                                        user.first_name
+                                                                    }}
+                                                                    {{
+                                                                        user.last_name
+                                                                    }}</b
+                                                                >
+                                                                Proof of Payment
+                                                            </h5>
+                                                            <button
+                                                                type="button"
+                                                                class="close"
+                                                                data-dismiss="modal"
+                                                                aria-label="Close"
+                                                            >
+                                                                <span
+                                                                    aria-hidden="true"
+                                                                    >&times;</span
+                                                                >
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div
+                                                                :key="proof.id"
+                                                                v-for="proof in user.proofs"
+                                                            >
+                                                                <p
+                                                                    class="text-center"
+                                                                    style="color:black !important"
+                                                                >
+                                                                    Uploaded:
+                                                                    {{
+                                                                        proof.created_at
+                                                                    }}
+                                                                </p>
+                                                                <hr />
+                                                                <img
+                                                                    :src="
+                                                                        proof.url
+                                                                    "
+                                                                    style="width:100%"
+                                                                    alt=""
+                                                                    class="mb-3"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-5">
                                                     <p
@@ -348,6 +419,38 @@
                                                         <b>{{
                                                             user.subscription_end
                                                         }}</b>
+                                                    </p>
+                                                    <p class="mb-0">
+                                                        Proof of Payment:
+                                                        <span
+                                                            v-if="
+                                                                user.proofs
+                                                                    .length == 0
+                                                            "
+                                                            class="ml-1"
+                                                        >
+                                                            <small
+                                                                class="proof-status"
+                                                                >No Proof
+                                                                Yet</small
+                                                            >
+                                                        </span>
+                                                        <span
+                                                            style="cursor:pointer"
+                                                            class="ml-1"
+                                                            v-else
+                                                            data-toggle="modal"
+                                                            :data-target="
+                                                                '#modal_' +
+                                                                    user.id
+                                                            "
+                                                        >
+                                                            <small
+                                                                class="proof-status"
+                                                            >
+                                                                CLICK TO SEE
+                                                            </small>
+                                                        </span>
                                                     </p>
                                                     <hr />
                                                     <p class="mb-0">

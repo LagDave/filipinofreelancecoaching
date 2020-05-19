@@ -214,7 +214,11 @@ class UsersController extends Controller
         ])->get();
     }
     public function subscribed(){
-        return User::where('plan', 'has_plan')->orderBy('updated_at', 'asc')->get();
+        return User::where('plan', 'has_plan')->orderBy('updated_at', 'asc')->with([
+            'proofs'=>function($q){
+                $q->orderBy('id', 'desc');
+            }
+        ])->get();
     }
     public function expired(){
         return User::where('plan', 'expired')->orderBy('updated_at', 'asc')->get();
