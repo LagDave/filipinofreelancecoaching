@@ -15,7 +15,7 @@
   </li>
 </ul>
 <br>
-<p>Before anything else, please check out our <a href="https://www.thefilipinofreelancecoaching.com/home/policies">Policies</a> first.</p>
+<p>Before anything else, please check out our Policies first.</p>
 <br>
 <br>
 <b>Plan Details</b>
