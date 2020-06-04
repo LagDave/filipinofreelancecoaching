@@ -83,7 +83,7 @@
             top:-5px;
             right: -10px;
             border-radius:2px'
-            >NEW!</span>
+            >COMING SOON!</span>
           </a>
 
           <a href="/home/subscription" class="dash-navigation templates">

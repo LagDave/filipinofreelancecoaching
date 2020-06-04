@@ -91,6 +91,6 @@ Route::post('/reset_password/updateStore', 'PasswordResetsController@updateStore
 
 
 // PREDEFINED PORTFOLIO TEMPLATE
-Route::get('/home/portfolio/setup', 'PortfoliosController@setup');
+Route::get('/home/portfolio/setup', 'PortfoliosController@setup')->middleware('admin_auth');
 Route::post('/home/portfolio/setup', 'PortfoliosController@saveSettings');
 Route::get('/portfolio/user/{username}', 'PortfoliosController@index');
