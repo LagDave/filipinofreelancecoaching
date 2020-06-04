@@ -68,6 +68,23 @@
             <i class="fas fa-user"></i>
             <span class='ml-2'>My Profile</span>
           </a>
+          
+          <a style='position:relative' href="/home/portfolio/setup" class="dash-navigation certs">
+
+            <i class="fas fa-user"></i>
+            <span class='ml-2'>Manage Portfolio Page</span>
+
+            <span style='
+            font-size:.6em; 
+            background:forestgreen; 
+            color:white; 
+            padding:1px 5px;
+            position:absolute;
+            top:-5px;
+            right: -10px;
+            border-radius:2px'
+            >NEW!</span>
+          </a>
 
           <a href="/home/subscription" class="dash-navigation templates">
 
@@ -86,8 +103,9 @@
       <div class="col-lg-9 ">
           <div class="card card-body mb-3">
             <h3 class='section-header mb-0'>@yield('section_title')</h3>
-          </div>
+          
           @yield('current_section')
+        </div>
       </div>
     </div>
 

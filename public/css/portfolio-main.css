@@ -1,0 +1,26 @@
+#jumbotron .profile {
+  height: 200px;
+  width: 200px;
+  border-radius: 50000px;
+}
+.socmed-icons img {
+  height: 35px;
+  width: 35px;
+}
+.card {
+  border: none;
+}
+
+.divider {
+  height: 0.5px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.39);
+}
+
+footer h3,
+footer h5,
+footer small,
+footer label,
+footer a {
+  color: white !important;
+}

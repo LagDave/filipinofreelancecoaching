@@ -1,236 +1,528 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      .profile {
-        height: 150px;
-        width: 150px;
-        border-radius: 500px;
-      }
-    </style>
-    <title>Solid State by HTML5 UP</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{{asset('css/'.$portfolio_entry->theme.'.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/portfolio-main.css')}}" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{{asset('css/pfolio_main.css')}}" />
-    <script src="https://kit.fontawesome.com/e4d9a73074.js" crossorigin="anonymous"></script>
-    <noscript
-      ><link rel="stylesheet" href="{{asset('css/pfolio_noscript.css')}}"
-    /></noscript>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    />
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Portfolio Template</title>
   </head>
-  <body class="is-preload">
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-      <!-- Header -->
-      <header id="header" class="alt">
-        <h1><a href="index.html">Rustine Dave</a></h1>
-        <nav>
-          <a href="#menu">Menu</a>
-        </nav>
-      </header>
+  <body>
+    <!-- Navigation bar START -->
 
-      <!-- Menu -->
-      <nav id="menu">
-        <div class="inner">
-          <h2>Menu</h2>
-          <ul class="links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-          </ul>
-          <a href="#" class="close">Close</a>
-        </div>
-      </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Carl Jepsen</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <!-- Banner -->
-      <section id="banner">
-        <div class="inner">
-          <div class="logo">
-            <img class="profile" src="{{asset('portfolio/dp.png')}}" alt="" />
-          </div>
-          <h2>Hi, I am Rustine Dave</h2>
-          <p>
-            Your Professional Web Developer
-          </p>
-        </div>
-      </section>
-
-      <!-- Wrapper -->
-      <section id="wrapper">
-        <section id="certificates" class="wrapper spotlight style1">
-          <div class="inner">
-            <a href="#" class="image"><img src="{{asset('portfolio/pic01.jpg')}}" alt="" /></a>
-            <div class="content">
-              <h2 class="major">Certificate One</h2>
-              <p>
-                Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras
-                turpis ante, nullam sit amet turpis non, sollicitudin posuere
-                urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim
-                dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla
-                cursus.
-              </p>
-              <a href="#" class="special">Learn more</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="wrapper alt spotlight style2">
-          <div class="inner">
-            <a href="#" class="image"><img src="{{asset('portfolio/pic01.jpg')}}" alt="" /></a>
-            <div class="content">
-              <h2 class="major">Certificate Two</h2>
-              <p>
-                Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras
-                turpis ante, nullam sit amet turpis non, sollicitudin posuere
-                urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim
-                dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla
-                cursus.
-              </p>
-              <a href="#" class="special">Learn more</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="wrapper spotlight style3">
-          <div class="inner">
-            <a href="#" class="image"><img src="{{asset('portfolio/pic01.jpg')}}" alt="" /></a>
-            <div class="content">
-              <h2 class="major">Certificate Three</h2>
-              <p>
-                Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras
-                turpis ante, nullam sit amet turpis non, sollicitudin posuere
-                urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim
-                dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla
-                cursus.
-              </p>
-              <a href="#" class="special">Learn more</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Four -->
-        <section id="projects" class="wrapper alt style1">
-          <div class="inner">
-            <h2 class="major">Projects</h2>
-            <p>
-              Relevant projects I created or contributed to. You can check them
-              out using the links provided for each.
-            </p>
-            <section class="features">
-              <article>
-                <a href="#" class="image"
-                  ><img src="{{asset('portfolio/pic04.jpg')}}" alt=""
-                /></a>
-                <h3 class="major">Sed feugiat lorem</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                  nulla dignissim dapibus ultrices.
-                </p>
-                <a href="#" class="special">Learn more</a>
-              </article>
-              <article>
-                <a href="#" class="image"
-                  ><img src="{{asset('portfolio/pic05.jpg')}}" alt=""
-                /></a>
-                <h3 class="major">Nisl placerat</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                  nulla dignissim dapibus ultrices.
-                </p>
-                <a href="#" class="special">Learn more</a>
-              </article>
-              <article>
-                <a href="#" class="image"
-                  ><img src="{{asset('portfolio/pic06.jpg')}}" alt=""
-                /></a>
-                <h3 class="major">Ante fermentum</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                  nulla dignissim dapibus ultrices.
-                </p>
-                <a href="#" class="special">Learn more</a>
-              </article>
-              <article>
-                <a href="#" class="image"
-                  ><img src="{{asset('portfolio/pic07.jpg')}}" alt=""
-                /></a>
-                <h3 class="major">Fusce consequat</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id
-                  nulla dignissim dapibus ultrices.
-                </p>
-                <a href="#" class="special">Learn more</a>
-              </article>
-            </section>
-          </div>
-        </section>
-      </section>
-
-      <!-- Footer -->
-      <section id="footer">
-        <div id="contacts" class="inner">
-          <h2 class="major">Get in touch</h2>
-          <p>
-            Use the form or the rest my contacts below to connect with me.
-          </p>
-          <form method="post" action="#">
-            <div class="fields">
-              <div class="field">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" />
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" />
-              </div>
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="4"></textarea>
-              </div>
-            </div>
-            <ul class="actions">
-              <li><input type="submit" value="Send Message" /></li>
-            </ul>
-          </form>
-          <ul class="contact">
-            <li class="icon solid fa-home">
-              Untitled Inc<br />
-              1234 Somewhere Road Suite #2894<br />
-              Nashville, TN 00000-0000
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
             </li>
-            <li class="icon solid fa-phone">(000) 000-0000</li>
-            <li class="icon solid fa-envelope">
-              <a href="#">information@untitled.tld</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
             </li>
-            <li class="icon brands fa-twitter">
-              <a href="#">twitter.com/untitled-tld</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Certificates</a>
             </li>
-            <li class="icon brands fa-facebook-f">
-              <a href="#">facebook.com/untitled-tld</a>
-            </li>
-            <li class="icon brands fa-instagram">
-              <a href="#">instagram.com/untitled-tld</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacts</a>
             </li>
           </ul>
-          <ul class="copyright">
-            <li>&copy; Rustine Dave All rights reserved.</li>
-          </ul>
         </div>
-      </section>
+      </div>
+    </nav>
+
+    <!-- Navigation bar END -->
+
+    <!-- Jumbotron START -->
+
+    <div class="jumbotron" id="jumbotron">
+      <div
+        class="container d-flex flex-column justify-content-center align-items-center"
+      >
+        <img data-aos="fade-up" src="{{asset('portfolio-images/dp.png')}}" alt="" class="profile" />
+        <h3
+          data-aos="fade-right"
+          data-aos-delay="300"
+          class="mt-3 text-center display-4"
+        >
+          Hi, I am Carl Jepsen
+        </h3>
+        <h6 data-aos="fade-left" data-aos-delay="500" class="text-center mt-2">
+          Your Web Developer
+        </h6>
+
+        <div class="socmed-icons mt-3">
+          <a href="">
+            <img
+              data-aos="fade-up"
+              data-aos-delay="700"
+              class="mx-1"
+              src="{{asset('portfolio-images/facebook.png')}}"
+            />
+          </a>
+          <a href="">
+            <img
+              data-aos="fade-up"
+              data-aos-delay="900"
+              class="mx-1"
+              src="{{asset('portfolio-images/twitter.png')}}"
+            />
+          </a>
+          <a href="">
+            <img
+              data-aos="fade-up"
+              data-aos-delay="1100"
+              class="mx-1"
+              src="{{asset('portfolio-images/in.png')}}"
+            />
+          </a>
+          <a href="">
+            <img
+              data-aos="fade-up"
+              data-aos-delay="1300"
+              class="mx-1"
+              src="{{asset('portfolio-images/instagram.png')}}"
+            />
+          </a>
+
+          <button
+            data-aos="fade-left"
+            data-aos-delay="1500"
+            class="ml-3 btn btn-primary"
+          >
+            <i class="fas fa-download"></i> Download Resume
+          </button>
+        </div>
+      </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="{{asset('js/pfolio_jquery.min.js')}}"></script>
-    <script src="{{asset('js/pfolio_jquery.scrollex.min.js')}}"></script>
-    <script src="{{asset('js/pfolio_browser.min.js')}}"></script>
-    <script src="{{asset('js/pfolio_breakpoints.min.js')}}"></script>
-    <script src="{{asset('js/pfolio_util.js')}}"></script>
-    <script src="{{asset('js/pfolio_main.js')}}"></script>
+    <!-- Jumbotron END -->
+
+    <!-- About start -->
+    <div id="about" class="my-5 py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <img
+              data-aos="fade-right"
+              class="img-fluid pb-2"
+              src="{{asset('portfolio-images/about.png')}}"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-6">
+            <h3 data-aos="fade-left" data-aos-delay="200">
+              <i class="text-primary fas fa-info-circle"></i> About Me
+            </h3>
+            <hr />
+            <p data-aos="fade-left" data-aos-delay="300">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
+              dolorum dolorem itaque odit earum dolor vitae architecto ea
+              asperiores ab! Voluptatem, nam! Quo quisquam perferendis sit et
+              error facilis eveniet. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Expedita, dignissimos commodi? Modi sapiente
+              dolorem reprehenderit architecto sint dolore, nostrum inventore
+              consequuntur vel odit, explicabo tenetur. Sunt possimus facere id
+              nemo. Lorem ipsum dolor sit amet consectetur adipisici.
+            </p>
+            <button
+              data-aos="fade-left"
+              data-aos-delay="400"
+              class="btn-primary btn"
+            >
+              <i class="fas fa-phone"></i> Get in touch
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About end -->
+
+    <!-- Certificates -->
+    <div class="my-5 py-5" id="certificates">
+      <div class="container px-3 py-3">
+        <h2 class="text-center" data-aos="fade-right">
+          <i class="fas text-primary fa-certificate"></i> Certificates
+        </h2>
+        <p class="text-center" data-aos="fade-right">
+          Papers to certify my accomplishments and completions in related
+          academic materials.
+        </p>
+        <br /><br />
+        <div class="row">
+          <div data-aos="zoom-in" data-aos-delay="100" class="col-lg-4 col-md-6 mb-2">
+            <div class="card shadow-sm">
+              <img class="img-fluid" src="{{asset('portfolio-images/cert.jpg')}}" alt="" />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Quick sample text to create the card title and make up the
+                  body of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary"
+                  ><i class="fas fa-external-link-alt"></i> Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+          <div data-aos="zoom-in" data-aos-delay="200" class="col-lg-4 col-md-6 mb-2">
+            <div class="card shadow-sm">
+              <img class="img-fluid" src="{{asset('portfolio-images/cert.jpg')}}" alt="" />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Quick sample text to create the card title and make up the
+                  body of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary"
+                  ><i class="fas fa-external-link-alt"></i> Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+          <div data-aos="zoom-in" data-aos-delay="300" class="col-lg-4 col-md-6 mb-2">
+            <div class="card shadow-sm">
+              <img class="img-fluid" src="{{asset('portfolio-images/cert.jpg')}}" alt="" />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Quick sample text to create the card title and make up the
+                  body of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary"
+                  ><i class="fas fa-external-link-alt"></i> Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+            <img
+              data-aos="fade-up"
+              src="{{asset('portfolio-images/cert.jpg')}}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Certificates End -->
+
+    <!-- Projects -->
+    <h2 data-aos='fade-right' class="text-center">
+      <i class="fas fa-project-diagram text-primary"></i> Projects
+    </h2>
+    <p data-aos='fade-right' class="text-center">
+      Here are my latest works during the course of my experience in the
+      industry.
+    </p>
+    <div data-aos='fade-up' class="my-0 py-5 bg-primary">
+      <div class="container">
+        <div data-aos='zoom-in' data-aos-delay='200' class="projects-slider">
+          <div>
+            <div class="card py-2 px-2 card-body mx-1">
+              <div class="row">
+                <div style="position: relative;" class="col-4 image-container">
+                  <div
+                    class="image"
+                    style="
+                      position: absolute;
+                      height: 100%;
+                      width: 100%;
+                      background: url('https://www.visioncritical.com/hubfs/Imported_Blog_Media/BLG_Andrew-G_-River-Sample_09_13_12.png');
+                      background-position: center;
+                      background-size: cover;
+                      background-repeat: no-repeat;
+                    "
+                  ></div>
+                </div>
+                <div class="text-container pl-4 col-8">
+                  <strong class="text-primary"
+                    >Learning Management System</strong
+                  >
+                  <br />
+                  <small class="text-muted">Personal Project</small>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Maiores eaque minima iste accusamus optio harum assumenda.
+                  </p>
+                  <a href="#" class="btn btn-primary"
+                    ><i class="fas fa-external-link-alt"></i> Learn More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card py-2 px-2 card-body mx-1">
+              <div class="row">
+                <div style="position: relative;" class="col-4 image-container">
+                  <div
+                    class="image"
+                    style="
+                      position: absolute;
+                      height: 100%;
+                      width: 100%;
+                      background: url('https://www.visioncritical.com/hubfs/Imported_Blog_Media/BLG_Andrew-G_-River-Sample_09_13_12.png');
+                      background-position: center;
+                      background-size: cover;
+                      background-repeat: no-repeat;
+                    "
+                  ></div>
+                </div>
+                <div class="text-container pl-4 col-8">
+                  <strong class="text-primary"
+                    >Learning Management System</strong
+                  >
+                  <br />
+                  <small class="text-muted">Personal Project</small>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Maiores eaque minima iste accusamus optio harum assumenda.
+                  </p>
+                  <a href="#" class="btn btn-primary"
+                    ><i class="fas fa-external-link-alt"></i> Learn More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card py-2 px-2 card-body mx-1">
+              <div class="row">
+                <div style="position: relative;" class="col-4 image-container">
+                  <div
+                    class="image"
+                    style="
+                      position: absolute;
+                      height: 100%;
+                      width: 100%;
+                      background: url('https://www.visioncritical.com/hubfs/Imported_Blog_Media/BLG_Andrew-G_-River-Sample_09_13_12.png');
+                      background-position: center;
+                      background-size: cover;
+                      background-repeat: no-repeat;
+                    "
+                  ></div>
+                </div>
+                <div class="text-container pl-4 col-8">
+                  <strong class="text-primary"
+                    >Learning Management System</strong
+                  >
+                  <br />
+                  <small class="text-muted">Personal Project</small>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Maiores eaque minima iste accusamus optio harum assumenda.
+                  </p>
+                  <a href="#" class="btn btn-primary"
+                    ><i class="fas fa-external-link-alt"></i> Learn More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Projects End -->
+
+    <!-- Footer Start -->
+    <footer class="my-0 py-5 bg-dark">
+      <div data-aos='zoom-in' class='container'>
+        <h3><i class="fas fa-phone"></i> Get in Touch</h3>
+        <br><br>
+        <div class="row">
+          <div class="col-lg-6">
+            <form  class="form">
+              <div class="form-group">
+                <label>Full Name:</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Email:</label>
+                <input type="email" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea name="" id="" rows='10' class="form-control"></textarea>
+              </div>
+              <p class='text-right'>
+                <button class="btn btn-primary"><i class="fas fa-envelope"></i> Send Email</button>
+              </p>
+              
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <h5><i class="fas fa-map-marker-alt mr-2"></i> Bldg. 21, Sunflower st., Barangay Matina, Davao City</h5>
+            <br>
+            <h5><i class="fas fa-phone mr-2"></i> 0910xxxxxxx</h5>
+            <br>
+            <h5><i class="fas fa-envelope mr-2"></i> laggy80@gmail.com</h5>
+            <br>
+            <div class='divider'></div>
+            <br>
+            <h1>
+              
+              <a href=""><i class="fab fa-facebook-square"></i></a>
+              <a href=""><i class="fab fa-twitter-square"></i></a>
+              
+              <a href=""><i class="fab fa-linkedin"></i></a>
+              <a href=""><i class="fab fa-instagram-square"></i></a>
+            </h1>
+            <br>
+            <small class="text-muted">&copy; Carl Jepsen | Filipino Freelance Coaching</small>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="{{asset('js/portfolio-main.js')}}"></script>
   </body>
 </html>
