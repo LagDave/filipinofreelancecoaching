@@ -1,7 +1,20 @@
 @extends('layouts.user_dashboard')
+
+
 @section('current_section')
 
-<h3 class='section-header mb-2'><i class="fas fa-pager"></i> Manage Portfolio Page</h3>
+<div class="alert alert-danger">This Feature is in Beta mode. Saved Changes may be lost during updates.</div>
+<br>
+<div class="row">
+  <div class="col-9">
+    <h3 class='section-header mb-2'><i class="fas fa-pager"></i> Manage Portfolio Page</h3>
+  </div>
+  <div class="col-3">
+    <p class='text-right'>
+      <a target="_blank" href="/portfolio/user/{{Auth::user()->username}}" class="btn btn-primary"><i class="fas fa-phone"></i> Preview Page</a>
+    </p>
+  </div>
+</div>
 <hr>
 
 <form method='post' action="/home/portfolio/setup" class="form">
