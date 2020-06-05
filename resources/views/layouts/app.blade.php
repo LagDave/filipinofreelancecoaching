@@ -30,7 +30,7 @@
 
     {{-- icons --}}
     <link href="{{asset('homepage/assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/df1803e6d7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 </head>
 <body>
     <div id="app">

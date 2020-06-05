@@ -2,6 +2,5 @@
     "/js/manage_courses.js": "/js/manage_courses.js",
     "/css/app.css": "/css/app.css",
     "/js/manage_downloadables.js": "/js/manage_downloadables.js",
-    "/js/manage_users.js": "/js/manage_users.js",
-    "/js/portfolio_setup.js": "/js/portfolio_setup.js"
+    "/js/manage_users.js": "/js/manage_users.js"
 }
