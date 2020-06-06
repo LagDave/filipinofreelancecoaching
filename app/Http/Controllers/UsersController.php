@@ -90,7 +90,7 @@ class UsersController extends Controller
 
         public function monthlyApply(Request $request){
             request()->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
            ]);
            if ($files = $request->file('image')) {
                $destinationPath = 'payment_proofs/'; // upload path
@@ -127,7 +127,7 @@ class UsersController extends Controller
         }
         public function yearlyApply(Request $request){
             request()->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
            ]);
            if ($files = $request->file('image')) {
                $destinationPath = 'payment_proofs/'; // upload path
@@ -163,7 +163,7 @@ class UsersController extends Controller
         }
         public function lifetimeApply(Request $request){
             request()->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
            ]);
            if ($files = $request->file('image')) {
                $destinationPath = 'payment_proofs/'; // upload path

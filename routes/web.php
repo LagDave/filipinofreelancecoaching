@@ -49,9 +49,9 @@ Route::post('/admin/manage/users/toggleCheck/expired/{user_id}', 'UsersControlle
 
 
 // Announcement Routes
-Route::get('/admin/manage/announcements', 'AnnouncementsController@manage');
-Route::post('/admin/manage/announcements/store', 'AnnouncementsController@store');
-Route::post('/admin/manage/announcements/delete/{announcement_id}','AnnouncementsController@delete');
+Route::get('/admin/manage/announcements', 'AnnouncementsController@manage')->middleware('admin_auth');
+Route::post('/admin/manage/announcements/store', 'AnnouncementsController@store')->middleware('admin_auth');
+Route::post('/admin/manage/announcements/delete/{announcement_id}','AnnouncementsController@delete')->middleware('admin_auth');
 
 // User Dashboard Routes
   // Enrollment
