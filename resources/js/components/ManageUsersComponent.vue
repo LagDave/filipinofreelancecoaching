@@ -20,11 +20,12 @@
                                     <hr />
                                     <transition-group name="fade">
                                         <div
-                                            v-for="user in unsubscribed"
+                                            v-for="(user,
+                                            index) in unsubscribed"
                                             :key="user.id"
                                             class="alert alert-secondary"
                                         >
-                                            <p
+                                            <span
                                                 class="user_name"
                                                 style="cursor:pointer"
                                                 data-toggle="collapse"
@@ -35,12 +36,13 @@
                                                     'collapse_' + user.id
                                                 "
                                             >
+                                                {{ index + 1 + ". " }}
                                                 {{ user.first_name }}
                                                 {{ user.last_name }}
                                                 <small class=""
                                                     >@{{ user.username }}</small
                                                 >
-                                            </p>
+                                            </span>
 
                                             <div
                                                 class="collapse"
@@ -70,7 +72,7 @@
                                     <hr />
                                     <transition-group name="fade">
                                         <div
-                                            v-for="user in pending"
+                                            v-for="(user, index) in pending"
                                             :key="user.id"
                                         >
                                             <div
@@ -144,7 +146,7 @@
                                                 <div class="row">
                                                     <div class="col-5">
                                                         <p
-                                                            class="user_name"
+                                                            class="user_name my-2"
                                                             style="cursor:pointer"
                                                             data-toggle="collapse"
                                                             :href="
@@ -158,6 +160,9 @@
                                                                     user.id
                                                             "
                                                         >
+                                                            {{
+                                                                index + 1 + ". "
+                                                            }}
                                                             {{
                                                                 user.first_name
                                                             }}
@@ -284,7 +289,7 @@
                                     <transition-group name="fade">
                                         <div
                                             :key="user.id"
-                                            v-for="user in subscribed"
+                                            v-for="(user, index) in subscribed"
                                             class="alert alert-primary"
                                         >
                                             <div
@@ -308,8 +313,8 @@
                                                                 style="color:black !important"
                                                                 id="exampleModalLabel"
                                                             >
-                                                                <b
-                                                                    >{{
+                                                                <b>
+                                                                    {{
                                                                         user.first_name
                                                                     }}
                                                                     {{
@@ -363,6 +368,7 @@
                                                     <p
                                                         style="cursor:pointer"
                                                         data-toggle="collapse"
+                                                        class="my-2"
                                                         :href="
                                                             '#collapse_' +
                                                                 user.id
@@ -374,7 +380,8 @@
                                                                 user.id
                                                         "
                                                     >
-                                                        {{ user.first_name }}
+                                                        {{ index + 1 + ". "
+                                                        }}{{ user.first_name }}
                                                         {{ user.last_name }}
                                                     </p>
                                                 </div>
@@ -483,22 +490,61 @@
                                     <hr />
                                     <div
                                         :key="user.id"
-                                        v-for="user in expired"
-                                        class="alert alert-secondary"
+                                        v-for="(user, index) in expired"
+                                        :class="{
+                                            alert: true,
+                                            'alert-secondary':
+                                                user.expired_check == 'false',
+                                            'alert-success':
+                                                user.expired_check == 'true'
+                                        }"
                                     >
-                                        <p
-                                            data-toggle="collapse"
-                                            :href="'#collapse_' + user.id"
-                                            role="button"
-                                            aria-expanded="false"
-                                            :aria-controls="
-                                                'collapse_' + user.id
-                                            "
-                                            style="cursor:pointer"
-                                        >
-                                            {{ user.first_name }}
-                                            {{ user.last_name }}
-                                        </p>
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <p
+                                                    data-toggle="collapse"
+                                                    :href="
+                                                        '#collapse_' + user.id
+                                                    "
+                                                    role="button"
+                                                    aria-expanded="false"
+                                                    :aria-controls="
+                                                        'collapse_' + user.id
+                                                    "
+                                                    style="cursor:pointer"
+                                                    class="my-2"
+                                                >
+                                                    {{ index + 1 + ". " }}
+                                                    {{ user.first_name }}
+                                                    {{ user.last_name }}
+                                                </p>
+                                            </div>
+                                            <div class="col-3">
+                                                <p class="text-right">
+                                                    <button
+                                                        @click="
+                                                            toggleExpiredCheck(
+                                                                user.id
+                                                            )
+                                                        "
+                                                        class="btn btn-sm btn-primary"
+                                                    >
+                                                        <i
+                                                            :class="{
+                                                                fas: true,
+                                                                'fa-check':
+                                                                    user.expired_check ==
+                                                                    'false',
+                                                                'fa-times':
+                                                                    user.expired_check ==
+                                                                    'true'
+                                                            }"
+                                                        ></i>
+                                                    </button>
+                                                </p>
+                                            </div>
+                                        </div>
+
                                         <div
                                             class="collapse"
                                             :id="'collapse_' + user.id"
@@ -775,7 +821,6 @@
 
 <style lang="scss">
 .list-container {
-    background: rgba(170, 170, 170, 0.185);
     padding: 10px;
     min-height: 500px;
     max-height: 500px;
@@ -810,7 +855,8 @@ export default {
             pending: [],
             subscribed: [],
             expired: [],
-            renewal: []
+            renewal: [],
+            unsub_counter: 0
         };
     },
     components: {
@@ -919,6 +965,22 @@ export default {
                     .post(`/admin/manage/users/${id}/unsubscribe`)
                     .then(response => {
                         console.log(response);
+                        this.gatherAll();
+                        this.toggleLoading();
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        this.toggleLoading();
+                    });
+            }
+        },
+        toggleExpiredCheck(id) {
+            if (confirm("Are you sure to check/uncheck this user?")) {
+                this.toggleLoading();
+                axios
+                    .post(`/admin/manage/users/toggleCheck/expired/${id}`)
+                    .then(res => {
+                        console.log(res);
                         this.gatherAll();
                         this.toggleLoading();
                     })

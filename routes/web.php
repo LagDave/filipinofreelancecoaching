@@ -45,6 +45,14 @@ Route::post('/admin/manage/users/{user_id}/grant/{grant_type}', 'UsersController
 Route::post('/admin/manage/users/{user_id}/moveToPending', 'UsersController@moveToPending');
 Route::post('/admin/manage/users/{user_id}/unsubscribe', 'UsersController@unsubscribe');
 
+Route::post('/admin/manage/users/toggleCheck/expired/{user_id}', 'UsersController@toggleExpiredCheck');
+
+
+// Announcement Routes
+Route::get('/admin/manage/announcements', 'AnnouncementsController@manage');
+Route::post('/admin/manage/announcements/store', 'AnnouncementsController@store');
+Route::post('/admin/manage/announcements/delete/{announcement_id}','AnnouncementsController@delete');
+
 // User Dashboard Routes
   // Enrollment
   Route::get('/home/enroll', 'UsersController@enrollPage')->middleware('auth');
@@ -66,6 +74,7 @@ Route::get('/home/subscription', 'UserDashboardsController@subscription')->middl
 Route::get('/home/contacts', "UserDashboardsController@contacts")->middleware('auth');
 Route::get('/home/cheat_sheet', "UserDashboardsController@cheatsheet")->middleware('has_plan');
 Route::get('/home/policies', "UserDashboardsController@policies")->middleware('has_plan');
+Route::get('/home/announcements', "UserDashboardsController@announcements")->middleware('has_plan');
 
 // Courses Routes
 Route::get('/courses/', 'UserCoursesController@index');

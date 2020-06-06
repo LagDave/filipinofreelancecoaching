@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\CourseUser;
+use App\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -50,5 +51,9 @@ class UserDashboardsController extends Controller
     }
     public function policies(){
         return view('user_dash.policies');
+    }
+    public function announcements(){
+        $announcements = Announcement::orderBy('id', 'desc')->get();
+        return view('user_dash.announcements',compact('announcements'));
     }
 }

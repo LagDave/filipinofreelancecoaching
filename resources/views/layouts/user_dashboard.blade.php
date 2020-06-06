@@ -26,25 +26,6 @@
         Your subscription application is still under process. Please wait.
     </div>
     @endif
-
-
-
-    @if($message = Session::get('error'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{$message}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    @endif
-    @if($message = Session::get('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{$message}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    @endif
   </div>
   <div class="container-fluid user-dashboard">
 
@@ -96,6 +77,21 @@
 
             <i class="fas fa-phone"></i>
             <span class='ml-2'>Contact Us</span>
+          </a>
+
+          <a style='position:relative' href="/home/announcements" class="dash-navigation ebooks">
+            <span style='
+            font-size:.6em; 
+            background:dodgerblue; 
+            color:white; 
+            padding:1px 5px;
+            position:absolute;
+            top:-5px;
+            right: -10px;
+            border-radius:2px'
+            >NEW!</span>
+            <i class="fas fa-bullhorn"></i>
+            <span class='ml-2'>Announcements</span>
           </a>
 
         </div>

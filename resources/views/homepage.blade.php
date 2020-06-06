@@ -107,7 +107,7 @@
           <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="/guest/courses">100+ Courses</a></h4>
+              <h4 class="title"><a href="/guest/courses">100+ Courses <small style='color: #e60c3e !important' class='text-muted'>click to view</small></a></h4>
               <p class="description">Get your 100+ courses! From Basic to Professional Courses!</p>
             </div>
           </div>
@@ -115,7 +115,7 @@
           <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="/guest/downloadables">Software and Tools</a></h4>
+              <h4 class="title"><a href="/guest/downloadables">Software and Tools <small style='color: #e60c3e !important' class='text-muted'>click to view</small></a></h4>
               <p class="description">We have at least 30 software and tools worth 30k that you can use!</p>
             </div>
           </div>
@@ -124,7 +124,7 @@
           <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="/guest/downloadables">Templates</a></h4>
+              <h4 class="title"><a href="/guest/downloadables">Templates <small style='color: #e60c3e !important' class='text-muted'>click to view</small></a></h4>
               <p class="description">Get your templates, checklist for VA and Social Media Management!</p>
             </div>
           </div>
@@ -137,7 +137,7 @@
           <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
               <div class="icon"><i class="bx bx-book-alt"></i></div>
-              <h4 class="title"><a href="/guest/downloadables">Ebooks</a></h4>
+              <h4 class="title"><a href="/guest/downloadables">Ebooks <small style='color: #e60c3e !important' class='text-muted'>click to view</small></a></h4>
               <p class="description">Get your ebook for English, Excel and many more!
               </p>
             </div>
@@ -146,8 +146,8 @@
           <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
               <div class="icon"><i class="bx bx-spreadsheet"></i></div>
-              <h4 class="title"><a href="#cheatsheet">Cheat Sheet</a></h4>
-              <p class="description">Know how to start freelancing with our Cheat Sheet!
+              <h4 class="title"><a href="#">Web Portfolio <small style='color: #e60c3e !important' class='text-muted'>click to view</small></a></h4>
+              <p class="description">You will have a website portfolio without paying domain name and hosting.
               </p>
             </div>
           </div>
@@ -155,7 +155,7 @@
           <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
               <div class="icon"><i class="bx bx-certification"></i></div>
-              <h4 class="title"><a href="#certificates">Certificates</a></h4>
+              <h4 class="title"><a href="#">Certificates</a></h4>
               <p class=" description">You can get 1 certificate for each course you will finish!
               </p>
             </div>
@@ -359,6 +359,72 @@
           </div>
 
 
+          {{-- NEW TESTIMONIALS --}}
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{{asset('homepage/assets/img/testimonials/diane-gaongen.jpg')}}" class="testimonial-img" alt="">
+              <h3>Diane Gaongen</h3>
+              <h4>Student</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Very resourceful in all you need and very helpful admin l get my first certificate after l finish online course thank you for this awesome learning you are sharing to us who like to work at home more power to guys😀😀</p>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{{asset('homepage/assets/img/testimonials/kim-lascano.png')}}" class="testimonial-img" alt="">
+              <h3>Kim Lascano</h3>
+              <h4>Student</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Affordable courses and easy to learn.  
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{{asset('homepage/assets/img/testimonials/azael-abas.png')}}" class="testimonial-img" alt="">
+              <h3>Azael C. Abas</h3>
+              <h4>Student</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Thank you po. Na overwhelm ako sa dami ng courses na pwede matutunan.
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{{asset('homepage/assets/img/testimonials/regina-bantug.png')}}" class="testimonial-img" alt="">
+              <h3>Regina Bantug</h3>
+              <h4>Student</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Thanks for the awesome content and courses. Very friendly and accommodating staff. Excited to learn more!!!
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img src="{{asset('homepage/assets/img/testimonials/francia.png')}}" class="testimonial-img" alt="">
+              <h3>Francia Metran Avorque</h3>
+              <h4>Student</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Awesome content and great quality courses. Very accommodating and fast reply. Kudos to your great services! 🙂
+              </p>
+            </div>
+          </div>
+          
+          
+
+
+          
+
+
         </div>
 
       </div>
@@ -532,9 +598,10 @@
           <div class="col-lg-4 col-md-6">
             <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
               <h3>Yearly</h3>
-              <h4><sup>₱</sup>999<span> / year</span></h4>
+              <h4><sup>₱</sup>1499<span> / year</span></h4>
               <ul>
                 <li>100+ Courses</li>
+                <li>Web Portfolio</li>
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
                 <li>E-Books</li>
@@ -551,9 +618,10 @@
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="box recommended" data-aos="zoom-in" data-aos-delay="100">
               <h3>Monthly</h3>
-              <h4><sup>₱</sup>399<span> / month</span></h4>
+              <h4><sup>₱</sup>499<span> / month</span></h4>
               <ul>
                 <li>100+ Courses</li>
+                <li>Web Portfolio</li>
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
                 <li>E-Books</li>
@@ -570,9 +638,10 @@
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
               <h3>Lifetime</h3>
-              <h4><sup>₱</sup>1,999<span> / limitless</span></h4>
+              <h4><sup>₱</sup>2,999<span> / limitless</span></h4>
               <ul>
                 <li>100+ Courses</li>
+                <li>Web Portfolio</li>
                 <li>Templates and Checklists</li>
                 <li>Softwares and Tools</li>
                 <li>E-Books</li>
@@ -625,7 +694,7 @@
               <div>
                 <i class="ri-mail-send-line"></i>
                 <p>
-                <small>info@thefilipinofreelancecoaching.com</small>
+                <small>admin@thefilipinofreelancecoaching.com</small>
               </p>
               </div>
 

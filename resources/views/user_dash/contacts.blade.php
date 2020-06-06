@@ -37,7 +37,7 @@
             <div>
               <i class="ri-mail-send-line"></i>
               <p>
-              info@thefilipinofreelancecoaching.com
+                admin@thefilipinofreelancecoaching.com
             </p>
             </div>
 

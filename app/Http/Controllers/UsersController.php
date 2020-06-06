@@ -28,7 +28,7 @@ class UsersController extends Controller
             'yearlyApply',
             'lifetimeApply',
             'changePass',
-            'confirmTermination'
+            'confirmTermination',
         ]);
     }
     
@@ -204,27 +204,27 @@ class UsersController extends Controller
         return User::all();
     }
     public function unsubscribed(){
-        return User::where('plan', 'no_plan')->orderBy('updated_at', 'asc')->get();
+        return User::where('plan', 'no_plan')->orderBy('id', 'asc')->get();
     }
     public function pending(){
-        return User::where('plan', 'pending')->orderBy('updated_at', 'asc')->with([
+        return User::where('plan', 'pending')->orderBy('id', 'asc')->with([
             'proofs'=>function($q){
                 $q->orderBy('id', 'desc');
             }
         ])->get();
     }
     public function subscribed(){
-        return User::where('plan', 'has_plan')->orderBy('updated_at', 'asc')->with([
+        return User::where('plan', 'has_plan')->orderBy('id', 'asc')->with([
             'proofs'=>function($q){
                 $q->orderBy('id', 'desc');
             }
         ])->get();
     }
     public function expired(){
-        return User::where('plan', 'expired')->orderBy('updated_at', 'asc')->get();
+        return User::where('plan', 'expired')->orderBy('id', 'asc')->get();
     }
     public function renewal(){
-        return User::where('plan', 'renewal')->orderBy('updated_at', 'asc')->with([
+        return User::where('plan', 'renewal')->orderBy('id', 'asc')->with([
             'proofs'=>function($q){
                 $q->orderBy('id', 'desc');
             }
@@ -269,6 +269,16 @@ class UsersController extends Controller
         $user->subscription_end = null;
         $user->plan = 'no_plan';
         $user->plan_name = null;
+        return $user->save();
+    }
+
+    public function toggleExpiredCheck($user_id){
+        $user = User::find($user_id);
+        if($user->expired_check == 'false'){
+            $user->expired_check = 'true';
+            return $user->save();
+        }
+        $user->expired_check = 'false';
         return $user->save();
     }
 }

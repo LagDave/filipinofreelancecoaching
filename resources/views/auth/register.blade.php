@@ -65,7 +65,7 @@
 
                         {{-- Email --}}
                         <div class="form-group">
-                            <label for="email" class="col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-form-label text-md-right">{{ __('E-Mail Address') }} <small class="text-muted">(use gmail only)</small></label>
 
                             <div >
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -98,7 +98,7 @@
                             <label for="password" class="col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div >
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="text" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -113,7 +113,7 @@
                             <label for="password-confirm" class="col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                             <div >
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="text" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
@@ -137,8 +137,9 @@
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header">Yearly</li>
-                        <li class="grey">₱ 999 / year</li>
+                        <li class="grey">₱ 1499 / year</li>
                         <small><li>100+ Courses</li></small>
+                        <small><li>Web Portfolio</li></small>
                         <small><li>Templates and Checklists</li></small>
                         <small><li>Softwares and Tools</li></small>
                         <small><li>E-Books</li></small>
@@ -150,8 +151,9 @@
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header recommended">Monthly</li>
-                        <li class="grey">₱ 399 / month</li>
+                        <li class="grey">₱ 499 / month</li>
                         <small><li>100+ Courses</li></small>
+                        <small><li>Web Portfolio</li></small>
                         <small><li>Templates and Checklists</li></small>
                         <small><li>Softwares and Tools</li></small>
                         <small><li>E-Books</li></small>
@@ -163,8 +165,9 @@
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header">Lifetime</li>
-                        <li class="grey">₱ 1,999 / ∞</li>
+                        <li class="grey">₱ 2,999 / ∞</li>
                         <small><li>100+ Courses</li></small>
+                        <small><li>Web Portfolio</li></small>
                         <small><li>Templates and Checklists</li></small>
                         <small><li>Softwares and Tools</li></small>
                         <small><li>E-Books</li></small>

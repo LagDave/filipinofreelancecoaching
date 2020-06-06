@@ -21,11 +21,12 @@
                             <div class="col-8">
                                 <p
                                     data-toggle="collapse"
-                                    :href="'#collapse_' + certificate.id"
+                                    :href="'#collapse_cert_' + certificate.id"
                                     role="button"
                                     aria-expanded="false"
                                     aria-controls="collapseExample"
                                     style="cursor:pointer"
+                                    class="my-0"
                                 >
                                     <small
                                         >@{{ certificate.user.username }}</small
@@ -33,27 +34,33 @@
                                 </p>
                             </div>
                             <div class="col-4">
-                                <button
-                                    @click="
-                                        toggleGrantCertificate(certificate.id)
-                                    "
-                                    class="btn btn-primary btn-sm"
-                                >
-                                    <i
-                                        v-if="certificate.checked == 'false'"
-                                        class="fas fa-check"
-                                    ></i>
-                                    <i
-                                        v-if="certificate.checked == 'true'"
-                                        class="fas fa-times"
-                                    ></i>
-                                </button>
+                                <p class="text-right my-0">
+                                    <button
+                                        @click="
+                                            toggleGrantCertificate(
+                                                certificate.id
+                                            )
+                                        "
+                                        class="btn btn-primary btn-sm"
+                                    >
+                                        <i
+                                            v-if="
+                                                certificate.checked == 'false'
+                                            "
+                                            class="fas fa-check"
+                                        ></i>
+                                        <i
+                                            v-if="certificate.checked == 'true'"
+                                            class="fas fa-times"
+                                        ></i>
+                                    </button>
+                                </p>
                             </div>
                         </div>
 
                         <div
                             class="collapse"
-                            :id="'collapse_' + certificate.id"
+                            :id="'collapse_cert_' + certificate.id"
                         >
                             <div class="card card-body px-1 py-1">
                                 <p class="mb-1">
@@ -113,17 +120,19 @@ export default {
     methods: {
         ...mapActions(["toggleLoading"]),
         toggleGrantCertificate(id) {
-            this.toggleLoading();
-            axios(`/admin/manage/users/toggleGrant/certificates/${id}`)
-                .then(res => {
-                    console.log(res);
-                    this.getAllCerts();
-                    this.toggleLoading();
-                })
-                .catch(err => {
-                    console.log(err);
-                    this.toggleLoading();
-                });
+            if (confirm("Are you sure to check/uncheck this user?")) {
+                this.toggleLoading();
+                axios(`/admin/manage/users/toggleGrant/certificates/${id}`)
+                    .then(res => {
+                        console.log(res);
+                        this.getAllCerts();
+                        this.toggleLoading();
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        this.toggleLoading();
+                    });
+            }
         },
         getAllCerts() {
             axios(`/admin/manage/users/get/certificates`)

@@ -85,7 +85,7 @@
                                 <a href="/admin/manage/courses" class="dropdown-item"><i class="fas fa-photo-video"></i> Manage Courses </a>
                                 <a href="/admin/manage/users" class="dropdown-item"><i class="fas fa-users"></i> Manage Students </a>
                                 <a href="/admin/manage/downloadables" class="dropdown-item"><i class="fas fa-download"></i> Manage Downloadables  </a>
-    
+                                <a href="/admin/manage/announcements" class="dropdown-item"><i class="fas fa-bullhorn"></i> Manage Announcements  </a>
                             </div>
                         </li>
 
@@ -123,6 +123,23 @@
                 </div>
             </div>
         </nav>
+
+        @if($message = Session::get('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{$message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        @endif
+        @if($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{$message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        @endif
 
         <main class="py-4">
             @yield('content')
