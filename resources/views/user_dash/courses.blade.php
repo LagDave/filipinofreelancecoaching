@@ -2,6 +2,7 @@
 @section('current_section')
   @section('section_title')
   <i class="fas fa-graduation-cap"></i> Your Courses
+  <hr>
   @endsection
   <div class="courses-container row">
     @foreach($courses as $course)
