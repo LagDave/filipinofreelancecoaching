@@ -597,7 +597,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
-              <h3>Yearly</h3>
+              <h3>1 Year</h3>
               <h4><sup>₱</sup>1499<span> / year</span></h4>
               <ul>
                 <li>100+ Courses</li>
@@ -617,7 +617,7 @@
 
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="box recommended" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Monthly</h3>
+              <h3>1 Month</h3>
               <h4><sup>₱</sup>499<span> / month</span></h4>
               <ul>
                 <li>100+ Courses</li>
@@ -627,7 +627,7 @@
                 <li>E-Books</li>
                 <li>Cheat sheet</li>
                 <li>Certificates</li>
-                <li class="na">Chat support</li>
+                <li><del class='text-muted'>Chat support</del></li>
               </ul>
               <div class="btn-wrap">
                 <a href="/register" class="btn-buy">Enroll Now</a>
@@ -761,19 +761,30 @@
 
 
 
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/5ea6f2c135bcbb0c9ab51ebf/default';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <!--End of Tawk.to Script-->
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v7.0'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your Chat Plugin code -->
+<div class="fb-customerchat"
+  attribution=install_email
+  page_id="392409661538166"
+theme_color="#e60c3e">
+</div>
 
 </body>
 
