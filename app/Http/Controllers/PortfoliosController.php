@@ -5,13 +5,21 @@ namespace App\Http\Controllers;
 use App\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PortfoliosController extends Controller
 {
     public function setup(){
         $portfolio_entry =  Portfolio::firstWhere('user_id', Auth::id());
         if(!$portfolio_entry){
-            Portfolio::create(['user_id'=>Auth::id(), 'username'=> Auth::user()->username]);
+            Portfolio::create(
+                [
+                    'user_id'=>Auth::id(),
+                    'username'=> Auth::user()->username,
+                    'email' => Auth::user()->email,
+                    'full_name'=> Auth::user()->first_name . ' '. Auth::user()->last_name
+                    ]
+            );
         }
 
         $portfolio_entry =  Auth::user()->portfolio;
@@ -19,7 +27,17 @@ class PortfoliosController extends Controller
     }
     public function saveSettings(Request $request){
         $portfolio = Portfolio::firstWhere('user_id', Auth::id());
+
         $portfolio->theme = $request->theme;
+        $portfolio->role = $request->role;
+        $portfolio->facebook_link = $request->facebook_link;
+        $portfolio->twitter_link = $request->twitter_link;
+        $portfolio->instagram_link = $request->instagram_link;
+        $portfolio->linkedin_link = $request->linkedin_link;
+        $portfolio->about_content = $request->about_content;
+        $portfolio->address = $request->address;
+        $portfolio->phone_number = $request->phone_number;
+
         $portfolio->save();
 
         return redirect()->back()->with('success', "Settings saved.");
@@ -31,5 +49,25 @@ class PortfoliosController extends Controller
             return view('predefined_portfolio.index', compact('portfolio_entry'));
         }
         abort(404);
+    }
+    public function uploadResume(Request $request){
+        $file_name = Auth::user()->username.'.'.$request->file('resume')->extension();
+        if($request->file('resume')->storeAs('public/resumes', $file_name)){
+            $portfolio_entry = Portfolio::firstWhere('user_id', Auth::id());
+            $portfolio_entry->resume_link = '/storage/resumes/'.$file_name;
+            if($portfolio_entry->save()){
+                return back()->with('success', 'Resume Uploaded and Saved!');
+            }
+        }
+    }
+    public function uploadProfilePic(Request $request){
+        $file_name = Auth::user()->username.'.'.$request->file('profile_pic')->extension();
+        if($request->file('profile_pic')->storeAs('public/profile_pics/', $file_name)){
+            $portfolio_entry = Portfolio::firstWhere('user_id', Auth::id());
+            $portfolio_entry->profile_pic = '/storage/profile_pics/'.$file_name;
+            if($portfolio_entry->save()){
+                return back()->with('success', 'Profile Picture Uploaded and Saved!');
+            }
+        }
     }
 }

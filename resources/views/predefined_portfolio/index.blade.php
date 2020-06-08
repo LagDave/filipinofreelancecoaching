@@ -41,14 +41,14 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>Portfolio Template</title>
+    <title>{{$portfolio_entry->full_name}}</title>
   </head>
   <body>
     <!-- Navigation bar START -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
-        <a class="navbar-brand" href="#">Carl Jepsen</a>
+        <a class="navbar-brand" href="#">{{$portfolio_entry->full_name}}</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -88,36 +88,41 @@
       <div
         class="container d-flex flex-column justify-content-center align-items-center"
       >
-        <img data-aos="fade-up" src="{{asset('portfolio-images/dp.png')}}" alt="" class="profile" />
+        <img data-aos="fade-up" src="{{url($portfolio_entry->profile_pic)}}" alt="" class="profile" />
         <h3
           data-aos="fade-right"
           data-aos-delay="300"
           class="mt-3 text-center display-4"
         >
-          Hi, I am Carl Jepsen
+          Hi, I am {{$portfolio_entry->full_name}}
         </h3>
         <h6 data-aos="fade-left" data-aos-delay="500" class="text-center mt-2">
-          Your Web Developer
+          {{$portfolio_entry->role}}
         </h6>
 
         <div class="socmed-icons mt-3">
-          <a href="">
-            <img
-              data-aos="fade-up"
-              data-aos-delay="700"
-              class="mx-1"
-              src="{{asset('portfolio-images/facebook.png')}}"
-            />
-          </a>
-          <a href="">
-            <img
-              data-aos="fade-up"
-              data-aos-delay="900"
-              class="mx-1"
-              src="{{asset('portfolio-images/twitter.png')}}"
-            />
-          </a>
-          <a href="">
+          @if($portfolio_entry->facebook_link != NULL)
+          <a href="{{$portfolio_entry->facebook_link}}">
+              <img
+                data-aos="fade-up"
+                data-aos-delay="700"
+                class="mx-1"
+                src="{{asset('portfolio-images/facebook.png')}}"
+              />
+            </a>
+          @endif
+          @if($portfolio_entry->twitter_link != NULL)
+            <a href="{{$portfolio_entry->twitter_link}}">
+              <img
+                data-aos="fade-up"
+                data-aos-delay="900"
+                class="mx-1"
+                src="{{asset('portfolio-images/twitter.png')}}"
+              />
+            </a>
+          @endif
+          @if($portfolio_entry->linkedin_link != NULL)
+          <a href="{{$portfolio_entry->linkedin_link}}">
             <img
               data-aos="fade-up"
               data-aos-delay="1100"
@@ -125,22 +130,29 @@
               src="{{asset('portfolio-images/in.png')}}"
             />
           </a>
-          <a href="">
-            <img
-              data-aos="fade-up"
-              data-aos-delay="1300"
-              class="mx-1"
-              src="{{asset('portfolio-images/instagram.png')}}"
-            />
-          </a>
-
-          <button
-            data-aos="fade-left"
-            data-aos-delay="1500"
-            class="ml-3 btn btn-primary"
-          >
-            <i class="fas fa-download"></i> Download Resume
-          </button>
+          @endif
+          @if($portfolio_entry->instagram_link != NULL)
+            <a href="{{$portfolio_entry->instagram_link}}">
+              <img
+                data-aos="fade-up"
+                data-aos-delay="1300"
+                class="mx-1"
+                src="{{asset('portfolio-images/instagram.png')}}"
+              />
+            </a>  
+          @endif
+          
+          @if($portfolio_entry->resume_link != NULL)
+            <a
+            href="{{$portfolio_entry->resume_link}}"
+            target="_blank"
+              data-aos="fade-left"
+              data-aos-delay="1500"
+              class="ml-3 btn btn-primary"
+            >
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          @endif
         </div>
       </div>
     </div>
@@ -165,14 +177,7 @@
             </h3>
             <hr />
             <p data-aos="fade-left" data-aos-delay="300">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
-              dolorum dolorem itaque odit earum dolor vitae architecto ea
-              asperiores ab! Voluptatem, nam! Quo quisquam perferendis sit et
-              error facilis eveniet. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Expedita, dignissimos commodi? Modi sapiente
-              dolorem reprehenderit architecto sint dolore, nostrum inventore
-              consequuntur vel odit, explicabo tenetur. Sunt possimus facere id
-              nemo. Lorem ipsum dolor sit amet consectetur adipisici.
+              {{$portfolio_entry->about_content}}
             </p>
             <button
               data-aos="fade-left"
@@ -496,24 +501,31 @@
             </form>
           </div>
           <div class="col-lg-6">
-            <h5><i class="fas fa-map-marker-alt mr-2"></i> Bldg. 21, Sunflower st., Barangay Matina, Davao City</h5>
+            <p class='text-white'><i class="fas fa-map-marker-alt mr-2"></i> {{$portfolio_entry->address}}</p>
             <br>
-            <h5><i class="fas fa-phone mr-2"></i> 0910xxxxxxx</h5>
+            <p class='text-white'><i class="fas fa-phone mr-2"></i> {{$portfolio_entry->phone_number}}</p>
             <br>
-            <h5><i class="fas fa-envelope mr-2"></i> laggy80@gmail.com</h5>
+            <p class='text-white'><i class="fas fa-envelope mr-2"></i> {{$portfolio_entry->email}}</p>
             <br>
             <div class='divider'></div>
             <br>
             <h1>
               
-              <a href=""><i class="fab fa-facebook-square"></i></a>
-              <a href=""><i class="fab fa-twitter-square"></i></a>
-              
-              <a href=""><i class="fab fa-linkedin"></i></a>
-              <a href=""><i class="fab fa-instagram-square"></i></a>
+              @if($portfolio_entry->facebook_link != NULL)
+                <a href="{{$portfolio_entry->facebook_link}}"><i class="fab fa-facebook-square"></i></a>
+              @endif
+              @if($portfolio_entry->twitter_link != NULL)
+                <a href="{{$portfolio_entry->twitter_link}}"><i class="fab fa-twitter-square"></i></a>
+              @endif
+              @if($portfolio_entry->linkedin_link != NULL)
+                <a href="{{$portfolio_entry->linkedin_link}}"><i class="fab fa-linkedin"></i></a>
+              @endif
+              @if($portfolio_entry->instagram_link != NULL)
+                <a href="{{$portfolio_entry->instagram_link}}"><i class="fab fa-instagram-square"></i></a>
+              @endif
             </h1>
             <br>
-            <small class="text-muted">&copy; Carl Jepsen | Filipino Freelance Coaching</small>
+            <small class="text-muted">&copy; {{$portfolio_entry->full_name}} | Filipino Freelance Coaching</small>
 
           </div>
         </div>
