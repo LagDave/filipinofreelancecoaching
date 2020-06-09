@@ -598,7 +598,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
               <h3>1 Year</h3>
-              <h4><sup>₱</sup>1499<span> / year</span></h4>
+              <h4><sup>₱</sup>999<span> / year</span></h4>
               <ul>
                 <li>100+ Courses</li>
                 <li>Web Portfolio</li>
@@ -618,7 +618,7 @@
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="box recommended" data-aos="zoom-in" data-aos-delay="100">
               <h3>1 Month</h3>
-              <h4><sup>₱</sup>499<span> / month</span></h4>
+              <h4><sup>₱</sup>399<span> / month</span></h4>
               <ul>
                 <li>100+ Courses</li>
                 <li>Web Portfolio</li>
@@ -638,7 +638,7 @@
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
               <h3>Lifetime</h3>
-              <h4><sup>₱</sup>2,999<span> / limitless</span></h4>
+              <h4><sup>₱</sup>1,999<span> / limitless</span></h4>
               <ul>
                 <li>100+ Courses</li>
                 <li>Web Portfolio</li>

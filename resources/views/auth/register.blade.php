@@ -133,7 +133,7 @@
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header">1 Year</li>
-                        <li class="grey">₱ 1499 / year</li>
+                        <li class="grey">₱ 999 / year</li>
                         <small><li>100+ Courses</li></small>
                         <small><li>Web Portfolio</li></small>
                         <small><li>Templates and Checklists</li></small>
@@ -147,7 +147,7 @@
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header recommended">1 Month</li>
-                        <li class="grey">₱ 499 / month</li>
+                        <li class="grey">₱ 399 / month</li>
                         <small><li>100+ Courses</li></small>
                         <small><li>Web Portfolio</li></small>
                         <small><li>Templates and Checklists</li></small>
@@ -161,7 +161,7 @@
                 <div class="col-lg-4">
                     <ul class="price">
                         <li class="header">Lifetime</li>
-                        <li class="grey">₱ 2,999 / ∞</li>
+                        <li class="grey">₱ 1,999 / ∞</li>
                         <small><li>100+ Courses</li></small>
                         <small><li>Web Portfolio</li></small>
                         <small><li>Templates and Checklists</li></small>
