@@ -365,108 +365,43 @@
     <div data-aos='fade-up' class="my-0 py-5 bg-primary">
       <div class="container">
         <div data-aos='zoom-in' data-aos-delay='200' class="projects-slider">
-          <div>
-            <div class="card py-2 px-2 card-body mx-1">
-              <div class="row">
-                <div style="position: relative;" class="col-4 image-container">
-                  <div
-                    class="image"
-                    style="
-                      position: absolute;
-                      height: 100%;
-                      width: 100%;
-                      background: url('https://www.visioncritical.com/hubfs/Imported_Blog_Media/BLG_Andrew-G_-River-Sample_09_13_12.png');
-                      background-position: center;
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                    "
-                  ></div>
-                </div>
-                <div class="text-container pl-4 col-8">
-                  <strong class="text-primary"
-                    >Learning Management System</strong
-                  >
-                  <br />
-                  <small class="text-muted">Personal Project</small>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Maiores eaque minima iste accusamus optio harum assumenda.
-                  </p>
-                  <a href="#" class="btn btn-primary"
-                    ><i class="fas fa-external-link-alt"></i> Learn More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="card py-2 px-2 card-body mx-1">
-              <div class="row">
-                <div style="position: relative;" class="col-4 image-container">
-                  <div
-                    class="image"
-                    style="
-                      position: absolute;
-                      height: 100%;
-                      width: 100%;
-                      background: url('https://www.visioncritical.com/hubfs/Imported_Blog_Media/BLG_Andrew-G_-River-Sample_09_13_12.png');
-                      background-position: center;
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                    "
-                  ></div>
-                </div>
-                <div class="text-container pl-4 col-8">
-                  <strong class="text-primary"
-                    >Learning Management System</strong
-                  >
-                  <br />
-                  <small class="text-muted">Personal Project</small>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Maiores eaque minima iste accusamus optio harum assumenda.
-                  </p>
-                  <a href="#" class="btn btn-primary"
-                    ><i class="fas fa-external-link-alt"></i> Learn More</a
-                  >
+
+          @foreach($projects as $project)
+            <div>
+              <div class="card py-2 px-2 card-body mx-1">
+                <div class="row">
+                  <div style="position: relative;" class="col-4 image-container">
+                    <div
+                      class="image"
+                      style="
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        background: url('{{$project->thumbnail}}');
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                      "
+                    ></div>
+                  </div>
+                  <div class="text-container pl-4 col-8">
+                    <strong class="text-primary"
+                    >{{$project->title}}</strong
+                    >
+                    <br />
+                    <p>
+                      {{$project->description}}
+                    </p>
+                    <a href="{{$project->link}}" class="btn btn-primary"
+                      ><i class="fas fa-external-link-alt"></i> Learn More</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div>
-            <div class="card py-2 px-2 card-body mx-1">
-              <div class="row">
-                <div style="position: relative;" class="col-4 image-container">
-                  <div
-                    class="image"
-                    style="
-                      position: absolute;
-                      height: 100%;
-                      width: 100%;
-                      background: url('https://www.visioncritical.com/hubfs/Imported_Blog_Media/BLG_Andrew-G_-River-Sample_09_13_12.png');
-                      background-position: center;
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                    "
-                  ></div>
-                </div>
-                <div class="text-container pl-4 col-8">
-                  <strong class="text-primary"
-                    >Learning Management System</strong
-                  >
-                  <br />
-                  <small class="text-muted">Personal Project</small>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Maiores eaque minima iste accusamus optio harum assumenda.
-                  </p>
-                  <a href="#" class="btn btn-primary"
-                    ><i class="fas fa-external-link-alt"></i> Learn More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+          @endforeach
+
+
         </div>
 
         </div>

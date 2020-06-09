@@ -56,5 +56,8 @@ class User extends Authenticatable
     public function portfolio(){
         return $this->hasOne('App\Portfolio');
     }
+    public function projects(){
+        return $this->hasMany('App\Project');
+    }
 
 }

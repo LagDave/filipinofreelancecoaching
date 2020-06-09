@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Project;
 use App\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -45,8 +47,12 @@ class PortfoliosController extends Controller
     }
     public function index($username){
         $portfolio_entry = Portfolio::firstWhere('username', $username);
+
+        $user = User::firstWhere('username', $username);
+
+        $projects = $user->projects;
         if($portfolio_entry){
-            return view('predefined_portfolio.index', compact('portfolio_entry'));
+            return view('predefined_portfolio.index', compact('portfolio_entry', 'projects'));
         }
         abort(404);
     }
@@ -68,6 +74,27 @@ class PortfoliosController extends Controller
             if($portfolio_entry->save()){
                 return back()->with('success', 'Profile Picture Uploaded and Saved!');
             }
+        }
+    }
+    public function projects(){
+        $projects = Auth::user()->projects;
+        return view('predefined_portfolio.projects', compact('projects'));
+    }
+    public function storeProject(Request $request){
+        $project = new Project;
+        $project->title = $request->title;
+        $project->description = $request->description;
+        $project->thumbnail = $request->thumbnail;
+        $project->link = $request->link;
+        $project->user_id = Auth::id();
+
+        if($project->save()){
+            return back()->with('success', 'Project Added Successfully!');
+        }
+    }
+    public function deleteProject($id){
+        if(Project::find($id)->delete()){
+            return back()->with('success', 'Project Deleted Successfully');
         }
     }
 }

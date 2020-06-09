@@ -105,3 +105,7 @@ Route::post('/home/portfolio/setup', 'PortfoliosController@saveSettings');
 Route::post('/home/portfolio/setup/resume', 'PortfoliosController@uploadResume');
 Route::post('/home/portfolio/setup/profilePic', 'PortfoliosController@uploadProfilePic');
 Route::get('/portfolio/user/{username}', 'PortfoliosController@index');
+
+Route::get('/home/portfolio/projects', 'PortfoliosController@projects');
+Route::post('/home/portfolio/projects/store', 'PortfoliosController@storeProject');
+Route::post('/home/portfolio/projects/delete/{id}', 'PortfoliosController@deleteProject');
