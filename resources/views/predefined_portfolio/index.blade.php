@@ -154,6 +154,33 @@
             </a>
           @endif
         </div>
+
+        <div class="freelance-sites">
+          <p data-aos='fade-up' data-aos-delay=1500 class='my-3'>
+            <small>
+            @if($portfolio_entry->online_jobs_link != NULL)
+            <a class='text-primary' href="{{$portfolio_entry->online_jobs_link}}">
+              Online Jobs PH
+            </a>
+            @endif
+            @if($portfolio_entry->upwork_link != NULL)
+            <a class='text-primary' href="{{$portfolio_entry->upwork_link}}">
+              | UpWork
+            </a>
+            @endif
+            @if($portfolio_entry->freelancer_link != NULL)
+            <a class='text-primary' href="{{$portfolio_entry->freelancer_link}}">
+              | Freelancer
+            </a>
+            @endif
+            @if($portfolio_entry->fiver_link != NULL)
+            <a class='text-primary' href="{{$portfolio_entry->fiver_link}}">
+              | Fiverr
+            </a>
+            @endif
+          </small>
+          </p>
+        </div>
       </div>
     </div>
 
@@ -164,12 +191,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <img
-              data-aos="fade-right"
-              class="img-fluid pb-2"
-              src="{{asset('portfolio-images/about.png')}}"
-              alt=""
-            />
+            {!! $portfolio_entry->intro_video !!}
           </div>
           <div class="col-lg-6">
             <h3 data-aos="fade-left" data-aos-delay="200">
@@ -179,13 +201,16 @@
             <p data-aos="fade-left" data-aos-delay="300">
               {{$portfolio_entry->about_content}}
             </p>
-            <button
+            @if($portfolio_entry->resume_link != NULL)
+            <a
+            href="{{$portfolio_entry->resume_link}}"
+            target="_blank"
               data-aos="fade-left"
-              data-aos-delay="400"
-              class="btn-primary btn"
+              class="btn btn-primary"
             >
-              <i class="fas fa-phone"></i> Get in touch
-            </button>
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          @endif
           </div>
         </div>
       </div>
@@ -444,21 +469,34 @@
             <br>
             <div class='divider'></div>
             <br>
-            <h1>
-              
-              @if($portfolio_entry->facebook_link != NULL)
-                <a href="{{$portfolio_entry->facebook_link}}"><i class="fab fa-facebook-square"></i></a>
+              <p>
+              @if($portfolio_entry->online_jobs_link != NULL)
+              <a class='text-white' href="{{$portfolio_entry->online_jobs_link}}">
+                Online Jobs PH
+              </a>
               @endif
-              @if($portfolio_entry->twitter_link != NULL)
-                <a href="{{$portfolio_entry->twitter_link}}"><i class="fab fa-twitter-square"></i></a>
+              </p>
+              <p>
+              @if($portfolio_entry->upwork_link != NULL)
+              <a class='text-white' href="{{$portfolio_entry->upwork_link}}">
+                UpWork
+              </a>
               @endif
-              @if($portfolio_entry->linkedin_link != NULL)
-                <a href="{{$portfolio_entry->linkedin_link}}"><i class="fab fa-linkedin"></i></a>
+              </p>
+              <p>
+              @if($portfolio_entry->freelancer_link != NULL)
+              <a class='text-white' href="{{$portfolio_entry->freelancer_link}}">
+                Freelancer
+              </a>
               @endif
-              @if($portfolio_entry->instagram_link != NULL)
-                <a href="{{$portfolio_entry->instagram_link}}"><i class="fab fa-instagram-square"></i></a>
+              </p>
+              <p>
+              @if($portfolio_entry->fiver_link != NULL)
+              <a class='text-white' href="{{$portfolio_entry->fiver_link}}">
+                Fiverr
+              </a>
               @endif
-            </h1>
+              </p>
             <br>
             <small class="text-muted">&copy; {{$portfolio_entry->full_name}} | Filipino Freelance Coaching</small>
 

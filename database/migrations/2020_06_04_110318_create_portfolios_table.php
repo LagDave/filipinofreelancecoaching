@@ -32,6 +32,13 @@ class CreatePortfoliosTable extends Migration
             $table->string('address')->default('Bldg. 21, Sunflower st., Barangay Matina, Davao City');
             $table->string('phone_number')->default('0910xxxxxxx');
             $table->string('email');
+
+            $table->string('online_jobs_link')->nullable();
+            $table->string('upwork_link')->nullable();
+            $table->string('freelancer_link')->nullable();
+            $table->string('fiver_link')->nullable();
+
+            $table->text('intro_video')->nullable();
         });
     }
 

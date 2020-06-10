@@ -65,10 +65,38 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <label>Online Jobs PH Link:</label>
+        <input value='{{$portfolio_entry->online_jobs_link}}' type="text" name='online_jobs_link' class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Upwork Link:</label>
+        <input value='{{$portfolio_entry->upwork_link}}' type="text" name='upwork_link' class="form-control">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+        <label>Freelancer Link:</label>
+        <input value='{{$portfolio_entry->freelancer_link}}' type="text" name='freelancer_link' class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Fiverr Link:</label>
+        <input value='{{$portfolio_entry->fiver_link}}' type="text" name='fiver_link' class="form-control">
+      </div>
+
+    </div>
+  </div>
 
   <div class="form-group">
     <label>About Me:</label>
-      <textarea name="about_content" required rows="10" class="form-control">{{$portfolio_entry->about_content}}</textarea>
+      <textarea name="about_content" required rows="5" class="form-control">{{$portfolio_entry->about_content}}</textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Intro Video Embed Link:</label>
+      <textarea name="intro_video" required rows="5" class="form-control">{{$portfolio_entry->intro_video}}</textarea>
   </div>
   
   <div class="row">

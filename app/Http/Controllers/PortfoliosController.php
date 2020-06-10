@@ -32,10 +32,17 @@ class PortfoliosController extends Controller
 
         $portfolio->theme = $request->theme;
         $portfolio->role = $request->role;
+        $portfolio->online_jobs_link = $request->online_jobs_link;
+        $portfolio->upwork_link = $request->upwork_link;
+        $portfolio->freelancer_link = $request->freelancer_link;
+        $portfolio->fiver_link = $request->fiver_link;
+        $portfolio->intro_video = $request->intro_video;
+
         $portfolio->facebook_link = $request->facebook_link;
         $portfolio->twitter_link = $request->twitter_link;
         $portfolio->instagram_link = $request->instagram_link;
         $portfolio->linkedin_link = $request->linkedin_link;
+
         $portfolio->about_content = $request->about_content;
         $portfolio->address = $request->address;
         $portfolio->phone_number = $request->phone_number;
