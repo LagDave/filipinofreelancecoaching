@@ -229,152 +229,37 @@
         </p>
         <br /><br />
         <div class="row">
-          <div data-aos="zoom-in" data-aos-delay="100" class="col-lg-4 col-md-6 mb-2">
-            <div class="card shadow-sm">
-              <img class="img-fluid" src="{{asset('portfolio-images/cert.jpg')}}" alt="" />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Quick sample text to create the card title and make up the
-                  body of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary"
-                  ><i class="fas fa-external-link-alt"></i> Learn More</a
-                >
+
+          @foreach($featured_certificates as $certificate)
+            <div data-aos="zoom-in" data-aos-delay="100" class="col-lg-4 col-md-6 mb-2">
+              <div class="card shadow-sm">
+                <img class="img-fluid" src="{{$certificate->image}}" alt="" />
+                <div class="card-body">
+                  <h5 class="card-title">{{$certificate->title}}</h5>
+                  <p class="card-text">
+                    {{$certificate->description}}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div data-aos="zoom-in" data-aos-delay="200" class="col-lg-4 col-md-6 mb-2">
-            <div class="card shadow-sm">
-              <img class="img-fluid" src="{{asset('portfolio-images/cert.jpg')}}" alt="" />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Quick sample text to create the card title and make up the
-                  body of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary"
-                  ><i class="fas fa-external-link-alt"></i> Learn More</a
-                >
-              </div>
-            </div>
-          </div>
-          <div data-aos="zoom-in" data-aos-delay="300" class="col-lg-4 col-md-6 mb-2">
-            <div class="card shadow-sm">
-              <img class="img-fluid" src="{{asset('portfolio-images/cert.jpg')}}" alt="" />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Quick sample text to create the card title and make up the
-                  body of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary"
-                  ><i class="fas fa-external-link-alt"></i> Learn More</a
-                >
-              </div>
-            </div>
-          </div>
+          @endforeach
+
+
         </div>
         <div class="row mt-5">
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+          @foreach($non_featured_certificates as $certificate)
+          <div data-aos="fade-up" class="col-lg-2 col-md-4 col-sm-6 mb-5">
             <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
+              
+              src="{{$certificate->image}}"
               alt=""
-              class="img-fluid"
+              class="img-fluid mb-2"
             />
+            <small>{{$certificate->title}}</small>
           </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
+          @endforeach
         </div>
-        <div class="row mt-5">
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <img
-              data-aos="fade-up"
-              src="{{asset('portfolio-images/cert.jpg')}}"
-              alt=""
-              class="img-fluid"
-            />
-          </div>
-        </div>
+
       </div>
     </div>
     <!-- Certificates End -->

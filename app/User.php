@@ -59,5 +59,9 @@ class User extends Authenticatable
     public function projects(){
         return $this->hasMany('App\Project');
     }
+    public function certificates(){
+        return $this->hasMany('App\Certificate');
+    }
+
 
 }

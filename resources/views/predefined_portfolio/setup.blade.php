@@ -18,7 +18,7 @@
 <div class="btn-group">
   <a href="/home/portfolio/setup" class="btn disabled btn-secondary">Basic Information</a>
   <a href="/home/portfolio/projects" class="btn btn-secondary">Projects</a>
-  <a href="" class="btn btn-secondary">Certificates</a>
+  <a href="/home/portfolio/certificates" class="btn btn-secondary">Certificates</a>
 </div>
 <br>
 

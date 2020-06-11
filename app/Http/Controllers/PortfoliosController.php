@@ -58,8 +58,10 @@ class PortfoliosController extends Controller
         $user = User::firstWhere('username', $username);
 
         $projects = $user->projects;
+        $featured_certificates = $user->certificates()->where('is_featured', 'true')->get();
+        $non_featured_certificates = $user->certificates()->where('is_featured', 'false')->get();
         if($portfolio_entry){
-            return view('predefined_portfolio.index', compact('portfolio_entry', 'projects'));
+            return view('predefined_portfolio.index', compact('portfolio_entry', 'projects', 'featured_certificates', 'non_featured_certificates'));
         }
         abort(404);
     }
@@ -103,5 +105,119 @@ class PortfoliosController extends Controller
         if(Project::find($id)->delete()){
             return back()->with('success', 'Project Deleted Successfully');
         }
+    }
+
+    public function certificates(){
+        $featured_certificates = Auth::user()->certificates()->where('is_featured', 'true')->get();
+        $non_featured_certificates = Auth::user()->certificates()->where('is_featured', 'false')->get();
+        return view('predefined_portfolio.certificates', compact('featured_certificates', 'non_featured_certificates'));        
+    }
+    public function store(Request $request){
+        if($request->is_featured == 'true'){
+
+            if(isset($request->description) && $request->description !== ''){
+                $featured_certificates = Auth::user()->certificates()->where('is_featured', 'true')->get();
+                $featured_certificates_count = sizeof($featured_certificates);
+                
+                if($featured_certificates_count < 3){
+
+                    if(Auth::user()->certificates()->create([
+                        'title'=>$request->title,
+                        'is_featured' => $request->is_featured,
+                        'image'=> $request->image,
+                        'description' => $request->description
+                    ])){
+                        return back()->with('success', 'Featured Certificate Added!');
+                    }
+
+                }else{
+                    return back()->with('error', 'You can only feature up to 3 certificates.');
+                }
+            }
+            return back()->with('error', 'Description is required for featured certificats.');
+
+            
+
+        }
+
+        $non_featured_certificates = Auth::user()->certificates()->where('is_featured', 'false')->get();
+        $non_featured_certificates_count = sizeof($non_featured_certificates);
+
+        if($non_featured_certificates_count < 12){
+            if(Auth::user()->certificates()->create([
+                'title'=>$request->title,
+                'is_featured' => $request->is_featured,
+                'image'=> $request->image
+            ])){
+                return back()->with('success', 'Non-featured Certificate Added!');
+            }
+        }else{
+            return back()->with('error', 'You can only add up to 12 non-featured certificates.');
+        }
+
+    }
+    public function deleteCertificate($id){
+        if(Auth::user()->certificates()->firstwhere('id', $id)->delete()){
+            return back()->with('success', 'Certificate Deleted!');
+        }
+        return back()->with('error', 'Certificate not found');
+    }
+    public function setToFeatured($id){
+        $featured_certificates = Auth::user()->certificates()->where('is_featured', 'true')->get();
+        $featured_certificates_count = sizeof($featured_certificates);
+
+        if($featured_certificates_count < 3){
+
+            $certificate = Auth::user()->certificates()->firstWhere('id', $id);
+            if($certificate->is_featured == 'false'){
+                $certificate->is_featured = 'true';
+                $certificate->save();
+                return back()->with('success', 'certificate toggled');
+            }
+
+            $certificate->is_featured = 'false';
+            $certificate->save();
+            return back()->with('success', 'certificate toggled');
+        }
+        return back()->with('error', 'Remember, you can only have 3 featured certificates.');
+    }
+    public function setToNonFeatured($id){
+        $non_featured_certificates = Auth::user()->certificates()->where('is_featured', 'false')->get();
+        $non_featured_certificates_count = sizeof($non_featured_certificates);
+
+        if($non_featured_certificates_count < 12){
+
+            $certificate = Auth::user()->certificates()->firstWhere('id', $id);
+            if($certificate->is_featured == 'false'){
+                $certificate->is_featured = 'true';
+                $certificate->save();
+                return back()->with('success', 'certificate toggled');
+            }
+
+            $certificate->is_featured = 'false';
+            $certificate->save();
+            return back()->with('success', 'certificate toggled');
+        }
+        return back()->with('error', 'Remember, you can only have 12 featured certificates.');
+    }
+    public function editCertificate($id){
+        $certificate = Auth::user()->certificates()->firstWhere('id', $id);
+        if(isset($certificate)){
+            return view('predefined_portfolio.edit_certificate', compact('certificate'));
+        }
+        return back()->with('error', 'Certificate not found');
+    }
+    public function updateCertificate($id, Request $request){
+        $certificate = Auth::user()->certificates()->firstWhere('id', $id);
+        if(isset($certificate)){
+            $certificate->title = $request->title;
+            $certificate->image = $request->image;
+            $certificate->description = $request->description;
+
+            if($certificate->save()){
+                return redirect('/home/portfolio/certificates')->with('success', 'Certificate updated!');
+            }
+        }
+        return back()->with('error', 'Certificate not found');
     }
 }

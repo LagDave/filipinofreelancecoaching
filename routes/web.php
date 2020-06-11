@@ -109,3 +109,11 @@ Route::get('/portfolio/user/{username}', 'PortfoliosController@index');
 Route::get('/home/portfolio/projects', 'PortfoliosController@projects');
 Route::post('/home/portfolio/projects/store', 'PortfoliosController@storeProject');
 Route::post('/home/portfolio/projects/delete/{id}', 'PortfoliosController@deleteProject');
+
+Route::get('/home/portfolio/certificates', 'PortfoliosController@certificates');
+Route::post('/home/portfolio/certificates/store', 'PortfoliosController@store');
+Route::post('/home/portfolio/certificates/delete/{id}', 'PortfoliosController@deleteCertificate');
+Route::get('/home/portfolio/certificates/setToFeatured/{id}', 'PortfoliosController@setToFeatured');
+Route::get('/home/portfolio/certificates/setToNonFeatured/{id}', 'PortfoliosController@setToNonFeatured');
+Route::get('/home/portfolio/certificates/edit/{id}', 'PortfoliosController@editCertificate');
+Route::post('/home/portfolio/certificates/update/{id}', 'PortfoliosController@updateCertificate');
