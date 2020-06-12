@@ -28,14 +28,14 @@
     <div class="col-4">
       <div class="form-group">
         <label>Project Title:</label>
-        <input placeholder='My Cool Project' type="text" name='title' class="form-control">
+        <input required placeholder='My Cool Project' type="text" name='title' class="form-control">
       </div>
     </div>
 
     <div class="col-4">
       <div class="form-group">
         <label>Project External Link:</label>
-        <input type="text" placeholder='https://project.link' name='link' class="form-control">
+        <input  required type="text" placeholder='https://project.link' name='link' class="form-control">
       </div>
     </div>
 
@@ -52,14 +52,14 @@
               >Need Help?</small
           ></a
       ></label>
-        <input placeholder='https://i.postimg.cc/image-direct-link' type="text" name='thumbnail' class="form-control">
+        <input required placeholder='https://i.postimg.cc/image-direct-link' type="text" name='thumbnail' class="form-control">
       </div>
     </div>
   </div>
 
   <div class="form-group">
     <label>Project Description:</label>
-    <textarea name="description" rows="5" class="form-control"></textarea>
+    <textarea required name="description" rows="5" class="form-control"></textarea>
   </div>
 
   <button class="btn btn-primary">Add Project</button>

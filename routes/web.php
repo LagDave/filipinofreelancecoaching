@@ -100,20 +100,22 @@ Route::post('/reset_password/updateStore', 'PasswordResetsController@updateStore
 
 
 // PREDEFINED PORTFOLIO TEMPLATE
-Route::get('/home/portfolio/setup', 'PortfoliosController@setup')->middleware('admin_auth');
-Route::post('/home/portfolio/setup', 'PortfoliosController@saveSettings');
-Route::post('/home/portfolio/setup/resume', 'PortfoliosController@uploadResume');
-Route::post('/home/portfolio/setup/profilePic', 'PortfoliosController@uploadProfilePic');
 Route::get('/portfolio/user/{username}', 'PortfoliosController@index');
 
-Route::get('/home/portfolio/projects', 'PortfoliosController@projects');
-Route::post('/home/portfolio/projects/store', 'PortfoliosController@storeProject');
-Route::post('/home/portfolio/projects/delete/{id}', 'PortfoliosController@deleteProject');
+Route::get('/home/portfolio/setup', 'PortfoliosController@setup')->middleware('has_plan');
+Route::post('/home/portfolio/setup', 'PortfoliosController@saveSettings')->middleware('has_plan');
+Route::post('/home/portfolio/setup/resume', 'PortfoliosController@uploadResume')->middleware('has_plan');
+Route::post('/home/portfolio/setup/profilePic', 'PortfoliosController@uploadProfilePic')->middleware('has_plan');
 
-Route::get('/home/portfolio/certificates', 'PortfoliosController@certificates');
-Route::post('/home/portfolio/certificates/store', 'PortfoliosController@store');
-Route::post('/home/portfolio/certificates/delete/{id}', 'PortfoliosController@deleteCertificate');
-Route::get('/home/portfolio/certificates/setToFeatured/{id}', 'PortfoliosController@setToFeatured');
-Route::get('/home/portfolio/certificates/setToNonFeatured/{id}', 'PortfoliosController@setToNonFeatured');
-Route::get('/home/portfolio/certificates/edit/{id}', 'PortfoliosController@editCertificate');
-Route::post('/home/portfolio/certificates/update/{id}', 'PortfoliosController@updateCertificate');
+
+Route::get('/home/portfolio/projects', 'PortfoliosController@projects')->middleware('has_plan');
+Route::post('/home/portfolio/projects/store', 'PortfoliosController@storeProject')->middleware('has_plan');
+Route::post('/home/portfolio/projects/delete/{id}', 'PortfoliosController@deleteProject')->middleware('has_plan');
+
+Route::get('/home/portfolio/certificates', 'PortfoliosController@certificates')->middleware('has_plan');
+Route::post('/home/portfolio/certificates/store', 'PortfoliosController@store')->middleware('has_plan');
+Route::post('/home/portfolio/certificates/delete/{id}', 'PortfoliosController@deleteCertificate')->middleware('has_plan');
+Route::get('/home/portfolio/certificates/setToFeatured/{id}', 'PortfoliosController@setToFeatured')->middleware('has_plan');
+Route::get('/home/portfolio/certificates/setToNonFeatured/{id}', 'PortfoliosController@setToNonFeatured')->middleware('has_plan');
+Route::get('/home/portfolio/certificates/edit/{id}', 'PortfoliosController@editCertificate')->middleware('has_plan');
+Route::post('/home/portfolio/certificates/update/{id}', 'PortfoliosController@updateCertificate')->middleware('has_plan');

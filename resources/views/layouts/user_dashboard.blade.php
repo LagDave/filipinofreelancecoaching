@@ -57,14 +57,14 @@
 
             <span style='
             font-size:.6em; 
-            background:forestgreen; 
+            background:dodgerblue; 
             color:white; 
             padding:1px 5px;
             position:absolute;
             top:-5px;
             right: -10px;
             border-radius:2px'
-            >COMING SOON!</span>
+            >NEW!</span>
           </a>
 
           <a href="/home/subscription" class="dash-navigation templates">
