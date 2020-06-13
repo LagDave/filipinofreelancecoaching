@@ -97,6 +97,21 @@
 
 </div>
 
+{{-- Modal --}}
+<link rel="stylesheet" href="{{asset('css/loader.css')}}">
+<div class="modal fade" id="loaderModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"><div class="lds-ring"><div></div><div></div><div></div><div></div></div> Loading...</h5>
+      </div>
+    </div>
+  </div>
+</div>
 
-
+<script>
+  $('form').submit(function(){
+    $('#loaderModal').modal('show')
+  });
+</script>
 @endsection

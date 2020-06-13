@@ -78,7 +78,7 @@
         <button class="btn mb-2  btn-sm btn-danger"><i class="fas fa-trash"></i></button>
 
       </form>
-      <a href='/home/portfolio/certificates/setToNonFeatured/{{$certificate->id}}' class="btn mb-2  btn-sm btn-primary"><span class="text-white">Unfeature</span></a>
+      <a  href='/home/portfolio/certificates/setToNonFeatured/{{$certificate->id}}' class="featuredToggler btn mb-2  btn-sm btn-primary"><span class="text-white">Unfeature</span></a>
       <a href='/home/portfolio/certificates/edit/{{$certificate->id}}' class="btn mb-2  btn-sm btn-primary"><i class="fas fa-pen-alt"></i></a>
     </div>
     
@@ -105,7 +105,7 @@
         <button class="btn mb-2  btn-sm btn-danger"><i class="fas fa-trash"></i></button>
 
       </form>
-      <a href='/home/portfolio/certificates/setToFeatured/{{$certificate->id}}' class="btn mb-2  btn-sm btn-primary">Feature</a>
+      <a  href='/home/portfolio/certificates/setToFeatured/{{$certificate->id}}' class="featuredToggler btn mb-2  btn-sm btn-primary">Feature</a>
       <a href='/home/portfolio/certificates/edit/{{$certificate->id}}' class="btn mb-2  btn-sm btn-primary"><i class="fas fa-pen-alt"></i></a>
 
     </div>
@@ -120,5 +120,26 @@
 </div>
 
 
+{{-- Modal --}}
+<link rel="stylesheet" href="{{asset('css/loader.css')}}">
+<div class="modal fade" id="loaderModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"><div class="lds-ring"><div></div><div></div><div></div><div></div></div> Loading...</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('form').submit(function(){
+    $('#loaderModal').modal('show');
+  });
+
+  $('.featuredToggler').click(function(){
+    $("#loaderModal").modal('show');
+  })
+</script>
 
 @endsection
