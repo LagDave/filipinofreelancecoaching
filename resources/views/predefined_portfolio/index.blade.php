@@ -46,7 +46,7 @@
   <body>
     <!-- Navigation bar START -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar shadow navbar-expand-lg sticky-top navbar-dark bg-primary">
       <div class="container">
         <a class="navbar-brand" href="#">{{$portfolio_entry->full_name}}</a>
         <button
@@ -64,16 +64,16 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="#jumbotron">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Projects</a>
+              <a class="nav-link" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Certificates</a>
+              <a class="nav-link" href="#certificates">Certificates</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacts</a>
+              <a class="nav-link" href="#contacts">Contacts</a>
             </li>
           </ul>
         </div>
@@ -265,62 +265,64 @@
     <!-- Certificates End -->
 
     <!-- Projects -->
-    <h2 data-aos='fade-right' class="text-center">
-      <i class="fas fa-project-diagram text-primary"></i> Projects
-    </h2>
-    <p data-aos='fade-right' class="text-center">
-      Here are my latest works during the course of my experience in the
-      industry.
-    </p>
-    <div data-aos='fade-up' class="my-0 py-5 bg-primary">
-      <div class="container">
-        <div data-aos='zoom-in' data-aos-delay='200' class="projects-slider">
-
-          @foreach($projects as $project)
-            <div>
-              <div class="card py-2 px-2 card-body mx-1">
-                <div class="row">
-                  <div style="position: relative;" class="col-4 image-container">
-                    <div
-                      class="image"
-                      style="
-                        position: absolute;
-                        height: 100%;
-                        width: 100%;
-                        background: url('{{$project->thumbnail}}');
-                        background-position: center;
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                      "
-                    ></div>
-                  </div>
-                  <div class="text-container pl-4 col-8">
-                    <strong class="text-primary"
-                    >{{$project->title}}</strong
-                    >
-                    <br />
-                    <p>
-                      {{$project->description}}
-                    </p>
-                    <a href="{{$project->link}}" class="btn btn-primary"
-                      ><i class="fas fa-external-link-alt"></i> Learn More</a
-                    >
+    <div id="projects">
+      <h2 data-aos='fade-right' class="text-center">
+        <i class="fas fa-project-diagram text-primary"></i> Projects
+      </h2>
+      <p data-aos='fade-right' class="text-center">
+        Here are my latest works during the course of my experience in the
+        industry.
+      </p>
+      <div data-aos='fade-up' class="my-0 py-5 bg-primary">
+        <div class="container">
+          <div data-aos='zoom-in' data-aos-delay='200' class="projects-slider">
+  
+            @foreach($projects as $project)
+              <div>
+                <div class="card py-2 px-2 card-body mx-1">
+                  <div class="row">
+                    <div style="position: relative;" class="col-4 image-container">
+                      <div
+                        class="image"
+                        style="
+                          position: absolute;
+                          height: 100%;
+                          width: 100%;
+                          background: url('{{$project->thumbnail}}');
+                          background-position: center;
+                          background-size: cover;
+                          background-repeat: no-repeat;
+                        "
+                      ></div>
+                    </div>
+                    <div class="text-container pl-4 col-8">
+                      <strong class="text-primary"
+                      >{{$project->title}}</strong
+                      >
+                      <br />
+                      <p>
+                        {{$project->description}}
+                      </p>
+                      <a href="{{$project->link}}" class="btn btn-primary"
+                        ><i class="fas fa-external-link-alt"></i> Learn More</a
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          @endforeach
-
-
-        </div>
-
+            @endforeach
+  
+  
+          </div>
+  
+          </div>
         </div>
       </div>
     </div>
     <!-- Projects End -->
 
     <!-- Footer Start -->
-    <footer class="my-0 py-5 bg-dark">
+    <footer id='contacts' class="my-0 py-5 bg-dark">
       <div data-aos='zoom-in' class='container'>
         <h3><i class="fas fa-phone"></i> Get in Touch</h3>
         <br><br>
