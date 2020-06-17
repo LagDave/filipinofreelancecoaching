@@ -181,4 +181,11 @@ class UserCoursesController extends Controller
         return view('courses.completed', compact('course'));
     }
 
+    public function search(Request $request){
+        $query = $request->search_query;
+        $courses = Course::where('title', 'LIKE', "%{$query}%")->with('topics')->get();
+        $search = true;
+        return view('courses.index',  compact('courses', 'search'));
+    }
+
 }

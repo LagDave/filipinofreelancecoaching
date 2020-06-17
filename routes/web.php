@@ -80,6 +80,7 @@ Route::get('/home/announcements', "UserDashboardsController@announcements")->mid
 Route::get('/courses/', 'UserCoursesController@index');
 Route::get('/courses/watch/{course_id}/{topic_index}/{lesson_index}', 'UserCoursesController@validateProgress');
 Route::get('/courses/{course_id}/completed', 'UserCoursesController@completed');
+Route::get('/courses/search', 'UserCoursesController@search');
 
 // Downloadables Routes
 Route::get('/admin/manage/downloadables', 'DownloadablesController@index');
