@@ -14,14 +14,43 @@
                             <div class="row">
                                 <!-- Unsubscribed -->
                                 <div class="col-lg-6 list-container">
-                                    <h5>
-                                        <b>Unsubscribed </b>
-                                    </h5>
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h5>
+                                                <b>Unsubscribed </b>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5">
+                                            <form @submit.prevent>
+                                                <div class="row">
+                                                    <div class="col-8 pr-1">
+                                                        <input
+                                                            type="text"
+                                                            class="form-control"
+                                                            v-model="
+                                                                unsubscribedSearchQuery
+                                                            "
+                                                        />
+                                                    </div>
+                                                    <div class="col-4 pl-1">
+                                                        <button
+                                                            class="btn btn-primary"
+                                                        >
+                                                            <i
+                                                                class="fas fa-search"
+                                                            ></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
                                     <hr />
                                     <transition-group name="fade">
                                         <div
                                             v-for="(user,
-                                            index) in unsubscribed"
+                                            index) in filteredUnsubscribed"
                                             :key="user.id"
                                             class="alert alert-secondary"
                                         >
@@ -66,13 +95,42 @@
                                 </div>
                                 <!-- Pending Registration -->
                                 <div class="col-lg-6 list-container">
-                                    <h5>
-                                        <b>Pending Registration</b>
-                                    </h5>
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h5>
+                                                <b>Pending Registration </b>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5">
+                                            <form @submit.prevent>
+                                                <div class="row">
+                                                    <div class="col-8 pr-1">
+                                                        <input
+                                                            type="text"
+                                                            class="form-control"
+                                                            v-model="
+                                                                pendingSearchQuery
+                                                            "
+                                                        />
+                                                    </div>
+                                                    <div class="col-4 pl-1">
+                                                        <button
+                                                            class="btn btn-primary"
+                                                        >
+                                                            <i
+                                                                class="fas fa-search"
+                                                            ></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                     <hr />
                                     <transition-group name="fade">
                                         <div
-                                            v-for="(user, index) in pending"
+                                            v-for="(user,
+                                            index) in filteredPending"
                                             :key="user.id"
                                         >
                                             <div
@@ -282,14 +340,43 @@
                             <div class="row mt-5">
                                 <!-- Subscribed -->
                                 <div class="col-lg-6 list-container">
-                                    <h5>
-                                        <b>Subscribed</b>
-                                    </h5>
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h5>
+                                                <b>Subscribed </b>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5">
+                                            <form @submit.prevent>
+                                                <div class="row">
+                                                    <div class="col-8 pr-1">
+                                                        <input
+                                                            type="text"
+                                                            class="form-control"
+                                                            v-model="
+                                                                subscribedSearchQuery
+                                                            "
+                                                        />
+                                                    </div>
+                                                    <div class="col-4 pl-1">
+                                                        <button
+                                                            class="btn btn-primary"
+                                                        >
+                                                            <i
+                                                                class="fas fa-search"
+                                                            ></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                     <hr />
                                     <transition-group name="fade">
                                         <div
                                             :key="user.id"
-                                            v-for="(user, index) in subscribed"
+                                            v-for="(user,
+                                            index) in filteredSubscribed"
                                             class="alert alert-primary"
                                         >
                                             <div
@@ -484,13 +571,41 @@
                                 </div>
                                 <!-- Expired -->
                                 <div class="col-lg-6 list-container">
-                                    <h5>
-                                        <b>Expired</b>
-                                    </h5>
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h5>
+                                                <b>Expired </b>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5">
+                                            <form @submit.prevent>
+                                                <div class="row">
+                                                    <div class="col-8 pr-1">
+                                                        <input
+                                                            type="text"
+                                                            class="form-control"
+                                                            v-model="
+                                                                expiredSearchQuery
+                                                            "
+                                                        />
+                                                    </div>
+                                                    <div class="col-4 pl-1">
+                                                        <button
+                                                            class="btn btn-primary"
+                                                        >
+                                                            <i
+                                                                class="fas fa-search"
+                                                            ></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                     <hr />
                                     <div
                                         :key="user.id"
-                                        v-for="(user, index) in expired"
+                                        v-for="(user, index) in filteredExpired"
                                         :class="{
                                             alert: true,
                                             'alert-secondary':
@@ -586,13 +701,41 @@
                             <div class="row mt-5">
                                 <!-- Renewal -->
                                 <div class="col-lg-6 list-container">
-                                    <h5 class="mt-5">
-                                        <b>Pending Renewal</b>
-                                    </h5>
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h5>
+                                                <b>Pending Renewal </b>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5">
+                                            <form @submit.prevent>
+                                                <div class="row">
+                                                    <div class="col-8 pr-1">
+                                                        <input
+                                                            type="text"
+                                                            class="form-control"
+                                                            v-model="
+                                                                renewalSearchQuery
+                                                            "
+                                                        />
+                                                    </div>
+                                                    <div class="col-4 pl-1">
+                                                        <button
+                                                            class="btn btn-primary"
+                                                        >
+                                                            <i
+                                                                class="fas fa-search"
+                                                            ></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                     <hr />
                                     <transition-group name="fade">
                                         <div
-                                            v-for="user in renewal"
+                                            v-for="user in filteredRenewal"
                                             :key="user.id"
                                         >
                                             <div
@@ -852,12 +995,58 @@ export default {
     data() {
         return {
             unsubscribed: [],
+            unsubscribedSearchQuery: "",
             pending: [],
+            pendingSearchQuery: "",
             subscribed: [],
+            subscribedSearchQuery: "",
             expired: [],
+            expiredSearchQuery: "",
             renewal: [],
-            unsub_counter: 0
+            renewalSearchQuery: ""
         };
+    },
+    computed: {
+        filteredUnsubscribed() {
+            return this.unsubscribed.filter(user => {
+                var full_name = user.first_name + " " + user.last_name;
+                return full_name
+                    .toLowerCase()
+                    .includes(this.unsubscribedSearchQuery.toLowerCase());
+            });
+        },
+        filteredPending() {
+            return this.pending.filter(user => {
+                var full_name = user.first_name + " " + user.last_name;
+                return full_name
+                    .toLowerCase()
+                    .includes(this.pendingSearchQuery.toLowerCase());
+            });
+        },
+        filteredSubscribed() {
+            return this.subscribed.filter(user => {
+                var full_name = user.first_name + " " + user.last_name;
+                return full_name
+                    .toLowerCase()
+                    .includes(this.subscribedSearchQuery.toLowerCase());
+            });
+        },
+        filteredExpired() {
+            return this.expired.filter(user => {
+                var full_name = user.first_name + " " + user.last_name;
+                return full_name
+                    .toLowerCase()
+                    .includes(this.expiredSearchQuery.toLowerCase());
+            });
+        },
+        filteredRenewal() {
+            return this.renewal.filter(user => {
+                var full_name = user.first_name + " " + user.last_name;
+                return full_name
+                    .toLowerCase()
+                    .includes(this.renewalSearchQuery.toLowerCase());
+            });
+        }
     },
     components: {
         loader: Loader,

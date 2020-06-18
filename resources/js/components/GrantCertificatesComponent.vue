@@ -4,10 +4,28 @@
             <div class="card-header">
                 <h4>Grant Certificates</h4>
             </div>
+
+            <form class="form mt-2" @submit.prevent>
+                <div class="row">
+                    <div class="col-10 pr-1">
+                        <input
+                            type="text"
+                            class="form-control"
+                            v-model="certificateSearchQuery"
+                        />
+                    </div>
+                    <div class="col-2 pl-1">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
             <div class="card-body px-1 py-1">
                 <div class="list-container">
                     <div
-                        v-for="certificate in certificateList"
+                        v-for="certificate in filteredCertificates"
                         :key="certificate.id"
                         :class="{
                             alert: true,
@@ -111,7 +129,8 @@ import { mapActions } from "vuex";
 export default {
     data() {
         return {
-            certificateList: []
+            certificateList: [],
+            certificateSearchQuery: ""
         };
     },
     comonents: {
@@ -142,6 +161,15 @@ export default {
                 .catch(err => {
                     console.log(err);
                 });
+        }
+    },
+    computed: {
+        filteredCertificates() {
+            return this.certificateList.filter(certificate => {
+                return certificate.user.username
+                    .toLowerCase()
+                    .includes(this.certificateSearchQuery.toLowerCase());
+            });
         }
     },
     created() {

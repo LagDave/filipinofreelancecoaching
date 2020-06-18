@@ -3095,13 +3095,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      certificateList: []
+      certificateList: [],
+      certificateSearchQuery: ""
     };
   },
   comonents: {
@@ -3136,6 +3155,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   }),
+  computed: {
+    filteredCertificates: function filteredCertificates() {
+      var _this3 = this;
+
+      return this.certificateList.filter(function (certificate) {
+        return certificate.user.username.toLowerCase().includes(_this3.certificateSearchQuery.toLowerCase());
+      });
+    }
+  },
   created: function created() {
     this.getAllCerts();
   }
@@ -4099,6 +4127,149 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4107,12 +4278,58 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       unsubscribed: [],
+      unsubscribedSearchQuery: "",
       pending: [],
+      pendingSearchQuery: "",
       subscribed: [],
+      subscribedSearchQuery: "",
       expired: [],
+      expiredSearchQuery: "",
       renewal: [],
-      unsub_counter: 0
+      renewalSearchQuery: ""
     };
+  },
+  computed: {
+    filteredUnsubscribed: function filteredUnsubscribed() {
+      var _this = this;
+
+      return this.unsubscribed.filter(function (user) {
+        var full_name = user.first_name + " " + user.last_name;
+        return full_name.toLowerCase().includes(_this.unsubscribedSearchQuery.toLowerCase());
+      });
+    },
+    filteredPending: function filteredPending() {
+      var _this2 = this;
+
+      return this.pending.filter(function (user) {
+        var full_name = user.first_name + " " + user.last_name;
+        return full_name.toLowerCase().includes(_this2.pendingSearchQuery.toLowerCase());
+      });
+    },
+    filteredSubscribed: function filteredSubscribed() {
+      var _this3 = this;
+
+      return this.subscribed.filter(function (user) {
+        var full_name = user.first_name + " " + user.last_name;
+        return full_name.toLowerCase().includes(_this3.subscribedSearchQuery.toLowerCase());
+      });
+    },
+    filteredExpired: function filteredExpired() {
+      var _this4 = this;
+
+      return this.expired.filter(function (user) {
+        var full_name = user.first_name + " " + user.last_name;
+        return full_name.toLowerCase().includes(_this4.expiredSearchQuery.toLowerCase());
+      });
+    },
+    filteredRenewal: function filteredRenewal() {
+      var _this5 = this;
+
+      return this.renewal.filter(function (user) {
+        var full_name = user.first_name + " " + user.last_name;
+        return full_name.toLowerCase().includes(_this5.renewalSearchQuery.toLowerCase());
+      });
+    }
   },
   components: {
     loader: _Loader__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -4120,46 +4337,46 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapActions"])(["toggleLoading"]), {
     gatherUnsubscribed: function gatherUnsubscribed() {
-      var _this = this;
+      var _this6 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default()("/admin/manage/users/get/unsubscribed").then(function (response) {
-        _this.unsubscribed = response.data;
+        _this6.unsubscribed = response.data;
       })["catch"](function (err) {
         console.log(err);
       });
     },
     gatherPending: function gatherPending() {
-      var _this2 = this;
+      var _this7 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default()("/admin/manage/users/get/pending").then(function (response) {
-        _this2.pending = response.data;
+        _this7.pending = response.data;
       })["catch"](function (err) {
         console.log(err);
       });
     },
     gatherSubscribed: function gatherSubscribed() {
-      var _this3 = this;
+      var _this8 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default()("/admin/manage/users/get/subscribed").then(function (response) {
-        _this3.subscribed = response.data;
+        _this8.subscribed = response.data;
       })["catch"](function (err) {
         console.log(err);
       });
     },
     gatherExpired: function gatherExpired() {
-      var _this4 = this;
+      var _this9 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default()("/admin/manage/users/get/expired").then(function (response) {
-        _this4.expired = response.data;
+        _this9.expired = response.data;
       })["catch"](function (err) {
         console.log(err);
       });
     },
     gatherRenewal: function gatherRenewal() {
-      var _this5 = this;
+      var _this10 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default()("/admin/manage/users/get/renewal").then(function (response) {
-        _this5.renewal = response.data;
+        _this10.renewal = response.data;
       })["catch"](function (err) {
         console.log(err);
       });
@@ -4175,81 +4392,81 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.gatherAll();
     },
     grantUser: function grantUser(id, grantType) {
-      var _this6 = this;
+      var _this11 = this;
 
       if (confirm("Grant the Plan to user?")) {
         this.toggleLoading();
         axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/admin/manage/users/".concat(id, "/grant/").concat(grantType)).then(function (response) {
-          _this6.gatherAll();
+          _this11.gatherAll();
 
-          _this6.toggleLoading();
+          _this11.toggleLoading();
         })["catch"](function (err) {
           console.log(err);
 
-          _this6.toggleLoading();
+          _this11.toggleLoading();
         });
       }
     },
     moveToPending: function moveToPending(id) {
-      var _this7 = this;
+      var _this12 = this;
 
       if (confirm("This will move user to pending and will forfeit its current plan.")) {
         this.toggleLoading();
         axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/admin/manage/users/".concat(id, "/moveToPending")).then(function (response) {
           console.log(response);
 
-          _this7.gatherAll();
+          _this12.gatherAll();
 
-          _this7.toggleLoading();
+          _this12.toggleLoading();
         })["catch"](function (err) {
           console.log(err);
         });
       }
     },
     unsubscribe: function unsubscribe(id) {
-      var _this8 = this;
+      var _this13 = this;
 
       if (confirm("This will unsubscribe the user and forfeit its plan \nUser has to reapply for a plan before admin can grant a subscription.")) {
         this.toggleLoading();
         axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/admin/manage/users/".concat(id, "/unsubscribe")).then(function (response) {
           console.log(response);
 
-          _this8.gatherAll();
+          _this13.gatherAll();
 
-          _this8.toggleLoading();
+          _this13.toggleLoading();
         })["catch"](function (err) {
           console.log(err);
 
-          _this8.toggleLoading();
+          _this13.toggleLoading();
         });
       }
     },
     toggleExpiredCheck: function toggleExpiredCheck(id) {
-      var _this9 = this;
+      var _this14 = this;
 
       if (confirm("Are you sure to check/uncheck this user?")) {
         this.toggleLoading();
         axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/admin/manage/users/toggleCheck/expired/".concat(id)).then(function (res) {
           console.log(res);
 
-          _this9.gatherAll();
+          _this14.gatherAll();
 
-          _this9.toggleLoading();
+          _this14.toggleLoading();
         })["catch"](function (err) {
           console.log(err);
 
-          _this9.toggleLoading();
+          _this14.toggleLoading();
         });
       }
     }
   }),
   created: function created() {
-    var _this10 = this;
+    var _this15 = this;
 
     this.toggleLoading();
     this.gatherAllWithLoad();
     setTimeout(function () {
-      _this10.toggleLoading();
+      _this15.toggleLoading();
     }, 1000);
   }
 });
@@ -5535,11 +5752,52 @@ var render = function() {
     _c("div", { staticClass: "card" }, [
       _vm._m(0),
       _vm._v(" "),
+      _c(
+        "form",
+        {
+          staticClass: "form mt-2",
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+            }
+          }
+        },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-10 pr-1" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.certificateSearchQuery,
+                    expression: "certificateSearchQuery"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text" },
+                domProps: { value: _vm.certificateSearchQuery },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.certificateSearchQuery = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
+          ])
+        ]
+      ),
+      _vm._v(" "),
       _c("div", { staticClass: "card-body px-1 py-1" }, [
         _c(
           "div",
           { staticClass: "list-container" },
-          _vm._l(_vm.certificateList, function(certificate) {
+          _vm._l(_vm.filteredCertificates, function(certificate) {
             return _c(
               "div",
               {
@@ -5661,6 +5919,16 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h4", [_vm._v("Grant Certificates")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-2 pl-1" }, [
+      _c("button", { staticClass: "btn btn-primary" }, [
+        _c("i", { staticClass: "fas fa-search" })
+      ])
     ])
   }
 ]
@@ -5829,14 +6097,62 @@ var render = function() {
                     "div",
                     { staticClass: "col-lg-6 list-container" },
                     [
-                      _vm._m(1),
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-5" }, [
+                          _c(
+                            "form",
+                            {
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                }
+                              }
+                            },
+                            [
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-8 pr-1" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.unsubscribedSearchQuery,
+                                        expression:
+                                          "\n                                                            unsubscribedSearchQuery\n                                                        "
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.unsubscribedSearchQuery
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.unsubscribedSearchQuery =
+                                          $event.target.value
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(2)
+                              ])
+                            ]
+                          )
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
                       _c(
                         "transition-group",
                         { attrs: { name: "fade" } },
-                        _vm._l(_vm.unsubscribed, function(user, index) {
+                        _vm._l(_vm.filteredUnsubscribed, function(user, index) {
                           return _c(
                             "div",
                             {
@@ -5912,14 +6228,60 @@ var render = function() {
                     "div",
                     { staticClass: "col-lg-6 list-container" },
                     [
-                      _vm._m(2),
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(3),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-5" }, [
+                          _c(
+                            "form",
+                            {
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                }
+                              }
+                            },
+                            [
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-8 pr-1" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.pendingSearchQuery,
+                                        expression:
+                                          "\n                                                            pendingSearchQuery\n                                                        "
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: { type: "text" },
+                                    domProps: { value: _vm.pendingSearchQuery },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.pendingSearchQuery =
+                                          $event.target.value
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(4)
+                              ])
+                            ]
+                          )
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
                       _c(
                         "transition-group",
                         { attrs: { name: "fade" } },
-                        _vm._l(_vm.pending, function(user, index) {
+                        _vm._l(_vm.filteredPending, function(user, index) {
                           return _c("div", { key: user.id }, [
                             _c(
                               "div",
@@ -6256,14 +6618,62 @@ var render = function() {
                     "div",
                     { staticClass: "col-lg-6 list-container" },
                     [
-                      _vm._m(3),
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(5),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-5" }, [
+                          _c(
+                            "form",
+                            {
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                }
+                              }
+                            },
+                            [
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-8 pr-1" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.subscribedSearchQuery,
+                                        expression:
+                                          "\n                                                            subscribedSearchQuery\n                                                        "
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: { type: "text" },
+                                    domProps: {
+                                      value: _vm.subscribedSearchQuery
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.subscribedSearchQuery =
+                                          $event.target.value
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(6)
+                              ])
+                            ]
+                          )
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
                       _c(
                         "transition-group",
                         { attrs: { name: "fade" } },
-                        _vm._l(_vm.subscribed, function(user, index) {
+                        _vm._l(_vm.filteredSubscribed, function(user, index) {
                           return _c(
                             "div",
                             {
@@ -6587,11 +6997,57 @@ var render = function() {
                     "div",
                     { staticClass: "col-lg-6 list-container" },
                     [
-                      _vm._m(4),
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(7),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-5" }, [
+                          _c(
+                            "form",
+                            {
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                }
+                              }
+                            },
+                            [
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-8 pr-1" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.expiredSearchQuery,
+                                        expression:
+                                          "\n                                                            expiredSearchQuery\n                                                        "
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: { type: "text" },
+                                    domProps: { value: _vm.expiredSearchQuery },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.expiredSearchQuery =
+                                          $event.target.value
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(8)
+                              ])
+                            ]
+                          )
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
-                      _vm._l(_vm.expired, function(user, index) {
+                      _vm._l(_vm.filteredExpired, function(user, index) {
                         return _c(
                           "div",
                           {
@@ -6728,14 +7184,60 @@ var render = function() {
                     "div",
                     { staticClass: "col-lg-6 list-container" },
                     [
-                      _vm._m(5),
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(9),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-5" }, [
+                          _c(
+                            "form",
+                            {
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                }
+                              }
+                            },
+                            [
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-8 pr-1" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.renewalSearchQuery,
+                                        expression:
+                                          "\n                                                            renewalSearchQuery\n                                                        "
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: { type: "text" },
+                                    domProps: { value: _vm.renewalSearchQuery },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.renewalSearchQuery =
+                                          $event.target.value
+                                      }
+                                    }
+                                  })
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(10)
+                              ])
+                            ]
+                          )
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
                       _c(
                         "transition-group",
                         { attrs: { name: "fade" } },
-                        _vm._l(_vm.renewal, function(user) {
+                        _vm._l(_vm.filteredRenewal, function(user) {
                           return _c("div", { key: user.id }, [
                             _c(
                               "div",
@@ -7119,32 +7621,90 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h5", [_c("b", [_vm._v("Unsubscribed ")])])
+    return _c("div", { staticClass: "col-7" }, [
+      _c("h5", [_c("b", [_vm._v("Unsubscribed ")])])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h5", [_c("b", [_vm._v("Pending Registration")])])
+    return _c("div", { staticClass: "col-4 pl-1" }, [
+      _c("button", { staticClass: "btn btn-primary" }, [
+        _c("i", { staticClass: "fas fa-search" })
+      ])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h5", [_c("b", [_vm._v("Subscribed")])])
+    return _c("div", { staticClass: "col-7" }, [
+      _c("h5", [_c("b", [_vm._v("Pending Registration ")])])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h5", [_c("b", [_vm._v("Expired")])])
+    return _c("div", { staticClass: "col-4 pl-1" }, [
+      _c("button", { staticClass: "btn btn-primary" }, [
+        _c("i", { staticClass: "fas fa-search" })
+      ])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h5", { staticClass: "mt-5" }, [
-      _c("b", [_vm._v("Pending Renewal")])
+    return _c("div", { staticClass: "col-7" }, [
+      _c("h5", [_c("b", [_vm._v("Subscribed ")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-4 pl-1" }, [
+      _c("button", { staticClass: "btn btn-primary" }, [
+        _c("i", { staticClass: "fas fa-search" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-7" }, [
+      _c("h5", [_c("b", [_vm._v("Expired ")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-4 pl-1" }, [
+      _c("button", { staticClass: "btn btn-primary" }, [
+        _c("i", { staticClass: "fas fa-search" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-7" }, [
+      _c("h5", [_c("b", [_vm._v("Pending Renewal ")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-4 pl-1" }, [
+      _c("button", { staticClass: "btn btn-primary" }, [
+        _c("i", { staticClass: "fas fa-search" })
+      ])
     ])
   }
 ]

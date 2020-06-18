@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-11">
         <div class="form-group">
-          <input placeholder='Search for a course...' type="text" name='search_query' class="form-control">
+          <input required placeholder='Search for a course...' type="text" name='search_query' class="form-control">
         </div>
       
       </div>
