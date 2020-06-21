@@ -1,6 +1,7 @@
 {
     "/js/manage_courses.js": "/js/manage_courses.js",
     "/css/app.css": "/css/app.css",
+    "/css/statistics.css": "/css/statistics.css",
     "/js/manage_downloadables.js": "/js/manage_downloadables.js",
     "/js/manage_users.js": "/js/manage_users.js"
 }

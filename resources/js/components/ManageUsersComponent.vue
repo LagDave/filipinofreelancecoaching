@@ -1,6 +1,7 @@
 <template>
     <div>
         <loader></loader>
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-9 pr-1">

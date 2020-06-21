@@ -86,6 +86,9 @@
                                 <a href="/admin/manage/users" class="dropdown-item"><i class="fas fa-users"></i> Manage Students </a>
                                 <a href="/admin/manage/downloadables" class="dropdown-item"><i class="fas fa-download"></i> Manage Downloadables  </a>
                                 <a href="/admin/manage/announcements" class="dropdown-item"><i class="fas fa-bullhorn"></i> Manage Announcements  </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="/admin/statistics" class="dropdown-item"><i class="fas fa-chart-bar"></i> Statistics  </a>
+
                             </div>
                         </li>
 

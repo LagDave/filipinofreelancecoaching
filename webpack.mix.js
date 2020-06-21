@@ -14,4 +14,5 @@ const mix = require("laravel-mix");
 mix.js("resources/js/manage_courses.js", "public/js")
     .js("resources/js/manage_users.js", "public/js")
     .js("resources/js/manage_downloadables.js", "public/js")
-    .sass("resources/sass/app.scss", "public/css");
+    .sass("resources/sass/app.scss", "public/css")
+    .sass("resources/sass/statistics.scss", "public/css");

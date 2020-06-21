@@ -9,6 +9,7 @@ Route::get('/home', 'UserDashboardsController@index')->middleware('auth');
 // Admin Routes
 Route::get('/admin/manage/courses', 'AdminsController@manage_courses')->middleware('admin_auth');
 Route::get('/admin/manage/users', "AdminsController@manage_users")->middleware('admin_auth');
+Route::get('/admin/statistics', 'AdminsController@statistics')->middleware('admin_auth');
 
 // Course Routes
 Route::get('/admin/manage/courses/get', 'CoursesController@index');

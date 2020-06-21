@@ -1,0 +1,76 @@
+.number-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: auto;
+    margin: 0 auto;
+    grid-gap: 15px;
+    .card {
+        min-height: 150px;
+        max-height: 150px;
+        min-width: 150px;
+        max-width: 150px;
+        background: orange;
+        padding: 10px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+
+        .label {
+            font-size: 0.7em;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+        .number {
+            font-size: 2.3em;
+            text-align: center;
+            font-weight: bold;
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+    }
+    .card.unsubscribed,
+    .card.expired {
+        background: #0f2027; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+            to right,
+            #2c5364,
+            #203a43,
+            #0f2027
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+            to right,
+            #2c5364,
+            #203a43,
+            #0f2027
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .card.pending,
+    .card.renewal {
+        background: #11998e; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+            to right,
+            #38ef7d,
+            #11998e
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+            to right,
+            #38ef7d,
+            #11998e
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .card.subscribed {
+        color: white;
+        background: #ff512f; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+            to right,
+            #ff512f,
+            #dd2476
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+            to right,
+            #ff512f,
+            #dd2476
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+}

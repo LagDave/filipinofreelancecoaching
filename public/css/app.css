@@ -10987,3 +10987,7 @@ main {
   color: black;
 }
 
+canvas {
+  width: 100%;
+}
+
