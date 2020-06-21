@@ -29,6 +29,10 @@
     <div class="card card-body">
       <div class="row">
         <div class="col-lg-6">
+          <p class="text-center"><b>Subscribed/Unsubscribed Ratio</b></p>
+          <canvas id="sub_unsub_ratio_chart"></canvas>
+        </div>
+        <div class="col-lg-6">
           <p class="text-center"><b>Subscription Type Density</b></p>
           <canvas id="sub_type_chart"></canvas>
         </div>
@@ -52,6 +56,28 @@
                         "#e60c3f7a",
                         "#e60c3f7a",
                         "#e60c3f7a"
+                    ]
+                }
+            ]
+        },
+        options: {
+            legend: {
+                display: false
+            }
+        }
+    });
+    
+    let sub_unsub_ratio_chart_ctx = document.getElementById("sub_unsub_ratio_chart");
+    var sub_unsub_ratio_chart = new Chart(sub_unsub_ratio_chart_ctx, {
+        type: "horizontalBar",
+        data: {
+            labels: ["Subscribed", "Unsubscribed"],
+            datasets: [
+                {
+                    data: [{{sizeof($subscribed)}}, {{sizeof($unsubscribed)}}],
+                    backgroundColor: [
+                        "#e60c3f7a",
+                        "#ddd",
                     ]
                 }
             ]
