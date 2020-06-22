@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDailySalesTable extends Migration
+class CreateStatisticsBaseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateDailySalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('daily_sales', function (Blueprint $table) {
+        Schema::create('statistics_base', function (Blueprint $table) {
             $table->id();
-            $table->string('day');
-            $table->string('monthly_subscribed');
-            $table->string('yearly_subscribed');
-            $table->string('lifetime_subscribed');
-            $table->string('week');
+            $table->string('name');
+            $table->string('value');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateDailySalesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('daily_sales');
+        Schema::dropIfExists('statistics_base');
     }
 }

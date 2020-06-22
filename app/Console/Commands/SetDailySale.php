@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\User;
 use App\DailySale;
 use Carbon\Carbon;
+use App\StatisticsBase;
 use Illuminate\Console\Command;
 
 class SetDailySale extends Command
@@ -56,11 +57,14 @@ class SetDailySale extends Command
             'latest_plan_update'=> $yesterday
         ])->get();
 
+        $week = StatisticsBase::firstWhere('name', 'week')->value;
+
         DailySale::create([
             'day'=> $yesterday,
             'monthly_subscribed'=> sizeof($monthly),
             'yearly_subscribed'=> sizeof($yearly),
             'lifetime_subscribed'=> sizeof($lifetime),
+            'week' => $week
         ]);
     }
 }
