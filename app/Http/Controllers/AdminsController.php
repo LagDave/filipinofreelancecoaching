@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\DailySale;
+use Carbon\Carbon;
+use App\WeeklySale;
+use App\StatisticsBase;
 use Illuminate\Http\Request;
 
 class AdminsController extends Controller
@@ -33,8 +36,15 @@ class AdminsController extends Controller
             return $student->plan_name == 'lifetime';
         }));
 
+
+        
         //  FOR DAILY SALES CHART
-        $daily_sales = DailySale::orderBy('id', 'desc')->take(7)->get();
+        $week = StatisticsBase::firstWhere('name', 'week')->value;
+        $daily_sales = DailySale::where('week', $week)->orderBy('id', 'asc')->get();
+        
+        // For WEEKLY SALES CHART
+        $month = StatisticsBase::firstWhere('name', 'month')->value;
+        $weekly_sales = WeeklySale::where('month', $month)->orderBy('id', 'asc')->get();
         
 
         return view('admin.statistics', compact(
@@ -47,7 +57,8 @@ class AdminsController extends Controller
             'monthlySubscribed',
             'yearlySubscribed',
             'lifetimeSubscribed',
-            'daily_sales'
+            'daily_sales',
+            'weekly_sales'
         ));
     }
 }

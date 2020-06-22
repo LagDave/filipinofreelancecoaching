@@ -46,7 +46,8 @@
                 <canvas id="daily_sales_chart"></canvas>
             </div>
             <div class="col-lg-6">
-
+                <p class="text-center"><b>Weekly Sales</b></p>
+                <canvas id="weekly_sales_chart"></canvas>
             </div>
         </div>
     </div>
@@ -115,6 +116,33 @@
                     data: [
                         @foreach($daily_sales as $sale)
                             '{{$sale->monthly_subscribed * 399 + $sale->yearly_subscribed * 999 + $sale->lifetime_subscribed * 1999}}',
+                        @endforeach
+                    ],
+                    backgroundColor: "#e60c3f7a"
+                }
+            ]
+        },
+        options: {
+            legend: {
+                display: false
+            }
+        }
+    });
+
+    let weekly_sales_chart_ctx = document.getElementById("weekly_sales_chart");
+    var weekly_sales_chart = new Chart(weekly_sales_chart_ctx, {
+        type: "line",
+        data: {
+            labels: [
+                @foreach($weekly_sales as $sale)
+                    'Week {{$sale->week + 1}}',
+                @endforeach
+            ],
+            datasets: [
+                {
+                    data: [
+                        @foreach($weekly_sales as $sale)
+                            '{{$sale->revenue}}',
                         @endforeach
                     ],
                     backgroundColor: "#e60c3f7a"

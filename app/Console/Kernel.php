@@ -25,7 +25,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('command:manageExpiredUsers')->daily();
-        $schedule->command('sale:daily')->dailyAt('13:00');
+        $schedule->command('sale:weekly')->weekly(); //will run daily at 12am
+        $schedule->command('sale:daily')->dailyAt('01:00'); //will run daily at 1 am
     }
 
     /**
