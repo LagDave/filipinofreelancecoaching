@@ -105,13 +105,11 @@ class UsersController extends Controller
                 // Set user to pending registration
                 $user->plan = 'pending';
                 $user->plan_name = 'monthly';
-                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
                 $user->save();
             }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
                 // Set user to pending renewal
                 $user->plan = 'renewal';
                 $user->plan_name = 'monthly';
-                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
                 $user->save();
             }
 
@@ -141,13 +139,11 @@ class UsersController extends Controller
                 // Set user to pending registration
                 $user->plan = 'pending';
                 $user->plan_name = 'yearly';
-                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
                 $user->save();
             }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
                 // Set user to pending renewal
                 $user->plan = 'renewal';
                 $user->plan_name = 'yearly';
-                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
                 $user->save();
             }
 
@@ -177,13 +173,11 @@ class UsersController extends Controller
                 // Set user to pending registration
                 $user->plan = 'pending';
                 $user->plan_name = 'lifetime';
-                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
                 $user->save();
             }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
                 // Set user to pending renewal
                 $user->plan = 'renewal';
                 $user->plan_name = 'lifetime';
-                $user->latest_plan_update = Carbon::now()->format('m-d-Y');
                 $user->save();
             }
 
@@ -236,14 +230,17 @@ class UsersController extends Controller
         if($grant_type == 'monthly'){
             $user->subscription_start =  Carbon::now()->format('m-d-Y');
             $user->subscription_end = Carbon::now()->addDays(30)->format('m-d-Y');
+            $user->latest_plan_update = Carbon::now()->format('m-d-Y');
             $user->plan_name = 'monthly';
         }else if($grant_type == 'yearly'){
             $user->subscription_start =  Carbon::now()->format('m-d-Y');
             $user->subscription_end = Carbon::now()->addDays(366)->format('m-d-Y');
+            $user->latest_plan_update = Carbon::now()->format('m-d-Y');
             $user->plan_name = 'yearly';
         }else if($grant_type == 'lifetime'){
             $user->subscription_start =  'lifetime';
             $user->subscription_end = 'lifetime';
+            $user->latest_plan_update = Carbon::now()->format('m-d-Y');
             $user->plan_name = 'lifetime';
         }
 

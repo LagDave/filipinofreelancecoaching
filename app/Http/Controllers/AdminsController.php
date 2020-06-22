@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\DailySale;
 use Illuminate\Http\Request;
 
 class AdminsController extends Controller
@@ -32,6 +33,10 @@ class AdminsController extends Controller
             return $student->plan_name == 'lifetime';
         }));
 
+        //  FOR DAILY SALES CHART
+        $daily_sales = DailySale::orderBy('id', 'desc')->take(7)->get();
+        
+
         return view('admin.statistics', compact(
             'users',
             'unsubscribed',
@@ -41,7 +46,8 @@ class AdminsController extends Controller
             'renewal',
             'monthlySubscribed',
             'yearlySubscribed',
-            'lifetimeSubscribed'
+            'lifetimeSubscribed',
+            'daily_sales'
         ));
     }
 }

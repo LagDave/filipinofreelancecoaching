@@ -38,6 +38,18 @@
         </div>
       </div>
     </div>
+
+    <div class="card card-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="text-center"><b>Daily Sales</b></p>
+                <canvas id="daily_sales_chart"></canvas>
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+        </div>
+    </div>
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script>
@@ -79,6 +91,33 @@
                         "#e60c3f7a",
                         "#ddd",
                     ]
+                }
+            ]
+        },
+        options: {
+            legend: {
+                display: false
+            }
+        }
+    });
+
+    let daily_sales_chart_ctx = document.getElementById("daily_sales_chart");
+    var daily_sales_chart = new Chart(daily_sales_chart_ctx, {
+        type: "line",
+        data: {
+            labels: [
+                @foreach($daily_sales as $sale)
+                    '{{$sale->day}}',
+                @endforeach
+            ],
+            datasets: [
+                {
+                    data: [
+                        @foreach($daily_sales as $sale)
+                            '{{$sale->monthly_subscribed * 399 + $sale->yearly_subscribed * 999 + $sale->lifetime_subscribed * 1999}}',
+                        @endforeach
+                    ],
+                    backgroundColor: "#e60c3f7a"
                 }
             ]
         },
