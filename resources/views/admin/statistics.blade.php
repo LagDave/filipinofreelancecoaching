@@ -38,6 +38,7 @@
         </div>
       </div>
     </div>
+    <br>
 
     <div class="card card-body">
         <div class="row">
@@ -49,6 +50,14 @@
                 <p class="text-center"><b>Weekly Sales</b></p>
                 <canvas id="weekly_sales_chart"></canvas>
             </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="text-center"><b>Monthly Sales</b></p>
+                <canvas id="monthly_sales_chart"></canvas>
+            </div>
+
         </div>
     </div>
   </div>
@@ -155,6 +164,34 @@
             }
         }
     });
+
+    let monthly_sales_chart_ctx = document.getElementById("monthly_sales_chart");
+    var monthly_sales_chart = new Chart(monthly_sales_chart_ctx, {
+        type: "line",
+        data: {
+            labels: [
+                @foreach($monthly_sales as $sale)
+                    '{{$sale->month}}',
+                @endforeach
+            ],
+            datasets: [
+                {
+                    data: [
+                        @foreach($monthly_sales as $sale)
+                            '{{$sale->revenue}}',
+                        @endforeach
+                    ],
+                    backgroundColor: "#e60c3f7a"
+                }
+            ]
+        },
+        options: {
+            legend: {
+                display: false
+            }
+        }
+    });
+
 
   </script>
   {{-- MAIN SCRIPT END --}}

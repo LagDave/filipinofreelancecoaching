@@ -6,6 +6,7 @@ use App\User;
 use App\DailySale;
 use Carbon\Carbon;
 use App\WeeklySale;
+use App\MonthlySale;
 use App\StatisticsBase;
 use Illuminate\Http\Request;
 
@@ -46,6 +47,9 @@ class AdminsController extends Controller
         $month = StatisticsBase::firstWhere('name', 'month')->value;
         $weekly_sales = WeeklySale::where('month', $month)->orderBy('id', 'asc')->get();
         
+        // For Monthly Sales chart
+        $year = StatisticsBase::firstWhere('name', 'year')->value;
+        $monthly_sales = MonthlySale::where('year', $year)->orderBy('id', 'desc')->get();
 
         return view('admin.statistics', compact(
             'users',
@@ -58,7 +62,8 @@ class AdminsController extends Controller
             'yearlySubscribed',
             'lifetimeSubscribed',
             'daily_sales',
-            'weekly_sales'
+            'weekly_sales',
+            'monthly_sales'
         ));
     }
 }
