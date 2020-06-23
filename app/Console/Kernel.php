@@ -27,7 +27,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('command:manageExpiredUsers')->daily();
         $schedule->command('sale:weekly')->weekly(); //will run weekly at 12am
         $schedule->command('sale:monthly')->monthly(); //will run monthly at 12am
-        $schedule->command('sale:daily')->dailyAt('01:00'); //will run daily at 1 am
+        $schedule->command('sale:daily')->dailyAt('00:30'); //will run daily at 1:30 am
     }
 
     /**
