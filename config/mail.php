@@ -39,8 +39,8 @@ return [
             'host' => 'smtp.mailgun.org',
             'port' => 587,
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => 'postmaster@thefilipinofreelancecoaching.com',
-            'password' => '5d399266cc8ced80c924e4a3f998cc45-65b08458-314c1a07',
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
         ],
 
