@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => 'smtp.pepipost.com',
+            'host' => 'smtp.mailgun.org',
             'port' => 587,
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => 'admine1akav',
-            'password' => 'admine1akav_23bd4d3f8bc86778c9cf13f40ae73be3',
+            'username' => 'postmaster@thefilipinofreelancecoaching.com',
+            'password' => '5d399266cc8ced80c924e4a3f998cc45-65b08458-314c1a07',
             'timeout' => null,
         ],
 
