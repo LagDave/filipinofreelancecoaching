@@ -261,170 +261,20 @@
         </div>
 
         <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/shane-nilo.jpg')}}" class="testimonial-img" alt="">
-              <h3>Shane Nilo</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                FFC is the best freelance coaching ever!!! Buti nalang sakanila ako nag enroll dahil super worth it ng binayad ko sa enrollment! 😊 Kung nag hahanap kayo ng Courses, FFC is the one you are looking for 😍 They are knowledgeable in Digital Marketing. You will not be disappointed. Thank you FFC and God bless!
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
+          @foreach($testimonials as $item)
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{{$item->image}}" class="testimonial-img" alt="">
+                <h3>{{$item->name}}</h3>
+                <h4>{{$item->role}}</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    {{$item->testimonial}}
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
             </div>
-          </div>
-
-
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/daisy-christina.jpg')}}" class="testimonial-img" alt="">
-              <h3>Daisy Christina</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Affordable and easy to learn for the tips given. Kudos!                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/jericho-pampola.jpg')}}" class="testimonial-img" alt="">
-              <h3>Jericho Pampola</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                I just avail their courses!!! Lahat ng courses magaganda, so far wala akong masasabi since halos nandito na lahat ng kailangan. Sila na yung pinaka mura sa market, sila pa yung pinaka legit. Ang dami ng courses, halos in-depth pa kaya super sulit!!!! Thanks FFC!                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/anna-bolus.jpg')}}" class="testimonial-img" alt="">
-              <h3>Maria Angela Dela Pena</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                FFC is the best! They are so supportive and very comfortable to talk with. They are so nice and humble. Thanks FFC for the opportunity!                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/anna-torres.jpg')}}" class="testimonial-img" alt="">
-              <h3>Ana Torres</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Got a good quality of service and one of the best coaches! Keep up the good work!                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/jane-cruz.jpg')}}" class="testimonial-img" alt="">
-              <h3>Jane Cruz</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Very affordable but worth it! Resourceful courses, softwares and tools!                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/daisy-sanchez.jpg')}}" class="testimonial-img" alt="">
-              <h3>Daisy Jane Sanchez</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Hello after reading and taking time na aralin sya. Im so happy kasi nag first day nako last Wednesday ❤️ I was hired as HR VA salamat po na share na learnings ❤️ God bless!                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/james-santos.jpg')}}" class="testimonial-img" alt="">
-              <h3>James Santos</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Because of FFC I got hired for $10 per hour as a Virtual Assistant! Highly recommended!              </p>
-            </div>
-          </div>
-
-
-          {{-- NEW TESTIMONIALS --}}
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/diane-gaongen.jpg')}}" class="testimonial-img" alt="">
-              <h3>Diane Gaongen</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Very resourceful in all you need and very helpful admin l get my first certificate after l finish online course thank you for this awesome learning you are sharing to us who like to work at home more power to guys😀😀</p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/kim-lascano.png')}}" class="testimonial-img" alt="">
-              <h3>Kim Lascano</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Affordable courses and easy to learn.  
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/azael-abas.png')}}" class="testimonial-img" alt="">
-              <h3>Azael C. Abas</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Thank you po. Na overwhelm ako sa dami ng courses na pwede matutunan.
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/regina-bantug.png')}}" class="testimonial-img" alt="">
-              <h3>Regina Bantug</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Thanks for the awesome content and courses. Very friendly and accommodating staff. Excited to learn more!!!
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial-item">
-              <img src="{{asset('homepage/assets/img/testimonials/francia.png')}}" class="testimonial-img" alt="">
-              <h3>Francia Metran Avorque</h3>
-              <h4>Student</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Awesome content and great quality courses. Very accommodating and fast reply. Kudos to your great services! 🙂
-              </p>
-            </div>
-          </div>
-          
-          
-
-
-          
-
-
+          @endforeach
         </div>
 
       </div>

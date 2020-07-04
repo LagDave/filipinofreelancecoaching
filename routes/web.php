@@ -9,7 +9,17 @@ Route::get('/home', 'UserDashboardsController@index')->middleware('auth');
 // Admin Routes
 Route::get('/admin/manage/courses', 'AdminsController@manage_courses')->middleware('admin_auth');
 Route::get('/admin/manage/users', "AdminsController@manage_users")->middleware('admin_auth');
-Route::get('/admin/statistics', 'AdminsController@statistics')->middleware('admin_auth');
+Route::get('/admin/statistics', 'AdminsController@statistics')->middleware('admin_auth');\
+
+// Testimonial CPanel Routes
+Route::get('/admin/manage/testimonials', 'TestimonialsController@index');
+Route::post('admin/manage/testimonials/store', 'TestimonialsController@store');
+Route::get('/admin/manage/testimonials/delete/{id}', 'TestimonialsController@delete');
+
+// Announcement Routes
+Route::get('/admin/manage/announcements', 'AnnouncementsController@manage')->middleware('admin_auth');
+Route::post('/admin/manage/announcements/store', 'AnnouncementsController@store')->middleware('admin_auth');
+Route::post('/admin/manage/announcements/delete/{announcement_id}','AnnouncementsController@delete')->middleware('admin_auth');
 
 // Course Routes
 Route::get('/admin/manage/courses/get', 'CoursesController@index');
@@ -47,12 +57,6 @@ Route::post('/admin/manage/users/{user_id}/moveToPending', 'UsersController@move
 Route::post('/admin/manage/users/{user_id}/unsubscribe', 'UsersController@unsubscribe');
 
 Route::post('/admin/manage/users/toggleCheck/expired/{user_id}', 'UsersController@toggleExpiredCheck');
-
-
-// Announcement Routes
-Route::get('/admin/manage/announcements', 'AnnouncementsController@manage')->middleware('admin_auth');
-Route::post('/admin/manage/announcements/store', 'AnnouncementsController@store')->middleware('admin_auth');
-Route::post('/admin/manage/announcements/delete/{announcement_id}','AnnouncementsController@delete')->middleware('admin_auth');
 
 // User Dashboard Routes
   // Enrollment

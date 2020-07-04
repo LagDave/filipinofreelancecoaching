@@ -3,14 +3,6 @@
   
 
 <div class="container">
-  @if($message = Session::get('error'))
-  <div class="alert alert-info alert-dismissible fade show" role="alert">
-  {{$message}}
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  </div>
-@endif
     <div class="row">
       <div class="col-lg-8 pr-1">
         <div class="card card-body">

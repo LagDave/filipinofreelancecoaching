@@ -112,11 +112,26 @@
                         <div class="col-lg-6">
                             <h5><b>Courses</b></h5>
                             <hr />
+                            <div class="row">
+                                <div class="col-10">
+                                    <input
+                                        type="text"
+                                        v-model="coursesSearchQuery"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="col-2">
+                                    <button class="w-100 btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <br />
                             <div class="courses">
                                 <transition-group name="fade">
                                     <div
                                         :key="course.id"
-                                        v-for="course in courses"
+                                        v-for="course in filtered_courses"
                                         :class="{
                                             'mb-2': true,
                                             'course-entry': true,
@@ -269,12 +284,22 @@ export default {
             editFlag: false,
             editId: 0,
             notif: false,
-            notifMessage: ""
+            notifMessage: "",
+            coursesSearchQuery: ""
         };
     },
     components: {
         editor: Editor,
         loader: Loader
+    },
+    computed: {
+        filtered_courses() {
+            return this.courses.filter(course => {
+                return course.title
+                    .toLowerCase()
+                    .includes(this.coursesSearchQuery.toLowerCase());
+            });
+        }
     },
     methods: {
         submitForm() {

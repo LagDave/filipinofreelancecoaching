@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Testimonial;
 use App\Downloadable;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function homepage(){
-        return view('homepage');
+        $testimonials = Testimonial::all();
+        return view('homepage', compact('testimonials'));
     }
     public function courses(){
         $courses = Course::where('published', 'true')->orderBy('id', 'asc')->paginate(16);
