@@ -79,21 +79,14 @@
             <span class='ml-2'>Contact Us</span>
           </a>
 
-          <a style='position:relative' href="/home/announcements" class="dash-navigation ebooks">
-            <span style='
-            font-size:.6em; 
-            background:dodgerblue; 
-            color:white; 
-            padding:1px 5px;
-            position:absolute;
-            top:-5px;
-            right: -10px;
-            border-radius:2px'
-            >NEW!</span>
-            <i class="fas fa-bullhorn"></i>
-            <span class='ml-2'>Announcements</span>
-          </a>
-
+          <hr>
+          @foreach($announcements as $entry)
+            <div class="alert alert-{{$entry->type}}">
+              <small><u><b>{{$entry->created_at}}</b></u></small>
+              <small class='my-0'>{{$entry->content}}</small>
+            </div>
+          @endforeach
+      
         </div>
       </div>
       <div class="col-lg-9 ">

@@ -12,7 +12,7 @@ class AnnouncementsController extends Controller
         return view('admin.manage_announcements', compact('announcements'));
     }
     public function store(Request $request){
-        if(Announcement::create(['content'=>$request->content])){
+        if(Announcement::create(['content'=>$request->content, 'type'=> $request->type])){
             return back()->with('success', 'Announcement posted!');
         }
 

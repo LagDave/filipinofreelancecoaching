@@ -14,6 +14,16 @@
                 <label>Content:</label>
                 <textarea name="content" rows="10" class="form-control"></textarea>
               </div>
+              <div class="form-group">
+                <label>Type:</label>
+                <select class='form-control' name="type">
+
+                  <option value="secondary">Secondary</option>
+                  <option value="primary">Primary</option>
+                  <option value="success">Green Card</option>
+
+                </select>
+              </div>
               <button class="btn btn-primary">Save</button>
             </form>
 
@@ -23,7 +33,7 @@
           <div class="card card-body">
 
             @foreach($announcements as $entry)
-              <div class="alert alert-secondary">
+            <div class="alert alert-{{$entry->type}}">
                 <div class="row">
                   <div class="col-2">
                     <small>{{$entry->created_at}}</small>
