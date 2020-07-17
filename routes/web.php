@@ -2,8 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
-Route::get('/', 'PagesController@homepage');
+Auth::routes(['register' => false]);
+
+
+// Route::get('/', 'PagesController@homepage');
+Route::get('/', function(){
+  return redirect('/home');
+});
+// THE CLOSURE ABOVE GETS RID OF THE HOMEPAGE
+
 Route::get('/home', 'UserDashboardsController@index')->middleware('auth');
 
 // Admin Routes
