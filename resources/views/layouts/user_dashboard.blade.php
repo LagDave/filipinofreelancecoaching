@@ -38,12 +38,12 @@
               <i class="fas fa-graduation-cap"></i>
               <span class='ml-2'>My Courses</span>
           </a>
-          <a href="/home/cheat_sheet" class="dash-navigation templates">
+          {{-- <a href="/home/cheat_sheet" class="dash-navigation templates">
 
             <i class="fas fa-scroll"></i>
             <span class='ml-2'>Cheat Sheet</span>
 
-          </a>
+          </a> --}}
           <a href="/home/profile" class="dash-navigation ebooks">
 
             <i class="fas fa-user"></i>
@@ -67,11 +67,11 @@
             >NEW!</span>
           </a>
 
-          <a href="/home/subscription" class="dash-navigation templates">
+          {{-- <a href="/home/subscription" class="dash-navigation templates">
 
             <i class="fas fa-clock"></i>
             <span class='ml-2'>Subscription</span>
-          </a>
+          </a> --}}
 
           <a href="/home/contacts" class="dash-navigation certs">
 

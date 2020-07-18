@@ -247,8 +247,8 @@ class UsersController extends Controller
         $user->plan = 'has_plan';
         
         // Mail the code
-        $toEmail = $user->email;
-        Mail::to($toEmail)->send(new PlanGrantedMail($user));
+        // $toEmail = $user->email;
+        // Mail::to($toEmail)->send(new PlanGrantedMail($user));
         
         return $user->save();
 

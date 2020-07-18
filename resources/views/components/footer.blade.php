@@ -14,7 +14,7 @@
             @endif
             @if(Auth::check())
               @if(Auth::user()->plan == 'has_plan' || Auth::user()->plan == 'admin')
-                <a href="/home/policies">Policies</a>
+                {{-- <a href="/home/policies">Policies</a> --}}
               @endif
             @endif
 

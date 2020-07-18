@@ -82,10 +82,10 @@ Route::post('/admin/manage/users/toggleCheck/expired/{user_id}', 'UsersControlle
 // Dashboard Routes
 Route::get('/home/courses', 'UserDashboardsController@index')->middleware('auth');
 Route::get('/home/profile', 'UserDashboardsController@profile')->middleware('auth');
-Route::get('/home/subscription', 'UserDashboardsController@subscription')->middleware('auth');
+// Route::get('/home/subscription', 'UserDashboardsController@subscription')->middleware('auth');
 Route::get('/home/contacts', "UserDashboardsController@contacts")->middleware('auth');
-Route::get('/home/cheat_sheet', "UserDashboardsController@cheatsheet")->middleware('has_plan');
-Route::get('/home/policies', "UserDashboardsController@policies")->middleware('has_plan');
+// Route::get('/home/cheat_sheet', "UserDashboardsController@cheatsheet")->middleware('has_plan');
+// Route::get('/home/policies', "UserDashboardsController@policies")->middleware('has_plan');
 Route::get('/home/announcements', "UserDashboardsController@announcements")->middleware('has_plan');
 
 // Courses Routes

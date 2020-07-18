@@ -76,8 +76,8 @@ class RegisterController extends Controller
     $user['username'] = $data['username'];
 
       // Mail the code
-      $toEmail = $data['email'];
-      Mail::to($toEmail)->send(new RegistrationSuccessMail($user));
+    //   $toEmail = $data['email'];
+    //   Mail::to($toEmail)->send(new RegistrationSuccessMail($user));
       
         return User::create([
             'username' => $data['username'],
