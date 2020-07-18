@@ -1015,44 +1015,59 @@ export default {
     },
     computed: {
         filteredUnsubscribed() {
-            return this.unsubscribed.filter(user => {
-                var full_name = user.first_name + " " + user.last_name;
-                return full_name
-                    .toLowerCase()
-                    .includes(this.unsubscribedSearchQuery.toLowerCase());
-            });
+            if (this.unsubscribed.length > 0) {
+                return this.unsubscribed.filter(user => {
+                    var full_name = user.first_name + " " + user.last_name;
+                    return full_name
+                        .toLowerCase()
+                        .includes(this.unsubscribedSearchQuery.toLowerCase());
+                });
+            }
+            return this.unsubscribed;
         },
         filteredPending() {
-            return this.pending.filter(user => {
-                var full_name = user.first_name + " " + user.last_name;
-                return full_name
-                    .toLowerCase()
-                    .includes(this.pendingSearchQuery.toLowerCase());
-            });
+            if (this.pending.length > 0) {
+                return this.pending.filter(user => {
+                    var full_name = user.first_name + " " + user.last_name;
+                    return full_name
+                        .toLowerCase()
+                        .includes(this.pendingSearchQuery.toLowerCase());
+                });
+            }
+            return this.pending;
         },
         filteredSubscribed() {
-            return this.subscribed.filter(user => {
-                var full_name = user.first_name + " " + user.last_name;
-                return full_name
-                    .toLowerCase()
-                    .includes(this.subscribedSearchQuery.toLowerCase());
-            });
+            if (this.subscribed.length > 0) {
+                return this.subscribed.filter(user => {
+                    var full_name = user.first_name + " " + user.last_name;
+                    return full_name
+                        .toLowerCase()
+                        .includes(this.subscribedSearchQuery.toLowerCase());
+                });
+            }
+            return this.subscribed;
         },
         filteredExpired() {
-            return this.expired.filter(user => {
-                var full_name = user.first_name + " " + user.last_name;
-                return full_name
-                    .toLowerCase()
-                    .includes(this.expiredSearchQuery.toLowerCase());
-            });
+            if (this.expired.length > 0) {
+                return this.expired.filter(user => {
+                    var full_name = user.first_name + " " + user.last_name;
+                    return full_name
+                        .toLowerCase()
+                        .includes(this.expiredSearchQuery.toLowerCase());
+                });
+            }
+            return this.expired;
         },
         filteredRenewal() {
-            return this.renewal.filter(user => {
-                var full_name = user.first_name + " " + user.last_name;
-                return full_name
-                    .toLowerCase()
-                    .includes(this.renewalSearchQuery.toLowerCase());
-            });
+            if (this.renewal.length > 0) {
+                return this.renewal.filter(user => {
+                    var full_name = user.first_name + " " + user.last_name;
+                    return full_name
+                        .toLowerCase()
+                        .includes(this.renewalSearchQuery.toLowerCase());
+                });
+            }
+            return this.renewal;
         }
     },
     components: {

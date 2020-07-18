@@ -4300,42 +4300,62 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     filteredUnsubscribed: function filteredUnsubscribed() {
       var _this = this;
 
-      return this.unsubscribed.filter(function (user) {
-        var full_name = user.first_name + " " + user.last_name;
-        return full_name.toLowerCase().includes(_this.unsubscribedSearchQuery.toLowerCase());
-      });
+      if (this.unsubscribed.length > 0) {
+        return this.unsubscribed.filter(function (user) {
+          var full_name = user.first_name + " " + user.last_name;
+          return full_name.toLowerCase().includes(_this.unsubscribedSearchQuery.toLowerCase());
+        });
+      }
+
+      return this.unsubscribed;
     },
     filteredPending: function filteredPending() {
       var _this2 = this;
 
-      return this.pending.filter(function (user) {
-        var full_name = user.first_name + " " + user.last_name;
-        return full_name.toLowerCase().includes(_this2.pendingSearchQuery.toLowerCase());
-      });
+      if (this.pending.length > 0) {
+        return this.pending.filter(function (user) {
+          var full_name = user.first_name + " " + user.last_name;
+          return full_name.toLowerCase().includes(_this2.pendingSearchQuery.toLowerCase());
+        });
+      }
+
+      return this.pending;
     },
     filteredSubscribed: function filteredSubscribed() {
       var _this3 = this;
 
-      return this.subscribed.filter(function (user) {
-        var full_name = user.first_name + " " + user.last_name;
-        return full_name.toLowerCase().includes(_this3.subscribedSearchQuery.toLowerCase());
-      });
+      if (this.subscribed.length > 0) {
+        return this.subscribed.filter(function (user) {
+          var full_name = user.first_name + " " + user.last_name;
+          return full_name.toLowerCase().includes(_this3.subscribedSearchQuery.toLowerCase());
+        });
+      }
+
+      return this.subscribed;
     },
     filteredExpired: function filteredExpired() {
       var _this4 = this;
 
-      return this.expired.filter(function (user) {
-        var full_name = user.first_name + " " + user.last_name;
-        return full_name.toLowerCase().includes(_this4.expiredSearchQuery.toLowerCase());
-      });
+      if (this.expired.length > 0) {
+        return this.expired.filter(function (user) {
+          var full_name = user.first_name + " " + user.last_name;
+          return full_name.toLowerCase().includes(_this4.expiredSearchQuery.toLowerCase());
+        });
+      }
+
+      return this.expired;
     },
     filteredRenewal: function filteredRenewal() {
       var _this5 = this;
 
-      return this.renewal.filter(function (user) {
-        var full_name = user.first_name + " " + user.last_name;
-        return full_name.toLowerCase().includes(_this5.renewalSearchQuery.toLowerCase());
-      });
+      if (this.renewal.length > 0) {
+        return this.renewal.filter(function (user) {
+          var full_name = user.first_name + " " + user.last_name;
+          return full_name.toLowerCase().includes(_this5.renewalSearchQuery.toLowerCase());
+        });
+      }
+
+      return this.renewal;
     }
   },
   components: {
