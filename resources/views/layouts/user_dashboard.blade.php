@@ -54,17 +54,6 @@
 
             <i class="fas fa-user"></i>
             <span class='ml-2'>Manage Portfolio Page</span>
-
-            <span style='
-            font-size:.6em; 
-            background:dodgerblue; 
-            color:white; 
-            padding:1px 5px;
-            position:absolute;
-            top:-5px;
-            right: -10px;
-            border-radius:2px'
-            >NEW!</span>
           </a>
 
           {{-- <a href="/home/subscription" class="dash-navigation templates">
@@ -73,11 +62,11 @@
             <span class='ml-2'>Subscription</span>
           </a> --}}
 
-          <a href="/home/contacts" class="dash-navigation certs">
+          {{-- <a href="/home/contacts" class="dash-navigation certs">
 
             <i class="fas fa-phone"></i>
             <span class='ml-2'>Contact Us</span>
-          </a>
+          </a> --}}
 
           <hr>
           @foreach($announcements as $entry)

@@ -1009,19 +1009,44 @@ export default {
     },
     computed: {
         filteredUnsubscribed() {
-            return this.unsubscribed;
+            return this.unsubscribed.filter(user => {
+                var full_name = user.first_name + " " + user.last_name;
+                return full_name
+                    .toLowerCase()
+                    .includes(this.unsubscribedSearchQuery.toLowerCase());
+            });
         },
         filteredPending() {
-            return this.pending;
+            return this.pending.filter(user => {
+                var full_name = user.first_name + " " + user.last_name;
+                return full_name
+                    .toLowerCase()
+                    .includes(this.pendingSearchQuery.toLowerCase());
+            });
         },
         filteredSubscribed() {
-            return this.subscribed;
+            return this.subscribed.filter(user => {
+                var full_name = user.first_name + " " + user.last_name;
+                return full_name
+                    .toLowerCase()
+                    .includes(this.subscribedSearchQuery.toLowerCase());
+            });
         },
         filteredExpired() {
-            return this.expired;
+            return this.expired.filter(user => {
+                var full_name = user.first_name + " " + user.last_name;
+                return full_name
+                    .toLowerCase()
+                    .includes(this.expiredSearchQuery.toLowerCase());
+            });
         },
         filteredRenewal() {
-            return this.renewal;
+            return this.renewal.filter(user => {
+                var full_name = user.first_name + " " + user.last_name;
+                return full_name
+                    .toLowerCase()
+                    .includes(this.renewalSearchQuery.toLowerCase());
+            });
         }
     },
     components: {
