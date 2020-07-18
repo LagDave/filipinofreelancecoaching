@@ -385,7 +385,7 @@
               @endif
               </p>
             <br>
-            <small class="text-muted">&copy; {{$portfolio_entry->full_name}} | Filipino Freelance Coaching</small>
+            <small class="text-muted">&copy; {{$portfolio_entry->full_name}}</small>
 
           </div>
         </div>
