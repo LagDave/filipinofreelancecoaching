@@ -286,9 +286,11 @@
                                                             Proof of Payment:
                                                             <span
                                                                 v-if="
-                                                                    user.proofs
-                                                                        .length ==
-                                                                        0
+                                                                    user.proofs &&
+                                                                        user
+                                                                            .proofs
+                                                                            .length ==
+                                                                            0
                                                                 "
                                                                 class="ml-1"
                                                             >
@@ -519,8 +521,10 @@
                                                         Proof of Payment:
                                                         <span
                                                             v-if="
-                                                                user.proofs
-                                                                    .length == 0
+                                                                user.proofs &&
+                                                                    user.proofs
+                                                                        .length ==
+                                                                        0
                                                             "
                                                             class="ml-1"
                                                         >
@@ -888,9 +892,11 @@
                                                             Proof of Payment:
                                                             <span
                                                                 v-if="
-                                                                    user.proofs
-                                                                        .length ==
-                                                                        0
+                                                                    user.proofs &&
+                                                                        user
+                                                                            .proofs
+                                                                            .length ==
+                                                                            0
                                                                 "
                                                                 class="ml-1"
                                                             >
