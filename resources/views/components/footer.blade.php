@@ -4,7 +4,6 @@
       <div class="row d-flex align-items-center">
         <div class="col-lg-6 text-lg-left text-center">
           <div class="copyright">
-            Copyright © All Rights Reserved 2019 - 2020 | Filipino Freelance Coaching.
           </div>
         </div>
         <div class="col-lg-6">

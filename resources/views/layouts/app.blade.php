@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Filipino Freelance Coaching</title>
+    <title>YourCourses.site</title>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -36,9 +36,6 @@
     <div id="app">
         <nav class="navbar sticky-top navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img style='max-heigh:80px' src="{{asset('homepage/assets/img/logo.png')}}" alt="" class="img-fluid"></a>
-                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -53,10 +50,10 @@
                             <li class="nav-item">
                                 <a href="{{Auth::user()->plan == 'has_plan' || Auth::user()->plan == 'admin' ? '/courses' : '/guest/courses'}}" class="nav-link">Browse Courses</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="/home/policies" class="nav-link">Policies</a>
-                            </li>
-                            @if(Auth::user()->plan !== 'admin')
+                            </li> --}}
+                            {{-- @if(Auth::user()->plan !== 'admin')
                                 @if(Auth::user()->plan == 'has_plan')
                                 <li class="nav-item">
                                     <a href="/home/enroll" class="nav-link">Renew Subscription</a>
@@ -66,7 +63,7 @@
                                     <a href="/home/enroll" class="nav-link">Enroll</a>
                                 </li>
                                 @endif
-                            @endif
+                            @endif --}}
                         @endif
 
                     </ul>
