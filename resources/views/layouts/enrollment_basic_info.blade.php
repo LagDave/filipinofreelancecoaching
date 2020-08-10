@@ -14,10 +14,10 @@
   </div>
   <div class="container">
     <div class="card card-body">
-      <div class="row">
-        <div class="col-lg-6 billing-details-container">
+      <div class="row justify-content-center">
+        <div class="col-lg-0 billing-details-container">
 
-          <h3 class='mb-5'>Billing Details</h3>
+          {{-- <h3 class='mb-5'>Billing Details</h3>
           <h5>1. Gcash</h5>
           <p>Andrea M - <b>09994575088</b></p>
 
@@ -28,11 +28,11 @@
           <p>Andrea M - <b>09994575088</b></p>
 
           <h5>4. Paypal</h5>
-          <p>Andrea M - <b>alasnanamandrea@gmail.com</b></p>
+          <p>Andrea M - <b>alasnanamandrea@gmail.com</b></p> --}}
 
 
         </div>
-        <div class="col-lg-6">        
+        <div class="col-lg-8">        
 
           @yield('form')
 

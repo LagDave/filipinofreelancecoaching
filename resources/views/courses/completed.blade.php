@@ -121,19 +121,13 @@
   <div class="wrapper-1">
     <div class="wrapper-2">
       <h1>Congratulations!</h1>
-      <p>It's been a marvelous ride and your certificate is on its way!</p>
-      <p></p>
-      <p>Please Allow up to 24 hours and check your email.</p>
       <p class='mt-4'>
-      <a href='/home' class="go-home">
-        go home
-      </a>
-    </p>
+        <a href='/home' class="go-home">
+          go home
+        </a>
+      </p>
     </div>
     <div class="footer-like">
-      <p>Want to make things faster?
-       <a href="https://web.facebook.com/filipinofreelancecoaching/">Message us on our FB page!</a>
-      </p>
     </div>
 </div>
 </div>

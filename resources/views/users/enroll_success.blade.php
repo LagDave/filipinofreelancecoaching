@@ -130,9 +130,7 @@
     </p>
     </div>
     <div class="footer-like">
-      <p>Want to make things faster?
-       <a href="https://web.facebook.com/filipinofreelancecoaching/">Message us on our FB page!</a>
-      </p>
+
     </div>
 </div>
 </div>

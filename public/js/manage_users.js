@@ -24244,7 +24244,7 @@ var manage_courses_store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Stor
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Rustine Dave\Documents\freelance_projects\filipinofreelancecoaching\resources\js\manage_users.js */"./resources/js/manage_users.js");
+module.exports = __webpack_require__(/*! C:\Users\Rustine Dave\documents\laravel_apps\filipinofreelancecoaching\resources\js\manage_users.js */"./resources/js/manage_users.js");
 
 
 /***/ })

@@ -10,7 +10,7 @@
 <div class="container">
 
     <div class="row justify-content-center">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-8 mb-3">
             <div class="card">
                 <div class="card-header"><i class="icofont-user"></i> {{ __('Register') }}</div>
 
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <div class="register-pricing col-md-8">
+        {{-- <div class="register-pricing col-md-8">
             <div class="row">
                 <div class="col-lg-4">
                     <ul class="price">
@@ -173,7 +173,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="row">
         <div class="col-lg-12 my-5">
