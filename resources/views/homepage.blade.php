@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>The Filipino Freelancing Coach</title>
+  <title>YourCourses.site</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -51,7 +51,7 @@
 
       <div class="logo mr-auto">
         <!-- Uncomment below if you prefer to use an image logo -->
-       <a href="index.html"><img src="{{asset('homepage/assets/img/logo.png')}}" alt="" class="img-fluid"></a>
+       <a href="index.html"><img src="{{asset('homepage/assets/img/logo.png')}}" alt="" style='width:50%;'></a>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -78,7 +78,7 @@
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up">Start your freelancing career with us!</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">Learn a new skill from Filipino Freelance Coaching
+          <h2 data-aos="fade-up" data-aos-delay="400">Learn a new skill from YourCourses.site
           </h2>
           <div data-aos="fade-up" data-aos-delay="800">
             <a href="/register" class="btn-get-started scrollto">Register Now</a>
@@ -523,10 +523,10 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-about">
-              <h3>Filipino Freelance Coaching</h3>
+              <h3>YourCourses.site</h3>
               <p>If you have any questions about the services we provide simply use the form below. We try to respond to all queries and comments within 24 hours.</p>
               <div class="social-links">
-                <a href="https://facebook.com/filipinofreelancecoaching/" class="facebook"><i class="icofont-facebook"></i></a>
+                <a href="https://facebook.com/yourcourses/" class="facebook"><i class="icofont-facebook"></i></a>
               </div>
             </div>
           </div>
@@ -537,14 +537,14 @@
                 <i class="ri-map-pin-line"></i>
                 <p>Fontanilla Homes,
                   <br>
-                  Mexico, Pampanga
+                  Cavite
                   </p>
               </div>
 
               <div>
                 <i class="ri-mail-send-line"></i>
                 <p>
-                <small>admin@thefilipinofreelancecoaching.com</small>
+                <small>admin@yourcourses.site</small>
               </p>
               </div>
 

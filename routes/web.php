@@ -6,9 +6,7 @@ Auth::routes();
 
 
 // Route::get('/', 'PagesController@homepage');
-Route::get('/', function(){
-  return redirect('/home');
-});
+Route::get('/', 'PagesController@homepage');
 // THE CLOSURE ABOVE GETS RID OF THE HOMEPAGE
 
 Route::get('/home', 'UserDashboardsController@index')->middleware('auth');
