@@ -78,7 +78,7 @@
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up">Start your freelancing career with us!</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">Learn a new skill from YourCourses.site
+          <h2 data-aos="fade-up" data-aos-delay="400">Learn a new skill from Your Courses Academy
           </h2>
           <div data-aos="fade-up" data-aos-delay="800">
             <a href="/register" class="btn-get-started scrollto">Register Now</a>
@@ -107,8 +107,8 @@
           <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="/guest/courses">100+ Courses <small style='color: #e60c3e !important' class='text-muted'>click to view</small></a></h4>
-              <p class="description">Get your 100+ courses! From Basic to Professional Courses!</p>
+              <h4 class="title"><a href="/guest/courses">200+ Courses <small style='color: #e60c3e !important' class='text-muted'>click to view</small></a></h4>
+              <p class="description">Get your 200+ courses! From Basic to Professional Courses!</p>
             </div>
           </div>
 
@@ -117,29 +117,6 @@
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4 class="title"><a href="/guest/downloadables">Software and Tools <small style='color: #e60c3e !important' class='text-muted'>click to view</small></a></h4>
               <p class="description">We have at least 30 software and tools worth 30k that you can use!</p>
-            </div>
-          </div>
-
-
-          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="/guest/downloadables">Templates <small style='color: #e60c3e !important' class='text-muted'>click to view</small></a></h4>
-              <p class="description">Get your templates, checklist for VA and Social Media Management!</p>
-            </div>
-          </div>
-
-
-        </div>
-
-        <div class="row mt-5">
-
-          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="bx bx-book-alt"></i></div>
-              <h4 class="title"><a href="/guest/downloadables">Ebooks <small style='color: #e60c3e !important' class='text-muted'>click to view</small></a></h4>
-              <p class="description">Get your ebook for English, Excel and many more!
-              </p>
             </div>
           </div>
 
@@ -152,14 +129,6 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="bx bx-certification"></i></div>
-              <h4 class="title"><a href="#">Certificates</a></h4>
-              <p class=" description">You can get 1 certificate for each course you will finish!
-              </p>
-            </div>
-          </div>
 
         </div>
 
@@ -175,34 +144,10 @@
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="300">
-          <div class="col-lg-3 col-md-4">
-            <div class="icon-box">
-              <img src="https://img.icons8.com/color/32/000000/obs-studio.png"/>
-              <h3 class='ml-2'><a href="/guest/downloadables">OBS STUDIO</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/adobe-photoshop.png"/>
               <h3 class='ml-2'><a href="/guest/downloadables">ADOBE PHOTOSHOP</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box">
-              <img src="https://img.icons8.com/color/32/000000/sony-vegas.png"/>
-              <h3 class='ml-2'><a href="/guest/downloadables">SONY VEGAS</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-            <div class="icon-box">
-              <img src="https://img.icons8.com/color/32/000000/ms-excel.png"/>
-              <h3 class='ml-2'><a href="/guest/downloadables">MS EXCEL</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <img src="https://img.icons8.com/color/32/000000/ms-powerpoint--v1.png"/>
-              <h3 class='ml-2'><a href="/guest/downloadables">MS POWERPOINT</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
@@ -219,20 +164,8 @@
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
-              <img src="https://img.icons8.com/color/32/000000/fl-studio.png"/>
-              <h3 class='ml-2'><a href="/guest/downloadables">FL STUDIO</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/particles.png"/>
               <h3 class='ml-2'><a href="/guest/downloadables">PARTICLE ILLUSION</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4">
-            <div class="icon-box">
-              <img src="https://img.icons8.com/flat_round/32/000000/record.png"/>
-              <h3 class='ml-2'><a href="/guest/downloadables">BANDICAM</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
@@ -245,6 +178,30 @@
             <div class="icon-box">
               <img src="https://img.icons8.com/color/32/000000/adobe-photoshop.png"/>
               <h3 class='ml-2'><a href="/guest/downloadables">PHOTOSHOP CS6</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <img src="https://img.icons8.com/dusk/32/000000/filmora9.png"/>
+              <h3 class='ml-2'><a href="/guest/downloadables">FILMORA 9</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <img src="https://img.icons8.com/dusk/32/000000/video.png"/>
+              <h3 class='ml-2'><a href="/guest/downloadables">POWER DIRECTOR</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <img src="https://img.icons8.com/dusk/32/000000/google-sketchup.png"/>
+              <h3 class='ml-2'><a href="/guest/downloadables">SKETCHUP</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <img src="https://img.icons8.com/dusk/32/000000/autodesk-autocad.png"/>
+              <h3 class='ml-2'><a href="/guest/downloadables">AUTOCAD</a></h3>
             </div>
           </div>
         </div>
@@ -447,17 +404,15 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
-              <h3>1 Year</h3>
-              <h4><sup>₱</sup>999<span> / year</span></h4>
+              <h3>Promo A</h3>
+              <h4><sup>₱</sup>999<span> / Lifetime Access</span></h4>
               <ul>
-                <li>100+ Courses</li>
-                <li>Web Portfolio</li>
-                <li>Templates and Checklists</li>
-                <li>Softwares and Tools</li>
-                <li>E-Books</li>
-                <li>Cheat sheet</li>
-                <li>Certificates</li>
-                <li>Chat support</li>
+                <li>200+ Courses</li>
+                <li>Website Portfolio</li>
+                <li>Additional Courses Every Week!</li>
+                <del><li>Softwares and Tools</li></del>
+                <del><li>+ Freebies and Bonuses</li></del>
+                <li>Lifetime Access on Everything</li>
               </ul>
               <div class="btn-wrap">
                 <a href="/register" class="btn-buy">Enroll Now</a>
@@ -467,17 +422,15 @@
 
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="box recommended" data-aos="zoom-in" data-aos-delay="100">
-              <h3>1 Month</h3>
-              <h4><sup>₱</sup>399<span> / month</span></h4>
+              <h3>Promo B</h3>
+              <h4><sup>₱</sup>1499<span> / Lifetime Access</span></h4>
               <ul>
-                <li>100+ Courses</li>
-                <li>Web Portfolio</li>
-                <li>Templates and Checklists</li>
+                <li>200+ Courses</li>
+                <li>Website Portfolio</li>
+                <li>Additional Courses Every Week!</li>
                 <li>Softwares and Tools</li>
-                <li>E-Books</li>
-                <li>Cheat sheet</li>
-                <li>Certificates</li>
-                <li><del class='text-muted'>Chat support</del></li>
+                <li>+ Freebies and Bonuses</li>
+                <li>Lifetime Access on Everything</li>
               </ul>
               <div class="btn-wrap">
                 <a href="/register" class="btn-buy">Enroll Now</a>
@@ -487,17 +440,15 @@
 
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
-              <h3>Lifetime</h3>
-              <h4><sup>₱</sup>1,999<span> / limitless</span></h4>
+              <h3>Promo C</h3>
+              <h4><sup>₱</sup>499<span> / 1 Year</span></h4>
               <ul>
-                <li>100+ Courses</li>
-                <li>Web Portfolio</li>
-                <li>Templates and Checklists</li>
-                <li>Softwares and Tools</li>
-                <li>E-Books</li>
-                <li>Cheat sheet</li>
-                <li>Certificates</li>
-                <li>Chat support</li>
+                <li>200+ Courses</li>
+                <li>Website Portfolio</li>
+                <li>Additional Courses Every Week!</li>
+                <del><li>Softwares and Tools</li></del>
+                <del><li>+ Freebies and Bonuses</li></del>
+                <li>1 Year Access on Everything!</li>
               </ul>
               <div class="btn-wrap">
                 <a href="/register" class="btn-buy">Enroll Now</a>
@@ -525,9 +476,6 @@
             <div class="contact-about">
               <h3>YourCourses.site</h3>
               <p>If you have any questions about the services we provide simply use the form below. We try to respond to all queries and comments within 24 hours.</p>
-              <div class="social-links">
-                <a href="https://facebook.com/yourcourses/" class="facebook"><i class="icofont-facebook"></i></a>
-              </div>
             </div>
           </div>
 
@@ -535,9 +483,7 @@
             <div class="info">
               <div>
                 <i class="ri-map-pin-line"></i>
-                <p>Fontanilla Homes,
-                  <br>
-                  Cavite
+                <p>Los Angeles, USA
                   </p>
               </div>
 
@@ -548,10 +494,6 @@
               </p>
               </div>
 
-              <div>
-                <i class="ri-phone-line"></i>
-                <p>+639994575088</p>
-              </div>
 
             </div>
           </div>
