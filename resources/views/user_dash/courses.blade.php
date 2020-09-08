@@ -7,8 +7,8 @@
   <div class="courses-container row">
     @foreach($courses as $course)
 
-    @if(isset($course->topics[0]))
-      @if(isset($course->topics[0]->lesson[0]))
+    @if(sizeof($course->topics) > 0)
+      @if(sizeof($course->topics[0]->lessons) > 0)
 
       <div class="mb-5 col-lg-3 course">
         <div class="card course-card card-body shadow-sm py-0 px-0">
@@ -25,7 +25,6 @@
             </div>
         </div>
       </div>
-      
       @endif
     @endif
 
