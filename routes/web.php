@@ -66,9 +66,9 @@ Route::post('/admin/manage/users/toggleCheck/expired/{user_id}', 'UsersControlle
 // User Dashboard Routes
   // Enrollment
   Route::get('/home/enroll', 'UsersController@enrollPage')->middleware('auth');
-  Route::get('/home/enroll/monthly/basic_info', 'UsersController@monthlyEnrollPage')->middleware('auth');
-  Route::get('/home/enroll/yearly/basic_info', 'UsersController@yearlyEnrollPage')->middleware('auth');
-  Route::get('/home/enroll/lifetime/basic_info', 'UsersController@lifetimeEnrollPage')->middleware('auth');
+  Route::get('/home/enroll/promo_a/basic_info', 'UsersController@monthlyEnrollPage')->middleware('auth');
+  Route::get('/home/enroll/promo_b/basic_info', 'UsersController@yearlyEnrollPage')->middleware('auth');
+  Route::get('/home/enroll/promo_c/basic_info', 'UsersController@lifetimeEnrollPage')->middleware('auth');
   Route::post('/home/enroll/yearly/apply', 'UsersController@yearlyApply')->middleware('auth');
   Route::post('/home/enroll/monthly/apply', 'UsersController@monthlyApply')->middleware('auth');
   Route::post('/home/enroll/lifetime/apply', 'UsersController@lifetimeApply')->middleware('auth');

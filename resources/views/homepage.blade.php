@@ -204,6 +204,18 @@
               <h3 class='ml-2'><a href="/guest/downloadables">AUTOCAD</a></h3>
             </div>
           </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <img src="https://img.icons8.com/color/32/000000/adobe-framemaker.png"/>
+              <h3 class='ml-2'><a href="/guest/downloadables">FRAMEMAKER</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box">
+              <img src="https://img.icons8.com/fluent/32/000000/adobe-indesign.png"/>
+              <h3 class='ml-2'><a href="/guest/downloadables">INDESIGN</a></h3>
+            </div>
+          </div>
         </div>
 
       </div>

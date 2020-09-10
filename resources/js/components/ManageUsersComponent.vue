@@ -240,33 +240,33 @@
                                                                 @click="
                                                                     grantUser(
                                                                         user.id,
-                                                                        'monthly'
+                                                                        'promo_a'
                                                                     )
                                                                 "
                                                             >
-                                                                MONTHLY
+                                                                PROMO_A
                                                             </button>
                                                             <button
                                                                 class="btn btn-sm btn-primary"
                                                                 @click="
                                                                     grantUser(
                                                                         user.id,
-                                                                        'yearly'
+                                                                        'promo_b'
                                                                     )
                                                                 "
                                                             >
-                                                                YEARLY
+                                                                PROMO_B
                                                             </button>
                                                             <button
                                                                 class="btn btn-sm btn-primary"
                                                                 @click="
                                                                     grantUser(
                                                                         user.id,
-                                                                        'lifetime'
+                                                                        'promo_c'
                                                                     )
                                                                 "
                                                             >
-                                                                LIFETIME
+                                                                PROMO_C
                                                             </button>
                                                         </div>
                                                     </div>

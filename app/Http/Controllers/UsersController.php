@@ -104,12 +104,12 @@ class UsersController extends Controller
             if($user->plan == 'no_plan'){
                 // Set user to pending registration
                 $user->plan = 'pending';
-                $user->plan_name = 'monthly';
+                $user->plan_name = 'promo_a';
                 $user->save();
             }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
                 // Set user to pending renewal
                 $user->plan = 'renewal';
-                $user->plan_name = 'monthly';
+                $user->plan_name = 'promo_a';
                 $user->save();
             }
 
@@ -138,12 +138,12 @@ class UsersController extends Controller
             if($user->plan == 'no_plan'){
                 // Set user to pending registration
                 $user->plan = 'pending';
-                $user->plan_name = 'yearly';
+                $user->plan_name = 'promo_b';
                 $user->save();
             }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
                 // Set user to pending renewal
                 $user->plan = 'renewal';
-                $user->plan_name = 'yearly';
+                $user->plan_name = 'promo_b';
                 $user->save();
             }
 
@@ -172,12 +172,12 @@ class UsersController extends Controller
             if($user->plan == 'no_plan'){
                 // Set user to pending registration
                 $user->plan = 'pending';
-                $user->plan_name = 'lifetime';
+                $user->plan_name = 'promo_c';
                 $user->save();
             }else if($user->plan == 'expired' || $user->plan == 'has_plan'){
                 // Set user to pending renewal
                 $user->plan = 'renewal';
-                $user->plan_name = 'lifetime';
+                $user->plan_name = 'promo_c';
                 $user->save();
             }
 
@@ -227,21 +227,21 @@ class UsersController extends Controller
     public function grant($user_id, $grant_type){
         // set subscription start
         $user = User::find($user_id);
-        if($grant_type == 'monthly'){
+        if($grant_type == 'promo_a'){
             $user->subscription_start =  Carbon::now()->format('m-d-Y');
-            $user->subscription_end = Carbon::now()->addDays(30)->format('m-d-Y');
+            $user->subscription_end = 'lifetime';
             $user->latest_plan_update = Carbon::now()->format('m-d-Y');
-            $user->plan_name = 'monthly';
-        }else if($grant_type == 'yearly'){
+            $user->plan_name = 'promo_a';
+        }else if($grant_type == 'promo_b'){
+            $user->subscription_start =  Carbon::now()->format('m-d-Y');
+            $user->subscription_end = 'lifetime';
+            $user->latest_plan_update = Carbon::now()->format('m-d-Y');
+            $user->plan_name = 'promo_b';
+        }else if($grant_type == 'promo_c'){
             $user->subscription_start =  Carbon::now()->format('m-d-Y');
             $user->subscription_end = Carbon::now()->addDays(366)->format('m-d-Y');
             $user->latest_plan_update = Carbon::now()->format('m-d-Y');
-            $user->plan_name = 'yearly';
-        }else if($grant_type == 'lifetime'){
-            $user->subscription_start =  'lifetime';
-            $user->subscription_end = 'lifetime';
-            $user->latest_plan_update = Carbon::now()->format('m-d-Y');
-            $user->plan_name = 'lifetime';
+            $user->plan_name = 'promo_c';
         }
 
         $user->plan = 'has_plan';
